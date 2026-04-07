@@ -1154,6 +1154,25 @@
       .phone-screen { border-radius: 0; }
       .phone-notch, .phone-home-indicator { display: none; }
 
+      .app-screen {
+        transform: none !important;
+        transition: opacity 0.25s ease !important;
+      }
+      .app-screen.active {
+        transform: none !important;
+      }
+      .app-screen.slide-out-left {
+        transform: none !important;
+        opacity: 0 !important;
+      }
+      .app-screen.sub-view {
+        transform: none !important;
+        transition: opacity 0.25s ease !important;
+      }
+      .app-screen.sub-view.active {
+        transform: none !important;
+      }
+
       .real-status-bar {
         padding-top: env(safe-area-inset-top, 10px);
         height: auto;
@@ -2571,16 +2590,20 @@
 
     const SUB_VIEWS = new Set([10, 11, 12, 13, 14, 15, 16, 17, 18]);
 
+    function isMobile() { return window.innerWidth <= 520; }
+
     function goToScreen(idx) {
       const screens = document.querySelectorAll('.app-screen');
       const btns = document.querySelectorAll('.screen-btn');
       const target = document.querySelector(`[data-screen-id="${idx}"]`);
       if (!target) return;
 
-      const prev = document.querySelector('.app-screen.active');
-      if (prev && prev !== target) {
-        prev.classList.add('slide-out-left');
-        setTimeout(() => prev.classList.remove('slide-out-left'), 400);
+      if (!isMobile()) {
+        const prev = document.querySelector('.app-screen.active');
+        if (prev && prev !== target) {
+          prev.classList.add('slide-out-left');
+          setTimeout(() => prev.classList.remove('slide-out-left'), 400);
+        }
       }
 
       screens.forEach(s => s.classList.remove('active'));

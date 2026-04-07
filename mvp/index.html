@@ -55,12 +55,11 @@
       text-align: center;
       padding: 2.5rem 1rem 1rem;
       max-width: 800px;
-      position: relative;
     }
     .theme-toggle {
       position: absolute;
-      right: 0.5rem;
-      top: 0.25rem;
+      right: 12px;
+      top: 44px;
       border: 1px solid rgba(255,255,255,0.2);
       background: rgba(255,255,255,0.08);
       color: #fff;
@@ -124,6 +123,7 @@
     .phone-wrapper {
       display: flex;
       justify-content: center;
+      width: 100%;
       padding: 0 1rem 3rem;
     }
     .phone-frame {
@@ -219,10 +219,16 @@
       border-top: 1px solid var(--md-outline-variant);
       display: flex;
       align-items: center;
-      justify-content: space-around;
-      padding-bottom: 16px;
+      justify-content: flex-start;
+      gap: 4px;
+      padding: 0 8px 16px;
       z-index: 90;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .bottom-nav::-webkit-scrollbar { display: none; }
     .screen-footer-fixed {
       position: absolute;
       bottom: 0;
@@ -254,12 +260,14 @@
       align-items: center;
       gap: 2px;
       cursor: pointer;
-      padding: 4px 12px;
+      padding: 4px 10px;
       border-radius: 16px;
       transition: all 0.2s;
       border: none;
       background: transparent;
       font-family: inherit;
+      flex: 0 0 auto;
+      min-width: 70px;
     }
     .bottom-nav .nav-item .nav-icon {
       width: 56px; height: 32px;
@@ -1130,7 +1138,7 @@
       .phone-notch, .phone-home-indicator { display: none; }
       .page-header { padding: 1.5rem 1rem 0.5rem; }
       .page-header .logo { font-size: 1.4rem; }
-      .theme-toggle { position: static; margin-top: 0.75rem; }
+      .theme-toggle { top: 40px; right: 10px; }
     }
 
     .dark-mode {
@@ -1193,7 +1201,6 @@
   <a href="../index.html" class="back-link">← Volver a Documentación</a>
 
   <header class="page-header">
-    <button class="theme-toggle" id="themeToggle">🌙 Modo Oscuro</button>
     <div class="badge">Prototipo MVP Interactivo</div>
     <div class="logo">
       <div class="icon">N</div>
@@ -1226,6 +1233,7 @@
   <div class="phone-wrapper">
     <div class="phone-frame">
       <div class="phone-screen">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙 Modo Oscuro</button>
         <div class="skeleton-overlay" id="skeletonOverlay">
           <div class="skeleton-block"></div>
           <div class="skeleton-block"></div>
@@ -1967,7 +1975,6 @@
       screens.forEach(s => {
         s.classList.remove('active');
         s.style.transition = `all 0.35s cubic-bezier(0.4, 0, 0.2, 1)`;
-        s.style.transform = idx > currentScreen ? 'translateX(30px)' : 'translateX(-30px)';
       });
       btns.forEach(b => b.classList.remove('active'));
       if (target) { target.classList.add('active'); target.scrollTop = 0; }

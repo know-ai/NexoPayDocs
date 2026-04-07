@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problema y Solución — NexoPay</title>
+  <meta name="description" content="Los 5 problemas críticos del sistema de pagos venezolano y cómo NexoPay los resuelve con tecnología de clase mundial.">
+  <meta property="og:title" content="Problema y Solución — NexoPay">
+  <meta property="og:description" content="Los 5 problemas críticos del sistema de pagos venezolano y cómo NexoPay los resuelve con tecnología de clase mundial.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexoPay — Inversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-icon">N</div>
+        <span><span class="logo-text-nexo">Nexo</span><span class="logo-text-pay">Pay</span></span>
+      </a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.navbar-nav').classList.toggle('open')">☰</button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-analisis-mercado.html">Mercado</a></li>
+        <li><a href="03-problema-solucion.html" class="active">Solución</a></li>
+        <li><a href="04-modelo-negocio.html">Negocio</a></li>
+        <li><a href="05-tecnologia.html">Tecnología</a></li>
+        <li><a href="06-regulatorio-legal.html">Legal</a></li>
+        <li><a href="07-analisis-competitivo.html">Competencia</a></li>
+        <li><a href="08-proyecciones-financieras.html">Finanzas</a></li>
+        <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
+        <li><a href="10-propuesta-inversion.html">Inversión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ Page Hero ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a><span class="separator">/</span><span class="current">Problema y Solución</span>
+      </div>
+      <span class="section-number">Sección 03</span>
+      <h1>Problema y Solución</h1>
+      <p class="lead">El ecosistema de pagos venezolano está fragmentado, propenso a errores y excluyente. NexoPay transforma cada punto de dolor en una ventaja competitiva.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PARTE 1 — EL PROBLEMA
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ═══ Resumen de Problemas ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Parte 1</span>
+        <h2>El Problema: Un Ecosistema Roto</h2>
+        <p>A pesar de liderar en adopción digital, Venezuela sufre cinco problemas estructurales que generan fricción, costos innecesarios y exclusión financiera masiva.</p>
+      </div>
+
+      <div class="kpi-row">
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">60+</div>
+          <div class="kpi-label">Bancos con Apps Diferentes</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color: var(--color-danger); -webkit-text-fill-color: var(--color-danger);">15-20%</div>
+          <div class="kpi-label">Tasa de Error en Pago Móvil</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value">$300+</div>
+          <div class="kpi-label">Costo de un Punto de Venta</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: linear-gradient(135deg, #EF4444, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">50%+</div>
+          <div class="kpi-label">PIB en Economía Informal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Problema 1: Fragmentación Bancaria ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="grid grid-1-2">
+        <div>
+          <span class="badge badge-danger">Problema #1</span>
+          <h2 class="mt-2">Fragmentación Bancaria</h2>
+          <p>Venezuela cuenta con más de 60 instituciones bancarias, cada una con su propia aplicación móvil. No existe un estándar de diseño, funcionalidad ni confiabilidad. El resultado es un caos digital donde los usuarios deben navegar entre múltiples interfaces para manejar su dinero.</p>
+          <p>Un venezolano promedio con cuentas en 2-3 bancos debe descargar, aprender y mantener actualizadas 2-3 aplicaciones completamente distintas, cada una con sus propios patrones de navegación, métodos de autenticación y limitaciones técnicas.</p>
+
+          <div class="callout callout-warning mt-3">
+            <div class="callout-title">💰 Costo para los Bancos</div>
+            <p style="margin-bottom: 0;">Cada banco invierte entre <strong>$500,000 y $2,000,000 anuales</strong> en el desarrollo y mantenimiento de su app móvil — recursos que podrían destinarse a mejorar sus servicios financieros principales.</p>
+          </div>
+        </div>
+        <div>
+          <div class="card card-accent">
+            <h4>El Caos de Múltiples Apps</h4>
+            <ul class="icon-list">
+              <li>
+                <span class="icon">📱</span>
+                <span><strong>60+ aplicaciones diferentes</strong> — Cada banco desarrolla su propia app con diseño, UX y funcionalidad distintos</span>
+              </li>
+              <li>
+                <span class="icon">🔄</span>
+                <span><strong>Inconsistencia total</strong> — Lo que funciona en una app no se aplica en otra; cada actualización cambia la interfaz</span>
+              </li>
+              <li>
+                <span class="icon">⚠️</span>
+                <span><strong>Confiabilidad variable</strong> — Algunas apps se caen constantemente; otras no cargan en horas pico</span>
+              </li>
+              <li>
+                <span class="icon">🧓</span>
+                <span><strong>Barrera para adultos mayores</strong> — La complejidad excluye a millones de usuarios menos tecnológicos</span>
+              </li>
+              <li>
+                <span class="icon">💾</span>
+                <span><strong>Consumo de recursos</strong> — Múltiples apps pesadas drenan batería, almacenamiento y datos móviles</span>
+              </li>
+              <li>
+                <span class="icon">🔐</span>
+                <span><strong>Seguridad desigual</strong> — No todas las apps cumplen estándares modernos de cifrado y protección de datos</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card mt-3" style="background: var(--color-surface-alt);">
+            <h4>Impacto Económico de la Fragmentación</h4>
+            <div class="table-container" style="border: none; box-shadow: none;">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Concepto</th>
+                    <th>Costo Estimado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Desarrollo inicial por app</td>
+                    <td><strong>$200K – $500K</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Mantenimiento anual por app</td>
+                    <td><strong>$300K – $1.5M</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Soporte técnico por banco</td>
+                    <td><strong>$100K – $400K/año</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Costo total del ecosistema</td>
+                    <td><strong style="color: var(--color-danger);">$30M – $120M/año</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Problema 2: Error Humano en Pago Móvil ═══ -->
+  <section class="section">
+    <div class="container">
+      <span class="badge badge-danger">Problema #2</span>
+      <h2 class="mt-2">Error Humano en Pago Móvil</h2>
+      <p class="lead" style="max-width: 800px;">El sistema de Pago Móvil venezolano obliga al usuario a introducir manualmente cuatro datos críticos por cada transacción. Un solo dígito errado puede significar perder dinero sin posibilidad de recuperación inmediata.</p>
+
+      <div class="divider-gradient"></div>
+
+      <!-- Flujo de datos requeridos -->
+      <h3 class="text-center mb-3">Datos Requeridos por Transacción</h3>
+      <div class="flow-diagram">
+        <div class="flow-node">📞 Número de<br>Teléfono</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">🪪 Cédula de<br>Identidad</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">🏦 Código del<br>Banco (4 dígitos)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">💵 Monto<br>a Transferir</div>
+      </div>
+
+      <div class="callout callout-warning mt-3">
+        <div class="callout-title">⚠️ Tasa de Error: 15–20%</div>
+        <p style="margin-bottom: 0;">De cada 100 transacciones de Pago Móvil, entre 15 y 20 fallan o se dirigen a un destinatario incorrecto por errores en la entrada manual de datos. Esto representa millones de transacciones problemáticas diariamente a nivel nacional.</p>
+      </div>
+
+      <!-- Tabla de errores comunes -->
+      <div class="grid grid-2 mt-4">
+        <div>
+          <h3>Tipos de Errores Más Comunes</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Error</th>
+                  <th>Frecuencia</th>
+                  <th>Consecuencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Código de banco incorrecto</td>
+                  <td><span class="badge badge-danger">Alta</span></td>
+                  <td>Transacción fallida, dinero retenido 24-72h</td>
+                </tr>
+                <tr>
+                  <td>Número de teléfono equivocado</td>
+                  <td><span class="badge badge-danger">Alta</span></td>
+                  <td>Dinero enviado a persona desconocida</td>
+                </tr>
+                <tr>
+                  <td>Cédula incorrecta</td>
+                  <td><span class="badge badge-gold">Media</span></td>
+                  <td>Rechazo de transacción, reintentar</td>
+                </tr>
+                <tr>
+                  <td>Error en monto (decimales)</td>
+                  <td><span class="badge badge-gold">Media</span></td>
+                  <td>Pago insuficiente o excesivo</td>
+                </tr>
+                <tr>
+                  <td>Duplicación de pago</td>
+                  <td><span class="badge badge-primary">Baja</span></td>
+                  <td>Doble cargo, reclamo bancario lento</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>Proceso de Recuperación de Fondos</h3>
+          <div class="card" style="background: rgba(239,68,68,0.03); border-color: rgba(239,68,68,0.2);">
+            <div class="process-steps" style="flex-direction: column; gap: 0;">
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">1</div>
+                <div>
+                  <h4 style="margin-bottom: 0.25rem;">Detectar el error</h4>
+                  <p style="margin: 0; font-size: 0.9rem;">El usuario se da cuenta que el pago fue a otra persona</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">2</div>
+                <div>
+                  <h4 style="margin-bottom: 0.25rem;">Contactar al banco</h4>
+                  <p style="margin: 0; font-size: 0.9rem;">Llamar a la línea de atención (esperas de 30-60 min)</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">3</div>
+                <div>
+                  <h4 style="margin-bottom: 0.25rem;">Abrir reclamo formal</h4>
+                  <p style="margin: 0; font-size: 0.9rem;">Documentar con capturas, ir a la agencia en persona</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: var(--gradient-gold);">4</div>
+                <div>
+                  <h4 style="margin-bottom: 0.25rem;">Esperar resolución</h4>
+                  <p style="margin: 0; font-size: 0.9rem;"><strong style="color: var(--color-danger);">5 a 45 días hábiles</strong> — sin garantía de reembolso</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-2" style="font-size: 0.88rem; color: var(--color-text-lighter);">* Si el destinatario retira los fondos antes del reclamo, la recuperación depende de la voluntad de esa persona.</p>
+        </div>
+      </div>
+
+      <!-- Before / After visual -->
+      <div class="divider-gradient"></div>
+      <h3 class="text-center mb-3">Antes vs. Después: La Experiencia de Pago</h3>
+      <div class="grid grid-2">
+        <div class="card" style="border-top: 3px solid var(--color-danger);">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <span class="badge badge-danger" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">❌ ANTES — Pago Móvil Tradicional</span>
+          </div>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">1</span>
+              <span>Abrir la app del banco (si carga)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">2</span>
+              <span>Preguntar al vendedor: teléfono, cédula y banco</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">3</span>
+              <span>Buscar el código del banco en una lista de 60+</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">4</span>
+              <span>Escribir todos los datos manualmente</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">5</span>
+              <span>Verificar cada campo (doble check)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">6</span>
+              <span>Enviar y esperar confirmación SMS (30-90 seg)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">7</span>
+              <span>Mostrar el SMS al vendedor como comprobante</span>
+            </li>
+          </ul>
+          <div style="text-align: center; margin-top: 1.25rem; padding: 0.75rem; background: rgba(239,68,68,0.05); border-radius: var(--radius-md);">
+            <strong style="color: var(--color-danger);">⏱ Tiempo total: 2–5 minutos</strong><br>
+            <span style="font-size: 0.85rem; color: var(--color-text-lighter);">Con riesgo de error en cada paso</span>
+          </div>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-success);">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <span class="badge badge-success" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">✅ DESPUÉS — NexoPay</span>
+          </div>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">1</span>
+              <span>Abrir NexoPay (siempre disponible)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">2</span>
+              <span>Escanear QR del comercio o tocar NFC</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">3</span>
+              <span>Confirmar monto y autenticar con biometría</span>
+            </li>
+          </ul>
+          <div style="text-align: center; margin-top: 1.25rem; padding: 0.75rem; background: rgba(16,185,129,0.05); border-radius: var(--radius-md);">
+            <strong style="color: var(--color-success);">⏱ Tiempo total: menos de 3 segundos</strong><br>
+            <span style="font-size: 0.85rem; color: var(--color-text-lighter);">Cero entrada manual, cero errores</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Problema 3: Costos del Punto de Venta ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="badge badge-danger">Problema #3</span>
+      <h2 class="mt-2">Costos Prohibitivos del Punto de Venta</h2>
+      <p class="lead" style="max-width: 800px;">El hardware de PoS tradicional impone una barrera de entrada insuperable para pequeños comerciantes, quienes representan la mayoría del tejido comercial venezolano.</p>
+
+      <div class="grid grid-2 mt-4">
+        <div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Concepto</th>
+                  <th>Costo Mensual</th>
+                  <th>Costo Anual</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Compra del equipo</strong></td>
+                  <td>—</td>
+                  <td>$100 – $300 (único)</td>
+                </tr>
+                <tr>
+                  <td><strong>Alquiler mensual</strong></td>
+                  <td>$15 – $45</td>
+                  <td>$180 – $540</td>
+                </tr>
+                <tr>
+                  <td><strong>Comisión por transacción</strong></td>
+                  <td>2% – 3%</td>
+                  <td>Variable según ventas</td>
+                </tr>
+                <tr>
+                  <td><strong>Rollo de papel térmico</strong></td>
+                  <td>$3 – $8</td>
+                  <td>$36 – $96</td>
+                </tr>
+                <tr>
+                  <td><strong>Mantenimiento / reparación</strong></td>
+                  <td>$5 – $15</td>
+                  <td>$60 – $180</td>
+                </tr>
+                <tr>
+                  <td><strong>Línea telefónica / CANTV</strong></td>
+                  <td>$5 – $20</td>
+                  <td>$60 – $240</td>
+                </tr>
+                <tr style="background: rgba(239,68,68,0.05);">
+                  <td><strong style="color: var(--color-danger);">TOTAL ESTIMADO</strong></td>
+                  <td><strong style="color: var(--color-danger);">$30 – $91/mes</strong></td>
+                  <td><strong style="color: var(--color-danger);">$436 – $1,356/año</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-2" style="font-size: 0.85rem; color: var(--color-text-lighter);">* Precios estimados para Venezuela, 2025-2026. No incluye costo de oportunidad por fallas de conectividad.</p>
+        </div>
+
+        <div>
+          <div class="card card-accent">
+            <h4>Problemas Adicionales del PoS Tradicional</h4>
+            <ul class="feature-list">
+              <li>
+                <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+                <div>
+                  <strong>Dependencia de línea fija (CANTV)</strong>
+                  <p style="font-size: 0.9rem; margin-bottom: 0;">La infraestructura de telecomunicaciones es inestable — caídas frecuentes dejan al comercio sin poder cobrar</p>
+                </div>
+              </li>
+              <li>
+                <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+                <div>
+                  <strong>Hardware frágil y obsoleto</strong>
+                  <p style="font-size: 0.9rem; margin-bottom: 0;">Los equipos se dañan con frecuencia y las reparaciones tardan semanas</p>
+                </div>
+              </li>
+              <li>
+                <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+                <div>
+                  <strong>Sin analíticas ni reportes</strong>
+                  <p style="font-size: 0.9rem; margin-bottom: 0;">El PoS solo procesa pagos — no ofrece dashboards, historial detallado ni exportación de datos</p>
+                </div>
+              </li>
+              <li>
+                <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+                <div>
+                  <strong>Un solo empleado por terminal</strong>
+                  <p style="font-size: 0.9rem; margin-bottom: 0;">Si tienes 3 empleados cobrando, necesitas 3 terminales</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="callout callout-info mt-3">
+            <div class="callout-title">📊 Dato Revelador</div>
+            <p style="margin-bottom: 0;">El <strong>70% de los comercios pequeños en Venezuela</strong> no tiene punto de venta por los costos asociados. Dependen exclusivamente de Pago Móvil o efectivo, limitando sus ventas y productividad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Problema 4: Lentitud y Congestión ═══ -->
+  <section class="section">
+    <div class="container">
+      <span class="badge badge-danger">Problema #4</span>
+      <h2 class="mt-2">Lentitud y Congestión del Sistema</h2>
+      <p class="lead" style="max-width: 800px;">El sistema bancario venezolano colapsa regularmente durante horas pico, creando colas digitales que frustran a usuarios y comerciantes por igual.</p>
+
+      <div class="grid grid-3 mt-4">
+        <div class="stat-card">
+          <div class="stat-value" style="color: var(--color-danger); -webkit-text-fill-color: var(--color-danger);">30-90s</div>
+          <div class="stat-label">Tiempo de Transacción</div>
+          <div class="stat-sublabel">En horas pico</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value gold">12-2pm</div>
+          <div class="stat-label">Hora de Mayor Congestión</div>
+          <div class="stat-sublabel">Almuerzo y pagos de nómina</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">~40%</div>
+          <div class="stat-label">Transacciones que Fallan</div>
+          <div class="stat-sublabel">En momentos de alta demanda</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-4">
+        <div class="card">
+          <h4>⏰ Horarios Críticos de Congestión</h4>
+          <div class="table-container" style="border: none; box-shadow: none;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Franja Horaria</th>
+                  <th>Nivel de Congestión</th>
+                  <th>Tasa de Fallo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>6:00 – 8:00 AM</td>
+                  <td><span class="badge badge-gold">Moderada</span></td>
+                  <td>10-15%</td>
+                </tr>
+                <tr>
+                  <td>8:00 – 10:00 AM</td>
+                  <td><span class="badge badge-danger">Alta</span></td>
+                  <td>20-30%</td>
+                </tr>
+                <tr>
+                  <td>12:00 – 2:00 PM</td>
+                  <td><span class="badge badge-danger">Crítica</span></td>
+                  <td>30-40%</td>
+                </tr>
+                <tr>
+                  <td>5:00 – 7:00 PM</td>
+                  <td><span class="badge badge-danger">Alta</span></td>
+                  <td>20-25%</td>
+                </tr>
+                <tr>
+                  <td>Fines de semana</td>
+                  <td><span class="badge badge-gold">Variable</span></td>
+                  <td>Mantenimiento frecuente</td>
+                </tr>
+                <tr>
+                  <td>Quincena / fin de mes</td>
+                  <td><span class="badge badge-danger">Colapso</span></td>
+                  <td>40-50%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h4>🔴 Consecuencias de la Lentitud</h4>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">⏳</span>
+              <span><strong>Colas físicas interminables</strong> — Los clientes esperan para pagar mientras el sistema procesa</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">❌</span>
+              <span><strong>Ventas perdidas</strong> — Clientes que se van sin comprar al ver la espera</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">🔁</span>
+              <span><strong>Transacciones duplicadas</strong> — Usuarios que reenvían al no recibir confirmación</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">📵</span>
+              <span><strong>Sin confirmación en tiempo real</strong> — Muchos bancos envían SMS con 5-15 min de retraso</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">🚫</span>
+              <span><strong>Limitaciones en feriados</strong> — Ventanas de mantenimiento sin previo aviso</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">😤</span>
+              <span><strong>Frustración generalizada</strong> — Los usuarios han normalizado la mala experiencia</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="blockquote mt-4">
+        "En Venezuela, no pagamos cuando queremos, sino cuando el sistema nos deja. Hacer una transferencia a mediodía es casi un acto de fe."
+        <cite>— Testimonio recurrente de usuarios bancarios venezolanos</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Problema 5: Exclusión Financiera ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="badge badge-danger">Problema #5</span>
+      <h2 class="mt-2">Exclusión Financiera Masiva</h2>
+      <p class="lead" style="max-width: 800px;">Más del 50% del PIB venezolano proviene de la economía informal — millones de trabajadores que no tienen acceso sencillo a pagos digitales y quedan al margen del sistema financiero.</p>
+
+      <div class="grid grid-3 mt-4">
+        <div class="card card-gold">
+          <div class="card-icon gold">🛒</div>
+          <h4>Vendedores Ambulantes</h4>
+          <p>Miles de vendedores en mercados populares, calles y avenidas manejan todo en efectivo. Sin RIF comercial, sin cuenta comercial, sin punto de venta. Pierden ventas porque los clientes no cargan efectivo.</p>
+        </div>
+        <div class="card card-gold">
+          <div class="card-icon gold">🚕</div>
+          <h4>Taxistas y Transportistas</h4>
+          <p>Conductores de taxi, moto-taxi y transporte informal cobran en efectivo o mediante complicados procesos de Pago Móvil mientras conducen — un riesgo de seguridad y una fricción constante.</p>
+        </div>
+        <div class="card card-gold">
+          <div class="card-icon gold">💼</div>
+          <h4>Freelancers y Oficios</h4>
+          <p>Plomeros, electricistas, peluqueros a domicilio, profesores particulares — profesionales independientes sin forma sencilla de cobrar digitalmente, obligados a manejar efectivo.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-4">
+        <div>
+          <h3>¿Por Qué Están Excluidos?</h3>
+          <ul class="feature-list">
+            <li>
+              <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+              <div>
+                <strong>Requisitos bancarios excesivos</strong>
+                <p style="font-size: 0.9rem; margin-bottom: 0;">Abrir una cuenta comercial requiere RIF, documentos notariados y múltiples visitas presenciales</p>
+              </div>
+            </li>
+            <li>
+              <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+              <div>
+                <strong>Pago Móvil requiere datos del receptor</strong>
+                <p style="font-size: 0.9rem; margin-bottom: 0;">El comprador necesita saber teléfono, cédula y banco del vendedor para cada pago</p>
+              </div>
+            </li>
+            <li>
+              <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+              <div>
+                <strong>No tienen PoS ni pueden costearlo</strong>
+                <p style="font-size: 0.9rem; margin-bottom: 0;">Un taxista no puede cargar un punto de venta, ni un vendedor ambulante pagarlo</p>
+              </div>
+            </li>
+            <li>
+              <span class="check" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">✗</span>
+              <div>
+                <strong>Teléfonos básicos sin apps bancarias</strong>
+                <p style="font-size: 0.9rem; margin-bottom: 0;">Un segmento significativo usa teléfonos que no soportan apps modernas</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <div style="position: relative; z-index: 1;">
+              <h3>Dimensión del Problema</h3>
+              <div class="kpi-row mt-3">
+                <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+                  <div class="kpi-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2rem;">50%+</div>
+                  <div class="kpi-label" style="color: rgba(255,255,255,0.6);">PIB Informal</div>
+                </div>
+                <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+                  <div class="kpi-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2rem;">~8M</div>
+                  <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Trabajadores Informales</div>
+                </div>
+              </div>
+              <p class="mt-3" style="font-size: 0.95rem;">Incluir a este segmento en la economía digital no solo beneficia a NexoPay — <strong style="color: #fff;">impulsa la formalización y el crecimiento económico del país entero.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Resumen Visual de los 5 Problemas ═══ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <h2 style="color: #fff;">Los 5 Problemas = 1 Gran Oportunidad</h2>
+        <p style="color: rgba(255,255,255,0.75);">Cada problema identificado es una puerta abierta para NexoPay. Donde otros ven caos, nosotros vemos el mercado perfecto.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🏦</div>
+          <h4>Fragmentación</h4>
+          <p>60+ apps bancarias desconectadas</p>
+          <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <span style="color: var(--color-cyan-light); font-weight: 600;">→ Una sola app universal</span>
+          </div>
+        </div>
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">❌</div>
+          <h4>Errores Humanos</h4>
+          <p>15-20% de tasa de fallos</p>
+          <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <span style="color: var(--color-cyan-light); font-weight: 600;">→ QR + NFC, cero entrada manual</span>
+          </div>
+        </div>
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">💳</div>
+          <h4>Costo PoS</h4>
+          <p>$100-300 de barrera de entrada</p>
+          <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <span style="color: var(--color-cyan-light); font-weight: 600;">→ Tu smartphone es tu PoS</span>
+          </div>
+        </div>
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🐢</div>
+          <h4>Lentitud</h4>
+          <p>30-90 segundos por transacción</p>
+          <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <span style="color: var(--color-cyan-light); font-weight: 600;">→ Sub-3 segundos garantizados</span>
+          </div>
+        </div>
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🚫</div>
+          <h4>Exclusión</h4>
+          <p>50%+ del PIB sin acceso digital</p>
+          <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <span style="color: var(--color-cyan-light); font-weight: 600;">→ Inclusión total, hasta por USSD</span>
+          </div>
+        </div>
+        <div class="card-glass" style="border: 1px solid rgba(245,158,11,0.3); background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.05) 100%);">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🎯</div>
+          <h4 style="color: var(--color-gold-light);">Resultado</h4>
+          <p style="color: rgba(255,255,255,0.8);">Mercado de $4.8B listo para ser capturado</p>
+          <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(245,158,11,0.2);">
+            <span style="color: var(--color-gold-light); font-weight: 600;">→ NexoPay lo resuelve todo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PARTE 2 — LA SOLUCIÓN: NEXOPAY
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ═══ Introducción a la Solución ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Parte 2</span>
+        <h2>La Solución: <span class="text-gradient">NexoPay</span></h2>
+        <p>Una plataforma unificada de pagos que elimina cada punto de dolor del ecosistema venezolano, transformando la frustración en una experiencia fluida, rápida e inclusiva.</p>
+      </div>
+
+      <div class="blockquote">
+        "NexoPay no es una app bancaria más. Es la capa de inteligencia que conecta todos los bancos, elimina los errores y abre la puerta de la economía digital a cada venezolano."
+        <cite>— Visión de Producto, NexoPay</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Solución 1: Una App, Todos los Bancos ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="grid grid-2-1">
+        <div>
+          <span class="badge badge-success">Solución #1</span>
+          <h2 class="mt-2">Una App, Todos los Bancos</h2>
+          <p>NexoPay reemplaza la necesidad de múltiples aplicaciones bancarias con una interfaz única, coherente y confiable. Sin importar si tienes cuentas en Banesco, Mercantil, Provincial, Venezuela o cualquier otro banco — todo vive en un solo lugar.</p>
+
+          <div class="grid grid-2 mt-3">
+            <div class="card" style="padding: 1.5rem;">
+              <h4 style="color: var(--color-accent);">🎨 Diseño Unificado</h4>
+              <p style="font-size: 0.92rem; margin-bottom: 0;">Una sola interfaz con lenguaje de diseño consistente. Aprendes una vez, dominas todo. Accesible para todas las edades.</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <h4 style="color: var(--color-accent);">🔗 Multi-Banco</h4>
+              <p style="font-size: 0.92rem; margin-bottom: 0;">Conecta todas tus cuentas bancarias. Ve saldos consolidados. Elige desde qué cuenta pagar en cada transacción.</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <h4 style="color: var(--color-accent);">📝 Registro Simple</h4>
+              <p style="font-size: 0.92rem; margin-bottom: 0;">Un solo registro, una sola verificación. Vincula cualquier cuenta bancaria de forma segura vía Open Banking.</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <h4 style="color: var(--color-accent);">📊 Vista Consolidada</h4>
+              <p style="font-size: 0.92rem; margin-bottom: 0;">Dashboard con todos tus movimientos de todos tus bancos. Gráficos de gasto, categorización automática e historial completo.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card card-dark" style="text-align: center; padding: 2.5rem 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">📱</div>
+            <h3 style="margin-bottom: 1.5rem;">Una Sola App</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: left;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm);">
+                <span style="color: var(--color-success);">✓</span>
+                <span style="font-size: 0.9rem;">Banesco</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm);">
+                <span style="color: var(--color-success);">✓</span>
+                <span style="font-size: 0.9rem;">Mercantil</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm);">
+                <span style="color: var(--color-success);">✓</span>
+                <span style="font-size: 0.9rem;">Provincial</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm);">
+                <span style="color: var(--color-success);">✓</span>
+                <span style="font-size: 0.9rem;">Banco de Venezuela</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm);">
+                <span style="color: var(--color-success);">✓</span>
+                <span style="font-size: 0.9rem;">BNC</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: rgba(37,99,235,0.15); border-radius: var(--radius-sm); border: 1px solid rgba(37,99,235,0.3);">
+                <span style="color: var(--color-cyan-light);">+</span>
+                <span style="font-size: 0.9rem; color: var(--color-cyan-light);">55+ bancos más</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Journey: Registro -->
+      <div class="divider-gradient"></div>
+      <h3 class="text-center mb-3">Viaje del Usuario: Registro en NexoPay</h3>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-number">1</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Descarga</h4>
+          <p style="font-size: 0.88rem;">Descarga NexoPay desde App Store o Play Store</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">2</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Verificación</h4>
+          <p style="font-size: 0.88rem;">Ingresa cédula + selfie. Verificación KYC en menos de 2 min</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">3</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Conectar Bancos</h4>
+          <p style="font-size: 0.88rem;">Selecciona tus bancos y vincula tus cuentas de forma segura</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">4</div>
+          <h4>¡Listo!</h4>
+          <p style="font-size: 0.88rem;">Comienza a pagar, cobrar y gestionar todo desde un solo lugar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Solución 2: Pago Inteligente sin Errores ═══ -->
+  <section class="section">
+    <div class="container">
+      <span class="badge badge-success">Solución #2</span>
+      <h2 class="mt-2">Pago Inteligente sin Errores</h2>
+      <p class="lead" style="max-width: 800px;">NexoPay elimina la entrada manual de datos — la causa raíz del 15-20% de errores en transacciones — reemplazándola con métodos de pago inteligentes, automáticos y a prueba de fallos.</p>
+
+      <div class="grid grid-3 mt-4">
+        <div class="card card-accent">
+          <div class="card-icon">📷</div>
+          <h4>Códigos QR</h4>
+          <p>Genera y escanea códigos QR dinámicos (con monto) o estáticos (sin monto). Toda la información del beneficiario se transmite automáticamente. Cero errores posibles.</p>
+          <ul class="icon-list" style="margin-top: 1rem;">
+            <li><span class="icon">✓</span><span>QR estático para comercios fijos</span></li>
+            <li><span class="icon">✓</span><span>QR dinámico con monto pre-cargado</span></li>
+            <li><span class="icon">✓</span><span>Compatible con estándar EMVCo</span></li>
+          </ul>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon cyan">📶</div>
+          <h4>NFC Tap-to-Pay</h4>
+          <p>Acerca tu teléfono al terminal o al teléfono del comerciante y paga. Tecnología de comunicación de campo cercano para transacciones instantáneas sin contacto.</p>
+          <ul class="icon-list" style="margin-top: 1rem;">
+            <li><span class="icon">✓</span><span>Pago sin contacto phone-to-phone</span></li>
+            <li><span class="icon">✓</span><span>Autenticación biométrica integrada</span></li>
+            <li><span class="icon">✓</span><span>Compatible con Android y iOS</span></li>
+          </ul>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon success">👥</div>
+          <h4>Pago por Contactos</h4>
+          <p>Selecciona un contacto de tu agenda telefónica y paga directamente. NexoPay cruza los datos automáticamente. Tan fácil como enviar un mensaje de texto.</p>
+          <ul class="icon-list" style="margin-top: 1rem;">
+            <li><span class="icon">✓</span><span>Directorio sincronizado con la app</span></li>
+            <li><span class="icon">✓</span><span>Beneficiarios guardados y frecuentes</span></li>
+            <li><span class="icon">✓</span><span>Plantillas de pago recurrente</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Comparación directa -->
+      <div class="divider-gradient"></div>
+      <h3 class="text-center mb-3">Métodos de Pago: Comparación Directa</h3>
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Pago Móvil Tradicional</th>
+              <th class="highlight-col">NexoPay QR</th>
+              <th class="highlight-col">NexoPay NFC</th>
+              <th class="highlight-col">NexoPay Contactos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Entrada manual de datos</strong></td>
+              <td>4 campos obligatorios</td>
+              <td class="highlight-col"><span class="badge badge-success">Ninguna</span></td>
+              <td class="highlight-col"><span class="badge badge-success">Ninguna</span></td>
+              <td class="highlight-col"><span class="badge badge-success">Solo monto</span></td>
+            </tr>
+            <tr>
+              <td><strong>Tasa de error</strong></td>
+              <td><span class="badge badge-danger">15-20%</span></td>
+              <td class="highlight-col"><span class="badge badge-success">~0%</span></td>
+              <td class="highlight-col"><span class="badge badge-success">~0%</span></td>
+              <td class="highlight-col"><span class="badge badge-success">~0%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Tiempo de la transacción</strong></td>
+              <td>2 – 5 minutos</td>
+              <td class="highlight-col"><strong>< 3 segundos</strong></td>
+              <td class="highlight-col"><strong>< 2 segundos</strong></td>
+              <td class="highlight-col"><strong>< 5 segundos</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Confirmación</strong></td>
+              <td>SMS en 1-15 min</td>
+              <td class="highlight-col">Push instantáneo</td>
+              <td class="highlight-col">Push instantáneo</td>
+              <td class="highlight-col">Push instantáneo</td>
+            </tr>
+            <tr>
+              <td><strong>Requiere internet</strong></td>
+              <td>Sí (siempre)</td>
+              <td class="highlight-col">Sí (con modo offline)</td>
+              <td class="highlight-col">No (peer-to-peer)</td>
+              <td class="highlight-col">Sí (con modo offline)</td>
+            </tr>
+            <tr>
+              <td><strong>Usabilidad</strong></td>
+              <td>Compleja</td>
+              <td class="highlight-col"><span class="badge badge-success">Muy fácil</span></td>
+              <td class="highlight-col"><span class="badge badge-success">Ultra fácil</span></td>
+              <td class="highlight-col"><span class="badge badge-success">Muy fácil</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- User Journey: Pago con QR -->
+      <div class="divider-gradient"></div>
+      <h3 class="text-center mb-3">Viaje del Usuario: Pago con QR en Comercio</h3>
+      <div class="flow-diagram">
+        <div class="flow-node" style="border-color: var(--color-primary);">🧑 Cliente abre<br>NexoPay</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">📷 Escanea QR<br>del comercio</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">💰 Verifica monto<br>y destinatario</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node" style="border-color: var(--color-success);">👆 Confirma con<br>biometría</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node" style="border-color: var(--color-success); background: rgba(16,185,129,0.05);">✅ Pago exitoso<br>< 3 segundos</div>
+      </div>
+
+      <div class="callout callout-success mt-3">
+        <div class="callout-title">🎯 Resultado Clave</div>
+        <p style="margin-bottom: 0;">La eliminación de la entrada manual de datos reduce la tasa de error del <strong>15-20% a prácticamente 0%</strong>, eliminando millones de transacciones problemáticas cada mes y ahorrando incontables horas de reclamos bancarios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Solución 3: PoS Virtual ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="badge badge-success">Solución #3</span>
+      <h2 class="mt-2">Punto de Venta Virtual</h2>
+      <p class="lead" style="max-width: 800px;">Cualquier smartphone se convierte en un punto de venta completo. Sin hardware, sin costos de alquiler, sin líneas telefónicas. Solo tu teléfono y NexoPay.</p>
+
+      <div class="grid grid-2 mt-4">
+        <div>
+          <h3>Funcionalidades del PoS Virtual</h3>
+          <div class="grid grid-2 mt-2">
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📱</div>
+              <h4 style="font-size: 1rem;">Generar QR</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 0;">Crea un código QR único para tu negocio, estático o con monto</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔗</div>
+              <h4 style="font-size: 1rem;">Link de Pago</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 0;">Comparte un enlace por WhatsApp, SMS o email para cobrar a distancia</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📶</div>
+              <h4 style="font-size: 1rem;">Cobro NFC</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 0;">Activa el modo cobro y recibe pagos con solo acercar teléfonos</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🧾</div>
+              <h4 style="font-size: 1rem;">Recibo Digital</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 0;">Recibo automático por push, SMS o email. Sin papel térmico</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
+              <h4 style="font-size: 1rem;">Dashboard</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 0;">Panel de ventas en tiempo real con gráficos, filtros y exportación</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👥</div>
+              <h4 style="font-size: 1rem;">Multi-Empleado</h4>
+              <p style="font-size: 0.88rem; margin-bottom: 0;">Cada empleado cobra desde su teléfono, todo centralizado en una cuenta</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>PoS Tradicional vs. NexoPay</h3>
+          <div class="table-container mt-2">
+            <table>
+              <thead>
+                <tr>
+                  <th>Concepto</th>
+                  <th>PoS Tradicional</th>
+                  <th>NexoPay PoS Virtual</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Costo inicial</strong></td>
+                  <td style="color: var(--color-danger);">$100 – $300</td>
+                  <td style="color: var(--color-success);"><strong>$0</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Renta mensual</strong></td>
+                  <td style="color: var(--color-danger);">$15 – $45</td>
+                  <td style="color: var(--color-success);"><strong>$0 (plan básico)</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Comisión</strong></td>
+                  <td>2 – 3%</td>
+                  <td><strong>0.8 – 1.5%</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Hardware necesario</strong></td>
+                  <td>Terminal dedicado</td>
+                  <td><strong>Cualquier smartphone</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Conectividad</strong></td>
+                  <td>Línea fija / CANTV</td>
+                  <td><strong>WiFi, datos móviles o NFC</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Analíticas</strong></td>
+                  <td>Ninguna</td>
+                  <td><strong>Dashboard completo</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Recibos</strong></td>
+                  <td>Papel térmico</td>
+                  <td><strong>Digitales (push/email)</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Multi-empleado</strong></td>
+                  <td>1 por terminal</td>
+                  <td><strong>Ilimitados</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Activación</strong></td>
+                  <td>3 – 15 días</td>
+                  <td><strong>5 minutos</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-success mt-3">
+            <div class="callout-title">💰 Ahorro para el Comerciante</div>
+            <p style="margin-bottom: 0;">Un comercio pequeño ahorra entre <strong>$436 y $1,356 al año</strong> al cambiar de un PoS tradicional a NexoPay, sin contar la eliminación de pérdidas por fallas de conectividad CANTV.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Journey: Comerciante -->
+      <div class="divider-gradient"></div>
+      <h3 class="text-center mb-3">Viaje del Comerciante: Primera Venta con NexoPay</h3>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-number" style="background: var(--gradient-gold);">1</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Registro Comercio</h4>
+          <p style="font-size: 0.88rem;">Crea tu perfil de negocio en 5 minutos</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: var(--gradient-gold);">2</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Imprime tu QR</h4>
+          <p style="font-size: 0.88rem;">Genera tu código QR único y colócalo en tu local</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: var(--gradient-gold);">3</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Recibe Pago</h4>
+          <p style="font-size: 0.88rem;">El cliente escanea, confirma y tú recibes la notificación</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: var(--gradient-gold);">4</div>
+          <h4>Analiza Ventas</h4>
+          <p style="font-size: 0.88rem;">Revisa tu dashboard en tiempo real con todas las métricas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Solución 4: Velocidad ═══ -->
+  <section class="section">
+    <div class="container">
+      <span class="badge badge-success">Solución #4</span>
+      <h2 class="mt-2">Velocidad de Clase Mundial</h2>
+      <p class="lead" style="max-width: 800px;">Mientras el sistema actual tarda 30-90 segundos (si funciona), NexoPay ejecuta transacciones en menos de 3 segundos con confirmación instantánea para ambas partes.</p>
+
+      <div class="grid grid-4 mt-4">
+        <div class="stat-card">
+          <div class="stat-value" style="background: linear-gradient(135deg, #10B981, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">< 3s</div>
+          <div class="stat-label">Tiempo de Transacción</div>
+          <div class="stat-sublabel">Objetivo de rendimiento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">Disponibilidad</div>
+          <div class="stat-sublabel">Uptime garantizado</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value gold">Real-time</div>
+          <div class="stat-label">Confirmaciones</div>
+          <div class="stat-sublabel">Push notification bilateral</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="background: linear-gradient(135deg, #8B5CF6, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Offline</div>
+          <div class="stat-label">Modo Sin Conexión</div>
+          <div class="stat-sublabel">Sincronización posterior</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-4">
+        <div class="card">
+          <h4>⚡ Arquitectura de Alta Velocidad</h4>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🔧</span>
+              <span><strong>Microservicios distribuidos</strong> — Cada componente escala de forma independiente ante picos de demanda</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🌐</span>
+              <span><strong>Edge computing regional</strong> — Servidores en Venezuela para latencia mínima (&lt;50ms)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">📡</span>
+              <span><strong>WebSockets para tiempo real</strong> — Confirmaciones bidireccionales instantáneas sin polling</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">💾</span>
+              <span><strong>Caché inteligente</strong> — Datos frecuentes pre-cargados para respuesta inmediata</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🔄</span>
+              <span><strong>Cola de transacciones tolerante a fallos</strong> — Si un banco se cae, la transacción se encola y se ejecuta automáticamente</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>📴 Modo Offline Inteligente</h4>
+          <p>NexoPay funciona incluso sin conexión a internet, resolviendo uno de los problemas más críticos de la infraestructura venezolana.</p>
+          <div class="process-steps mt-2" style="flex-direction: column; gap: 0;">
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 32px; height: 32px; font-size: 0.85rem;">1</div>
+              <span style="font-size: 0.92rem;">Transacción NFC entre dos dispositivos sin internet</span>
+            </div>
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 32px; height: 32px; font-size: 0.85rem;">2</div>
+              <span style="font-size: 0.92rem;">Transacción se almacena localmente con firma criptográfica</span>
+            </div>
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 32px; height: 32px; font-size: 0.85rem;">3</div>
+              <span style="font-size: 0.92rem;">Al recuperar conexión, sincronización automática con el backend</span>
+            </div>
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 32px; height: 32px; font-size: 0.85rem; background: linear-gradient(135deg, #10B981, #059669);">4</div>
+              <span style="font-size: 0.92rem;">Confirmación retroactiva a ambas partes vía push notification</span>
+            </div>
+          </div>
+          <p class="mt-2" style="font-size: 0.88rem; color: var(--color-text-lighter);">* Límites de monto por seguridad en modo offline. Montos mayores requieren conexión.</p>
+        </div>
+      </div>
+
+      <!-- Comparación de velocidad visual -->
+      <div class="divider-gradient"></div>
+      <h3 class="text-center mb-3">Velocidad Comparativa: Antes vs. NexoPay</h3>
+      <div class="card mt-3" style="padding: 2.5rem;">
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 600;">Pago Móvil Tradicional (hora pico)</span>
+              <span class="badge badge-danger">60–90 seg</span>
+            </div>
+            <div class="progress-bar" style="height: 24px; border-radius: var(--radius-sm);">
+              <div class="progress-bar-fill" style="width: 95%; background: linear-gradient(90deg, #EF4444, #F97316); border-radius: var(--radius-sm);"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 600;">Pago Móvil Tradicional (normal)</span>
+              <span class="badge badge-gold">30–60 seg</span>
+            </div>
+            <div class="progress-bar" style="height: 24px; border-radius: var(--radius-sm);">
+              <div class="progress-bar-fill" style="width: 65%; background: linear-gradient(90deg, #F59E0B, #FBBF24); border-radius: var(--radius-sm);"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 600;">PoS Tradicional</span>
+              <span class="badge badge-gold">15–30 seg</span>
+            </div>
+            <div class="progress-bar" style="height: 24px; border-radius: var(--radius-sm);">
+              <div class="progress-bar-fill" style="width: 35%; background: linear-gradient(90deg, #F59E0B, #D97706); border-radius: var(--radius-sm);"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 600; color: var(--color-accent);">NexoPay</span>
+              <span class="badge badge-success">< 3 seg</span>
+            </div>
+            <div class="progress-bar" style="height: 24px; border-radius: var(--radius-sm);">
+              <div class="progress-bar-fill success" style="width: 4%; min-width: 30px; border-radius: var(--radius-sm);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Solución 5: Inclusión Total ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="badge badge-success">Solución #5</span>
+      <h2 class="mt-2">Inclusión Financiera Total</h2>
+      <p class="lead" style="max-width: 800px;">NexoPay abre la puerta de los pagos digitales a los millones de venezolanos de la economía informal con soluciones adaptadas a cada nivel de acceso tecnológico.</p>
+
+      <div class="grid grid-2 mt-4">
+        <div>
+          <div class="card card-gold">
+            <h4>📱 Onboarding Simplificado</h4>
+            <p>Registro con solo cédula de identidad y número de teléfono. Sin RIF comercial, sin papeles notariados, sin ir a una agencia. Verificación KYC con inteligencia artificial en menos de 2 minutos.</p>
+            <ul class="feature-list" style="margin-top: 1rem;">
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Solo necesitas cédula + selfie</strong>
+                  <p style="font-size: 0.88rem; margin-bottom: 0;">Verificación facial comparada con base de datos del SAIME</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Sin requisitos bancarios comerciales</strong>
+                  <p style="font-size: 0.88rem; margin-bottom: 0;">Cualquier persona puede cobrar, no solo empresas registradas</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Niveles de verificación progresivos</strong>
+                  <p style="font-size: 0.88rem; margin-bottom: 0;">Comienza con límites básicos, amplía con documentación adicional</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="card card-gold">
+            <h4>💬 Integración WhatsApp</h4>
+            <p>Envía solicitudes de pago a través de WhatsApp — la aplicación más usada en Venezuela con más del 95% de penetración. El cliente recibe un link seguro para pagar sin tener NexoPay instalado.</p>
+            <div class="flow-diagram mt-3" style="flex-direction: column; gap: 0.75rem; padding: 0;">
+              <div class="flow-node" style="width: 100%;">🏪 Comerciante crea cobro en NexoPay</div>
+              <div class="flow-arrow" style="transform: rotate(90deg);">→</div>
+              <div class="flow-node" style="width: 100%; border-color: var(--color-success);">💬 Link se envía por WhatsApp al cliente</div>
+              <div class="flow-arrow" style="transform: rotate(90deg);">→</div>
+              <div class="flow-node" style="width: 100%; border-color: var(--color-gold);">🌐 Cliente paga desde el navegador (sin app)</div>
+              <div class="flow-arrow" style="transform: rotate(90deg);">→</div>
+              <div class="flow-node" style="width: 100%; border-color: var(--color-success); background: rgba(16,185,129,0.05);">✅ Confirmación instantánea para ambos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-3">
+        <div class="card card-gold">
+          <h4>📟 USSD para Teléfonos Básicos</h4>
+          <p>Para el segmento de la población sin smartphone, NexoPay ofrece un canal USSD que permite realizar transacciones desde cualquier teléfono que pueda hacer llamadas.</p>
+          <div class="card mt-2" style="background: #1a1a2e; color: #fff; font-family: var(--font-mono); padding: 1.5rem; border: none;">
+            <p style="color: #22D3EE; margin-bottom: 0.5rem; font-size: 0.85rem;">Marcar *123# para acceder:</p>
+            <p style="color: #10B981; margin-bottom: 0.25rem;">1. Enviar pago</p>
+            <p style="color: #10B981; margin-bottom: 0.25rem;">2. Consultar saldo</p>
+            <p style="color: #10B981; margin-bottom: 0.25rem;">3. Historial</p>
+            <p style="color: #10B981; margin-bottom: 0;">4. Cobrar (recibir pago)</p>
+          </div>
+        </div>
+        <div class="card card-gold">
+          <h4>📉 Consumo Mínimo de Datos</h4>
+          <p>La aplicación está optimizada para funcionar con conexiones lentas y planes de datos limitados — una realidad para millones de venezolanos.</p>
+          <div class="table-container mt-2" style="border: none; box-shadow: none;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Acción</th>
+                  <th>Consumo NexoPay</th>
+                  <th>App Bancaria Típica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Abrir la app</td>
+                  <td><strong style="color: var(--color-success);">~50 KB</strong></td>
+                  <td>2-5 MB</td>
+                </tr>
+                <tr>
+                  <td>Realizar un pago</td>
+                  <td><strong style="color: var(--color-success);">~10 KB</strong></td>
+                  <td>500 KB – 2 MB</td>
+                </tr>
+                <tr>
+                  <td>Consultar saldo</td>
+                  <td><strong style="color: var(--color-success);">~5 KB</strong></td>
+                  <td>1-3 MB</td>
+                </tr>
+                <tr>
+                  <td>Tamaño de la app</td>
+                  <td><strong style="color: var(--color-success);">~15 MB</strong></td>
+                  <td>80-200 MB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Niveles de acceso -->
+      <div class="divider-gradient"></div>
+      <h3 class="text-center mb-3">Niveles de Acceso: Nadie Queda Fuera</h3>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #10B981, #059669);">1</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Smartphone + Internet</h4>
+          <p style="font-size: 0.88rem;">Experiencia completa con QR, NFC, dashboard y analíticas</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #F59E0B, #D97706);">2</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Smartphone + Sin Internet</h4>
+          <p style="font-size: 0.88rem;">NFC peer-to-peer y modo offline con sincronización posterior</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">3</div>
+          <span class="process-step-arrow">→</span>
+          <h4>Teléfono Básico</h4>
+          <p style="font-size: 0.88rem;">Canal USSD para pagos, consultas y cobros sin datos ni app</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #06B6D4, #0891B2);">4</div>
+          <h4>Sin Teléfono Propio</h4>
+          <p style="font-size: 0.88rem;">Pago via link web de WhatsApp — funciona en el navegador de cualquier dispositivo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Resumen Integral de la Solución ═══ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <h2 style="color: #fff;">NexoPay: La Solución Integral</h2>
+        <p style="color: rgba(255,255,255,0.75);">Cinco problemas, una plataforma. Así es como NexoPay transforma el ecosistema completo de pagos en Venezuela.</p>
+      </div>
+
+      <div class="table-container" style="border-color: rgba(255,255,255,0.15);">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">Problema</th>
+              <th style="width: 25%;">Situación Actual</th>
+              <th style="width: 25%;">Solución NexoPay</th>
+              <th style="width: 15%;">Impacto</th>
+              <th style="width: 15%;">Beneficiarios</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fragmentación</strong></td>
+              <td>60+ apps, UX inconsistente</td>
+              <td>Una sola app multi-banco</td>
+              <td><span class="badge badge-success">Alto</span></td>
+              <td>28M+ usuarios</td>
+            </tr>
+            <tr>
+              <td><strong>Errores</strong></td>
+              <td>15-20% tasa de fallo</td>
+              <td>QR + NFC + Contactos</td>
+              <td><span class="badge badge-success">Crítico</span></td>
+              <td>Todos los usuarios</td>
+            </tr>
+            <tr>
+              <td><strong>Costo PoS</strong></td>
+              <td>$100-300 + mensualidades</td>
+              <td>PoS virtual gratuito</td>
+              <td><span class="badge badge-success">Alto</span></td>
+              <td>3M+ comercios</td>
+            </tr>
+            <tr>
+              <td><strong>Lentitud</strong></td>
+              <td>30-90 seg, caídas frecuentes</td>
+              <td>Sub-3 seg, 99.9% uptime</td>
+              <td><span class="badge badge-success">Alto</span></td>
+              <td>Todo el ecosistema</td>
+            </tr>
+            <tr>
+              <td><strong>Exclusión</strong></td>
+              <td>50%+ PIB sin acceso digital</td>
+              <td>USSD + WhatsApp + onboarding simple</td>
+              <td><span class="badge badge-success">Transformador</span></td>
+              <td>~8M informales</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Viaje Completo del Usuario ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Experiencia Completa</span>
+        <h2>Viaje del Usuario: De Inicio a Fin</h2>
+        <p>Desde que un usuario descubre NexoPay hasta que se convierte en un evangelista de la plataforma.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+          <h3>👤 Usuario Individual</h3>
+          <div class="card mt-2">
+            <div class="process-steps" style="flex-direction: column; gap: 0;">
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">1</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Descubrimiento</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Ve un QR de NexoPay en un comercio o recibe link por WhatsApp</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">2</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Registro (2 min)</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Descarga, ingresa cédula, toma selfie, verificación automática</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">3</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Vinculación Bancaria</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Conecta sus cuentas bancarias de forma segura</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">4</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Primer Pago</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Escanea QR, toca NFC o selecciona contacto — pago en 3 seg</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: linear-gradient(135deg, #10B981, #059669);">5</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Adopción Permanente</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Elimina otras apps bancarias. Gestiona todo desde NexoPay</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>🏪 Comerciante</h3>
+          <div class="card mt-2">
+            <div class="process-steps" style="flex-direction: column; gap: 0;">
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: var(--gradient-gold);">1</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Propuesta de Valor</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Conoce NexoPay: sin hardware, sin renta, comisiones mínimas</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: var(--gradient-gold);">2</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Activación (5 min)</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Registro comercial, genera QR, configura perfil de negocio</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: var(--gradient-gold);">3</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Primeras Ventas</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Recibe pagos por QR, link o NFC. Notificaciones instantáneas</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: var(--gradient-gold);">4</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Gestión Avanzada</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Agrega empleados, analiza ventas, exporta reportes fiscales</p>
+                </div>
+              </div>
+              <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+                <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: linear-gradient(135deg, #10B981, #059669);">5</div>
+                <div>
+                  <h4 style="margin-bottom: 0.15rem;">Crecimiento</h4>
+                  <p style="margin: 0; font-size: 0.88rem;">Accede a microcréditos basados en historial de ventas NexoPay</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Conclusión / CTA ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="highlight-box" style="text-align: center;">
+        <div style="position: relative; z-index: 1;">
+          <h2 style="color: #fff; margin-bottom: 1rem;">El Momento es Ahora</h2>
+          <p style="max-width: 750px; margin: 0 auto 2rem; font-size: 1.15rem;">Venezuela tiene la demanda, la adopción digital y la necesidad. Solo falta la tecnología correcta para unir todas las piezas. <strong style="color: #fff;">NexoPay es esa pieza.</strong></p>
+          <div class="kpi-row" style="max-width: 900px; margin: 0 auto;">
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2rem;">5</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Problemas Resueltos</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2rem;">1 App</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Solución Unificada</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light); font-size: 2rem;">28M+</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Vidas Transformadas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Page Navigation ═══ -->
+  <div class="container">
+    <div class="page-nav">
+      <a href="02-analisis-mercado.html"><span class="label">← Anterior</span><span class="title">Análisis de Mercado</span></a>
+      <a href="04-modelo-negocio.html" class="next"><span class="label">Siguiente →</span><span class="title">Modelo de Negocio</span></a>
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer" style="padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 NexoPay. Todos los derechos reservados. Documento confidencial para inversionistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Confidential Bar ═══ -->
+  <div class="confidential-bar">⚠ Documento Confidencial — Solo para Inversionistas Autorizados — NexoPay © 2026</div>
+
+</body>
+</html>

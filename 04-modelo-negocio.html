@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Negocio — NexoPay</title>
+  <meta name="description" content="Modelo de negocio de NexoPay: 6 fuentes de ingreso, unit economics con LTV/CAC de 23x, y estrategia de crecimiento viral.">
+  <meta property="og:title" content="Modelo de Negocio — NexoPay">
+  <meta property="og:description" content="Modelo de negocio de NexoPay: 6 fuentes de ingreso, unit economics con LTV/CAC de 23x, y estrategia de crecimiento viral.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexoPay — Inversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-icon">N</div>
+        <span><span class="logo-text-nexo">Nexo</span><span class="logo-text-pay">Pay</span></span>
+      </a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.navbar-nav').classList.toggle('open')">☰</button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-analisis-mercado.html">Mercado</a></li>
+        <li><a href="03-problema-solucion.html">Solución</a></li>
+        <li><a href="04-modelo-negocio.html" class="active">Negocio</a></li>
+        <li><a href="05-tecnologia.html">Tecnología</a></li>
+        <li><a href="06-regulatorio-legal.html">Legal</a></li>
+        <li><a href="07-analisis-competitivo.html">Competencia</a></li>
+        <li><a href="08-proyecciones-financieras.html">Finanzas</a></li>
+        <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
+        <li><a href="10-propuesta-inversion.html">Inversión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ Page Hero ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a><span class="separator">/</span><span class="current">Modelo de Negocio</span>
+      </div>
+      <span class="section-number">Sección 04</span>
+      <h1>Modelo de Negocio</h1>
+      <p class="lead">Un motor de ingresos diversificado y escalable inspirado en los ecosistemas de pago más exitosos del mundo — PIX, UPI y Stripe — adaptado a la realidad venezolana.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1 — RESUMEN DEL MODELO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Visión General</span>
+        <h2>Resumen del Modelo de Negocio</h2>
+        <p>NexoPay opera como agregador/facilitador de pagos fintech con un modelo de ingresos que combina comisiones transaccionales, suscripciones escalonadas y servicios de valor agregado.</p>
+      </div>
+
+      <div class="blockquote">
+        "Los mejores negocios fintech no cobran por el acceso — cobran por el valor. NexoPay monetiza cada capa de la experiencia de pago sin sacrificar accesibilidad."
+        <cite>— Principio de Diseño del Modelo, NexoPay</cite>
+      </div>
+
+      <div class="grid grid-3 mt-4">
+        <div class="card card-accent">
+          <div class="card-icon">💳</div>
+          <h4>Comisiones Transaccionales</h4>
+          <p>Micro-comisiones sobre cada transacción procesada: 0.3–0.8% para PoS, mínima para P2P. Volumen masivo compensa la baja tarifa individual.</p>
+          <span class="badge badge-primary">Ingreso Principal</span>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon gold">📊</div>
+          <h4>Suscripciones SaaS</h4>
+          <p>Planes escalonados para comercios (Gratis, Pro, Enterprise) y una suscripción premium para usuarios individuales con funciones avanzadas.</p>
+          <span class="badge badge-gold">Ingreso Recurrente</span>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon cyan">🔗</div>
+          <h4>Servicios de Valor Agregado</h4>
+          <p>Microcréditos, data analytics, seguros, white-label API y servicios financieros complementarios que multiplican el ARPU.</p>
+          <span class="badge badge-cyan">Alto Margen</span>
+        </div>
+      </div>
+
+      <div class="divider-gradient"></div>
+
+      <h3 class="text-center mb-3">Inspiración: Modelos Globales Probados</h3>
+      <div class="grid grid-3">
+        <div class="card card-gold">
+          <h4>🇧🇷 PIX (Brasil)</h4>
+          <p>Sistema de pagos instantáneos del Banco Central de Brasil. Procesó 42 mil millones de transacciones en 2024. Modelo de referencia para infraestructura gratuita P2P con monetización sobre servicios comerciales.</p>
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Lo que adoptamos:</strong> P2P gratuito como gancho de adquisición masiva</span>
+          </div>
+        </div>
+        <div class="card card-gold">
+          <h4>🇮🇳 UPI (India)</h4>
+          <p>Unified Payments Interface conectó 350+ bancos en una sola plataforma. 14 mil millones de transacciones mensuales. Demostró que la interoperabilidad bancaria es posible en mercados emergentes.</p>
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Lo que adoptamos:</strong> Interoperabilidad multi-banco como propuesta de valor central</span>
+          </div>
+        </div>
+        <div class="card card-gold">
+          <h4>🇺🇸 Stripe / Square</h4>
+          <p>Stripe procesa cientos de miles de millones de dólares anuales con comisiones por transacción + servicios premium. Square democratizó los PoS con software en smartphones.</p>
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Lo que adoptamos:</strong> Modelo SaaS + comisiones escalonadas para comercios</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2 — FUENTES DE INGRESO (6 streams)
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Monetización</span>
+        <h2>6 Fuentes de Ingreso Diversificadas</h2>
+        <p>Un portafolio de ingresos diseñado para generar valor en cada etapa del ciclo de vida del usuario, reduciendo la dependencia de una sola fuente.</p>
+      </div>
+
+      <!-- Stream 1: Comisiones Transaccionales -->
+      <div class="grid grid-1-2 mt-4">
+        <div>
+          <span class="badge badge-primary">Fuente #1</span>
+          <h3 class="mt-2">Comisión por Transacción</h3>
+          <p>Micro-comisión aplicada a cada transacción procesada a través de la plataforma. Tarifas significativamente menores que las del PoS tradicional, lo que incentiva la migración masiva.</p>
+          <div class="callout callout-info">
+            <div class="callout-title">📈 Potencial de Mercado</div>
+            <p style="margin-bottom: 0;">Venezuela procesa <strong>~31 millones de transacciones digitales diarias</strong>. Si NexoPay captura tan solo el 0.5% del mercado en el primer año, procesará <strong>155,000 transacciones/día</strong>, generando ingresos significativos incluso con comisiones mínimas.</p>
+          </div>
+        </div>
+        <div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo de Transacción</th>
+                  <th>Comisión NexoPay</th>
+                  <th>Comisión PoS Actual</th>
+                  <th>Ahorro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>PoS Virtual (QR/NFC)</strong></td>
+                  <td><strong style="color: var(--color-success);">0.5 – 0.8%</strong></td>
+                  <td style="color: var(--color-danger);">2.0 – 3.0%</td>
+                  <td><span class="badge badge-success">60-75%</span></td>
+                </tr>
+                <tr>
+                  <td><strong>P2P (persona a persona)</strong></td>
+                  <td><strong style="color: var(--color-success);">$0.01 – $0.03</strong></td>
+                  <td>Gratis (bancario)</td>
+                  <td><span class="badge badge-gold">Con valor añadido</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Link de pago</strong></td>
+                  <td><strong style="color: var(--color-success);">0.8 – 1.2%</strong></td>
+                  <td>No existe</td>
+                  <td><span class="badge badge-primary">Nuevo canal</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Pago recurrente</strong></td>
+                  <td><strong style="color: var(--color-success);">0.3 – 0.5%</strong></td>
+                  <td>No disponible</td>
+                  <td><span class="badge badge-primary">Nuevo canal</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Retiro a cuenta bancaria</strong></td>
+                  <td><strong style="color: var(--color-success);">$0.10 – $0.25</strong></td>
+                  <td>Incluido</td>
+                  <td><span class="badge badge-gold">Tarifa flat</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card mt-3" style="background: rgba(37,99,235,0.03); border-color: rgba(37,99,235,0.15);">
+            <h4 style="font-size: 1rem;">Proyección de Ingresos por Transacciones (Año 1)</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">155K txn/día × $0.04 promedio</span>
+                  <strong>$6,200/día</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 40%;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">Ingreso mensual estimado</span>
+                  <strong>$186,000</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 60%;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">Ingreso anual estimado (creciente)</span>
+                  <strong style="color: var(--color-accent);">$2.23M</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-gradient"></div>
+
+      <!-- Stream 2: Suscripciones Comerciales -->
+      <span class="badge badge-gold">Fuente #2</span>
+      <h3 class="mt-2">Suscripciones Comerciales</h3>
+      <p class="lead" style="max-width: 800px;">Tres niveles de servicio diseñados para acompañar el crecimiento de cada negocio — desde el vendedor ambulante hasta la cadena de tiendas.</p>
+
+      <div class="grid grid-3 mt-4">
+        <div class="pricing-card">
+          <span class="badge badge-success" style="font-size: 0.85rem;">Gratuito</span>
+          <h4 class="mt-2">Plan Básico</h4>
+          <div class="price">$0<span>/mes</span></div>
+          <p style="color: var(--color-text-lighter); font-size: 0.9rem;">Para emprendedores y pequeños comercios que inician</p>
+          <div style="text-align: left; margin-top: 1.5rem;">
+            <ul class="feature-list">
+              <li>
+                <span class="check">✓</span>
+                <div><strong>PoS Virtual básico</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Genera QR estático para tu negocio</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Hasta 100 transacciones/mes</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Ideal para micro-comerciantes</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Historial de cobros básico</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Listado de transacciones recientes</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Notificaciones de pago</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Push instantáneo en cada cobro</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pricing-card featured">
+          <span class="badge badge-primary" style="font-size: 0.85rem;">Más Popular</span>
+          <h4 class="mt-2">Plan Pro</h4>
+          <div class="price">$9.99<span>/mes</span></div>
+          <p style="color: var(--color-text-lighter); font-size: 0.9rem;">Para comercios establecidos con flujo constante de clientes</p>
+          <div style="text-align: left; margin-top: 1.5rem;">
+            <ul class="feature-list">
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Transacciones ilimitadas</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Sin topes de procesamiento</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Dashboard de analíticas</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Gráficos de ventas, horarios pico y tendencias</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Recibos digitales personalizados</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Con logo y datos fiscales del comercio</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>QR dinámicos con monto</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Genera códigos con precio pre-cargado</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Exportación de reportes</strong><p style="font-size: 0.85rem; margin-bottom: 0;">CSV, PDF y conexión con Excel</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <span class="badge badge-gold" style="font-size: 0.85rem;">Alto Volumen</span>
+          <h4 class="mt-2">Plan Enterprise</h4>
+          <div class="price">$29.99<span>/mes</span></div>
+          <p style="color: var(--color-text-lighter); font-size: 0.9rem;">Para negocios con múltiples empleados y operaciones avanzadas</p>
+          <div style="text-align: left; margin-top: 1.5rem;">
+            <ul class="feature-list">
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Todo lo del Plan Pro</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Incluye todas las funcionalidades anteriores</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Multi-empleado (hasta 20)</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Cada empleado cobra desde su dispositivo</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Acceso API completo</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Integra NexoPay con tu ERP o sistema contable</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Integración contable</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Sincronización automática con herramientas fiscales</p></div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Soporte prioritario 24/7</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Canal directo con equipo técnico dedicado</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-gradient"></div>
+
+      <!-- Stream 3: Suscripción Premium Personal -->
+      <div class="grid grid-2">
+        <div>
+          <span class="badge badge-cyan">Fuente #3</span>
+          <h3 class="mt-2">Suscripción Premium Personal</h3>
+          <p>Una suscripción opcional para usuarios individuales que desean funciones avanzadas de gestión financiera, límites ampliados y beneficios exclusivos.</p>
+
+          <div class="card card-accent mt-3">
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <span style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary);">$2.99</span>
+              <span style="color: var(--color-text-lighter);">/mes</span>
+            </div>
+            <ul class="icon-list">
+              <li>
+                <span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">⬆</span>
+                <span><strong>Límites de transacción ampliados</strong> — Montos diarios y mensuales 5x superiores al plan gratuito</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">⚡</span>
+                <span><strong>Procesamiento prioritario</strong> — Tus transacciones van primero en la cola, garantizando sub-2 segundos</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">📊</span>
+                <span><strong>Presupuesto inteligente</strong> — Herramientas de categorización automática, alertas de gasto y metas de ahorro</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">💰</span>
+                <span><strong>Programa de cashback</strong> — Hasta 1.5% de devolución en compras con comercios aliados</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">🎨</span>
+                <span><strong>Personalización de la app</strong> — Temas, widgets personalizados y tarjeta digital con tu diseño</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">🛡️</span>
+                <span><strong>Seguro de transacciones</strong> — Protección ante errores o fraudes hasta $500/mes</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <!-- Stream 4: Servicios Financieros -->
+          <span class="badge badge-success">Fuente #4</span>
+          <h3 class="mt-2">Servicios Financieros</h3>
+          <p>Productos financieros complementarios que aprovechan el historial transaccional de los usuarios para ofrecer servicios personalizados. Fase de lanzamiento: Año 2-3.</p>
+
+          <div class="card mt-3" style="background: rgba(16,185,129,0.03); border-color: rgba(16,185,129,0.2);">
+            <ul class="icon-list">
+              <li>
+                <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">💳</span>
+                <span><strong>Microcréditos instantáneos</strong> — Préstamos de $50–$500 basados en historial de ventas NexoPay. Tasa competitiva, aprobación en minutos.</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🛡️</span>
+                <span><strong>Micro-seguros</strong> — Pólizas accesibles para comerciantes: protección de inventario, seguros de salud básicos, cobertura por robo.</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🐖</span>
+                <span><strong>Ahorro programado</strong> — Apartados automáticos (redondeo al siguiente dólar, % fijo de cada venta) con rendimiento competitivo.</span>
+              </li>
+              <li>
+                <span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">💱</span>
+                <span><strong>Cambio de divisas</strong> — Conversión Bs/USD dentro de la app con tasas competitivas y sin comisiones ocultas.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Stream 5 & 6 -->
+          <div class="grid grid-2 mt-3">
+            <div class="card" style="padding: 1.5rem;">
+              <span class="badge badge-gold" style="font-size: 0.75rem;">Fuente #5</span>
+              <h4 class="mt-2" style="font-size: 1.05rem;">Data & Analytics</h4>
+              <p style="font-size: 0.88rem;">Inteligencia de mercado anonimizada vendida a bancos y empresas: patrones de gasto agregados, indicadores económicos, tendencias por sector y zona geográfica.</p>
+              <p style="font-size: 0.85rem; color: var(--color-text-lighter); margin-bottom: 0;"><strong>Ingreso estimado:</strong> $5K–$50K/mes por cliente institucional</p>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+              <span class="badge badge-danger" style="font-size: 0.75rem;">Fuente #6</span>
+              <h4 class="mt-2" style="font-size: 1.05rem;">White-Label / API</h4>
+              <p style="font-size: 0.88rem;">Bancos y empresas integran la tecnología NexoPay en sus propias apps. Licencia mensual + fee por transacción procesada a través de la API.</p>
+              <p style="font-size: 0.85rem; color: var(--color-text-lighter); margin-bottom: 0;"><strong>Ingreso estimado:</strong> $10K–$100K/mes por licencia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3 — ESTRUCTURA DE PRECIOS (Comparación)
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Precios</span>
+        <h2>Estructura de Precios vs. Competencia</h2>
+        <p>NexoPay ofrece un ahorro masivo para los comerciantes respecto a las soluciones actuales, generando un incentivo inmediato para la adopción.</p>
+      </div>
+
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>PoS Tradicional</th>
+              <th>Pago Móvil Bancario</th>
+              <th class="highlight-col">NexoPay Básico</th>
+              <th class="highlight-col">NexoPay Pro</th>
+              <th class="highlight-col">NexoPay Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Costo de entrada</strong></td>
+              <td style="color: var(--color-danger);">$100 – $300</td>
+              <td>$0</td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">$0</strong></td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">$0</strong></td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">$0</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Renta mensual</strong></td>
+              <td style="color: var(--color-danger);">$15 – $45</td>
+              <td>$0</td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">$0</strong></td>
+              <td class="highlight-col"><strong>$9.99</strong></td>
+              <td class="highlight-col"><strong>$29.99</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Comisión por venta</strong></td>
+              <td style="color: var(--color-danger);">2.0 – 3.0%</td>
+              <td>0% (sin PoS)</td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">0.8%</strong></td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">0.5%</strong></td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">0.3%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Límite de transacciones</strong></td>
+              <td>Ilimitado</td>
+              <td>Según banco</td>
+              <td class="highlight-col">100/mes</td>
+              <td class="highlight-col"><strong>Ilimitado</strong></td>
+              <td class="highlight-col"><strong>Ilimitado</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Analíticas</strong></td>
+              <td><span class="badge badge-danger">No</span></td>
+              <td><span class="badge badge-danger">No</span></td>
+              <td class="highlight-col"><span class="badge badge-gold">Básico</span></td>
+              <td class="highlight-col"><span class="badge badge-success">Completo</span></td>
+              <td class="highlight-col"><span class="badge badge-success">Avanzado + API</span></td>
+            </tr>
+            <tr>
+              <td><strong>Multi-empleado</strong></td>
+              <td>1 por terminal</td>
+              <td>N/A</td>
+              <td class="highlight-col">1</td>
+              <td class="highlight-col"><strong>3</strong></td>
+              <td class="highlight-col"><strong>20</strong></td>
+            </tr>
+            <tr style="background: rgba(37,99,235,0.03);">
+              <td><strong>Costo total anual</strong><br><span style="font-size: 0.8rem; color: var(--color-text-lighter);">(500 ventas/mes, ticket $10)</span></td>
+              <td><strong style="color: var(--color-danger);">$1,380 – $3,540</strong></td>
+              <td>$0 (sin PoS)</td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">$480</strong></td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">$420</strong></td>
+              <td class="highlight-col"><strong style="color: var(--color-success);">$540</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-success mt-3">
+        <div class="callout-title">💰 Ahorro Promedio para el Comerciante</div>
+        <p style="margin-bottom: 0;">Un comercio con 500 transacciones mensuales de $10 promedio ahorra entre <strong>$900 y $3,000 al año</strong> al migrar de un PoS tradicional a NexoPay Pro. Esto representa un ahorro del <strong>65–85%</strong> en costos de procesamiento de pagos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       4 — UNIT ECONOMICS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Unit Economics</span>
+        <h2>Economía Unitaria Detallada</h2>
+        <p>Métricas unitarias que demuestran la viabilidad y escalabilidad del modelo de negocio desde el día uno.</p>
+      </div>
+
+      <div class="kpi-row">
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$0.012</div>
+          <div class="kpi-label">Costo por Transacción</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$1.80</div>
+          <div class="kpi-label">CAC (Costo de Adquisición)</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: linear-gradient(135deg, #10B981, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$42.50</div>
+          <div class="kpi-label">LTV (Valor de Vida)</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color: var(--color-success); -webkit-text-fill-color: var(--color-success);">23.6x</div>
+          <div class="kpi-label">Ratio LTV / CAC</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-4">
+        <div>
+          <div class="card">
+            <h4>📐 Desglose del Costo por Transacción</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">Infraestructura cloud (AWS/GCP)</span>
+                  <strong>$0.004</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 33%;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">Gateway interbancario</span>
+                  <strong>$0.003</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill gold" style="width: 25%;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">Notificaciones (push + SMS)</span>
+                  <strong>$0.002</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 17%; background: linear-gradient(90deg, #8B5CF6, #A78BFA);"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">Prevención de fraude / KYC</span>
+                  <strong>$0.002</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill success" style="width: 17%;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.9rem;">Soporte y otros</span>
+                  <strong>$0.001</strong>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 8%; background: linear-gradient(90deg, #F59E0B, #FBBF24);"></div>
+                </div>
+              </div>
+              <div style="padding-top: 0.75rem; border-top: 2px solid var(--color-border); display: flex; justify-content: space-between;">
+                <strong>Costo total por transacción</strong>
+                <strong style="color: var(--color-accent);">$0.012</strong>
+              </div>
+            </div>
+            <p class="mt-3" style="font-size: 0.85rem; color: var(--color-text-lighter); margin-bottom: 0;">Con un ingreso promedio de $0.04 por transacción, el <strong>margen bruto por transacción es del 70%</strong>.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h4>🎯 Cálculo del CAC (Costo de Adquisición)</h4>
+            <div class="table-container mt-2" style="border: none; box-shadow: none;">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Canal de Adquisición</th>
+                    <th>% del Mix</th>
+                    <th>CAC por Canal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Referidos virales (pago → descarga)</td>
+                    <td>40%</td>
+                    <td><strong style="color: var(--color-success);">$0.50</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Marketing digital (redes sociales)</td>
+                    <td>25%</td>
+                    <td>$2.50</td>
+                  </tr>
+                  <tr>
+                    <td>Alianzas con comercios ancla</td>
+                    <td>20%</td>
+                    <td>$1.50</td>
+                  </tr>
+                  <tr>
+                    <td>Equipo de ventas directo</td>
+                    <td>15%</td>
+                    <td>$4.00</td>
+                  </tr>
+                  <tr style="background: rgba(37,99,235,0.03);">
+                    <td><strong>CAC Ponderado</strong></td>
+                    <td>100%</td>
+                    <td><strong style="color: var(--color-accent);">$1.80</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card mt-3">
+            <h4>📈 Cálculo del LTV (Valor de Vida del Cliente)</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border-light);">
+                <span style="font-size: 0.92rem;">ARPU mensual (usuario promedio)</span>
+                <strong>$1.18</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border-light);">
+                <span style="font-size: 0.92rem;">Vida promedio del cliente</span>
+                <strong>36 meses</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-border-light);">
+                <span style="font-size: 0.92rem;">Margen bruto</span>
+                <strong>70%</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.75rem 0; border-top: 2px solid var(--color-accent);">
+                <strong>LTV = $1.18 × 36 × 0.70</strong>
+                <strong style="color: var(--color-accent); font-size: 1.2rem;">$29.74</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                <span style="font-size: 0.92rem;">+ Valor de servicios financieros (Año 2+)</span>
+                <strong>+$12.76</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 0.75rem 0; background: rgba(16,185,129,0.05); border-radius: var(--radius-sm); padding-left: 0.75rem; padding-right: 0.75rem;">
+                <strong style="color: var(--color-success);">LTV Total Proyectado</strong>
+                <strong style="color: var(--color-success); font-size: 1.2rem;">$42.50</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box mt-4" style="text-align: center;">
+        <div style="position: relative; z-index: 1;">
+          <h3 style="color: #fff; margin-bottom: 1rem;">Ratio LTV/CAC: <span style="color: var(--color-gold-light);">23.6x</span></h3>
+          <p style="max-width: 700px; margin: 0 auto; font-size: 1.05rem;">El benchmark de la industria fintech para un modelo saludable es <strong style="color: #fff;">LTV/CAC &gt; 3x</strong>. NexoPay supera esto por un factor de <strong style="color: var(--color-gold-light);">casi 8 veces</strong>, impulsado por el bajo costo de adquisición viral y la alta retención inherente a las plataformas de pago.</p>
+          <div class="kpi-row mt-3" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2rem;">&lt; 2 meses</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Payback Period</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2rem;">70%</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Margen Bruto</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       5 — ESTRATEGIA DE CRECIMIENTO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Crecimiento</span>
+        <h2>Estrategia de Crecimiento</h2>
+        <p>Efectos de red, mecánicas virales y alianzas estratégicas que aceleran la adopción exponencialmente.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card card-accent">
+          <h4>🌐 Efectos de Red</h4>
+          <p>Cada nuevo usuario incrementa el valor de la plataforma para todos los demás. Cuantos más comercios aceptan NexoPay, más consumidores la descargan — y viceversa.</p>
+          <div class="flow-diagram mt-2" style="padding: 1rem 0;">
+            <div class="flow-node" style="min-width: 100px; padding: 0.75rem;">Más<br>Comercios</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node" style="min-width: 100px; padding: 0.75rem;">Más<br>Consumidores</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node" style="min-width: 100px; padding: 0.75rem;">Más<br>Datos</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node" style="min-width: 100px; padding: 0.75rem; border-color: var(--color-gold);">Mejores<br>Servicios</div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--color-text-lighter); margin-bottom: 0;">Este ciclo virtuoso genera una barrera de entrada para competidores y reduce el CAC a medida que crece la base de usuarios.</p>
+        </div>
+
+        <div class="card card-accent">
+          <h4>🚀 Mecánicas Virales</h4>
+          <p>Cada transacción es una oportunidad de adquisición. Los pagos NexoPay actúan como invitaciones naturales a la plataforma.</p>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">📩</span>
+              <span><strong>Solicitudes de pago</strong> — El receptor sin NexoPay recibe un link para cobrar e instalar la app</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">🎁</span>
+              <span><strong>Referidos con incentivo</strong> — $0.50 para quien invita y quien se registra al hacer la primera transacción</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">📱</span>
+              <span><strong>QR en comercios</strong> — Cada QR físico es publicidad permanente de NexoPay</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">💬</span>
+              <span><strong>Compartir por WhatsApp</strong> — Links de pago que se reenvían naturalmente entre contactos</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-3">
+        <div class="card">
+          <h4>🤝 Alianzas Estratégicas con Bancos</h4>
+          <p>NexoPay no compite con los bancos — los complementa. La estrategia de alianzas convierte posibles competidores en socios de distribución.</p>
+          <div class="table-container mt-2" style="border: none; box-shadow: none;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo de Alianza</th>
+                  <th>Beneficio para el Banco</th>
+                  <th>Beneficio para NexoPay</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Integración API</strong></td>
+                  <td>Reducción de costos en apps propias</td>
+                  <td>Acceso directo a base de clientes</td>
+                </tr>
+                <tr>
+                  <td><strong>White-label</strong></td>
+                  <td>Tecnología de punta sin desarrollo</td>
+                  <td>Ingresos por licencia recurrente</td>
+                </tr>
+                <tr>
+                  <td><strong>Co-marketing</strong></td>
+                  <td>Innovación percibida ante sus clientes</td>
+                  <td>Confianza y credibilidad institucional</td>
+                </tr>
+                <tr>
+                  <td><strong>Datos agregados</strong></td>
+                  <td>Insights de mercado para decisiones</td>
+                  <td>Ingresos por analíticas B2B</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h4>🌎 Plan de Expansión Geográfica</h4>
+          <p>Tras consolidar Venezuela, NexoPay tiene un camino natural hacia otros mercados latinoamericanos con problemas similares.</p>
+          <div class="process-steps mt-3" style="flex-direction: column; gap: 0;">
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem;">1</div>
+              <div>
+                <h4 style="margin-bottom: 0.15rem;">Venezuela (Año 1-2)</h4>
+                <p style="margin: 0; font-size: 0.88rem;">Dominar el mercado local. Meta: 2M de usuarios activos</p>
+              </div>
+            </div>
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: var(--gradient-gold);">2</div>
+              <div>
+                <h4 style="margin-bottom: 0.15rem;">Colombia y Panamá (Año 3)</h4>
+                <p style="margin: 0; font-size: 0.88rem;">Mercados con diáspora venezolana y flujo de remesas</p>
+              </div>
+            </div>
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 0.9rem; background: linear-gradient(135deg, #10B981, #059669);">3</div>
+              <div>
+                <h4 style="margin-bottom: 0.15rem;">Centroamérica y Caribe (Año 4-5)</h4>
+                <p style="margin: 0; font-size: 0.88rem;">Economías con fragmentación bancaria similar y alta informalidad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info mt-3">
+        <div class="callout-title">🔑 Coeficiente Viral Proyectado: 1.4</div>
+        <p style="margin-bottom: 0;">Cada usuario activo trae en promedio <strong>1.4 nuevos usuarios</strong> en los primeros 90 días, a través de solicitudes de pago, referidos y exposición al QR en comercios. Un coeficiente viral &gt; 1.0 indica <strong>crecimiento orgánico auto-sostenido</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       6 — MONETIZACIÓN POR FASE
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number" style="background: rgba(245,158,11,0.2); border-color: rgba(245,158,11,0.3);">Fases</span>
+        <h2 style="color: #fff;">Monetización por Fase</h2>
+        <p style="color: rgba(255,255,255,0.75);">Una estrategia escalonada que prioriza la adquisición de usuarios antes de activar fuentes de ingreso de alto margen.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card-glass">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; flex-shrink: 0;">1</div>
+            <div>
+              <h4 style="margin-bottom: 0; font-size: 1.1rem;">Fase 1 — Tracción</h4>
+              <span style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Año 1</span>
+            </div>
+          </div>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-cyan-light);">💳</span>
+              <span style="color: rgba(255,255,255,0.85);">Comisiones por transacción (0.3–0.8%)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-cyan-light);">📋</span>
+              <span style="color: rgba(255,255,255,0.85);">Suscripciones comerciales básicas (Pro $9.99)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-cyan-light);">🎯</span>
+              <span style="color: rgba(255,255,255,0.85);">Foco: adquisición masiva de usuarios y comercios</span>
+            </li>
+          </ul>
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 0.85rem; color: rgba(255,255,255,0.5);">Ingreso estimado</span>
+              <strong style="color: var(--color-cyan-light);">$2.2M – $3.5M</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-glass" style="border-color: rgba(245,158,11,0.3); background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.03));">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-gold); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; flex-shrink: 0;">2</div>
+            <div>
+              <h4 style="margin-bottom: 0; font-size: 1.1rem;">Fase 2 — Expansión</h4>
+              <span style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Año 2</span>
+            </div>
+          </div>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">⭐</span>
+              <span style="color: rgba(255,255,255,0.85);">Suscripción Premium Personal ($2.99/mes)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">📊</span>
+              <span style="color: rgba(255,255,255,0.85);">Data analytics para instituciones</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">🏢</span>
+              <span style="color: rgba(255,255,255,0.85);">Plan Enterprise ($29.99/mes)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">🎯</span>
+              <span style="color: rgba(255,255,255,0.85);">Foco: monetización avanzada y retención</span>
+            </li>
+          </ul>
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 0.85rem; color: rgba(255,255,255,0.5);">Ingreso estimado</span>
+              <strong style="color: var(--color-gold-light);">$8M – $15M</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-glass" style="border-color: rgba(16,185,129,0.3); background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.03));">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #10B981, #059669); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; flex-shrink: 0;">3</div>
+            <div>
+              <h4 style="margin-bottom: 0; font-size: 1.1rem;">Fase 3 — Dominio</h4>
+              <span style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Año 3+</span>
+            </div>
+          </div>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.2); color: #34D399;">💳</span>
+              <span style="color: rgba(255,255,255,0.85);">Servicios financieros (microcréditos, seguros)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.2); color: #34D399;">🔗</span>
+              <span style="color: rgba(255,255,255,0.85);">White-label / licencias API a bancos</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.2); color: #34D399;">🌎</span>
+              <span style="color: rgba(255,255,255,0.85);">Expansión internacional (Colombia, Panamá)</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(16,185,129,0.2); color: #34D399;">🎯</span>
+              <span style="color: rgba(255,255,255,0.85);">Foco: plataforma financiera integral y escala regional</span>
+            </li>
+          </ul>
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 0.85rem; color: rgba(255,255,255,0.5);">Ingreso estimado</span>
+              <strong style="color: #34D399;">$25M – $50M+</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue mix chart -->
+      <div style="margin-top: 3rem;">
+        <h3 class="text-center mb-3" style="color: #fff;">Evolución del Mix de Ingresos</h3>
+        <div class="grid grid-3" style="gap: 1.5rem;">
+          <div style="text-align: center;">
+            <h4 style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem;">AÑO 1</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 75; background: var(--gradient-accent); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">75% Txn</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 25; background: var(--gradient-gold); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">25% Subs</span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <h4 style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem;">AÑO 2</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 50; background: var(--gradient-accent); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">50% Txn</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 30; background: var(--gradient-gold); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">30% Subs</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 20; background: linear-gradient(135deg, #8B5CF6, #A78BFA); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">20% Data</span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <h4 style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem;">AÑO 3+</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 35; background: var(--gradient-accent); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">35% Txn</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 25; background: var(--gradient-gold); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">25% Subs</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 25; background: linear-gradient(135deg, #10B981, #059669); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">25% Fin</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="height: 24px; flex: 15; background: linear-gradient(135deg, #8B5CF6, #A78BFA); border-radius: var(--radius-sm);"></div>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.7); white-space: nowrap;">15% API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       7 — CANVAS DEL MODELO DE NEGOCIO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Business Model Canvas</span>
+        <h2>Canvas del Modelo de Negocio</h2>
+        <p>Visión completa de los nueve bloques del modelo de negocio de NexoPay en un formato estructurado.</p>
+      </div>
+
+      <!-- Canvas Grid -->
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+        <!-- Row 1: Key Partners | Key Activities | Value Props | Customer Rel | Customer Seg -->
+        <div class="card" style="padding: 1.25rem; border-top: 3px solid var(--color-accent); grid-row: span 2;">
+          <h4 style="font-size: 0.9rem; color: var(--color-accent); margin-bottom: 1rem;">🤝 Socios Clave</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">Bancos comerciales (60+ instituciones)</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">BCV (Banco Central de Venezuela)</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">SUDEBAN (regulador financiero)</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">Proveedores cloud (AWS/GCP)</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">Operadores de telecomunicaciones</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0;">Cadenas comerciales ancla</li>
+          </ul>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="card" style="padding: 1.25rem; border-top: 3px solid var(--color-cyan);">
+            <h4 style="font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 1rem;">⚙️ Actividades Clave</h4>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+              <li style="font-size: 0.82rem;">Desarrollo de plataforma</li>
+              <li style="font-size: 0.82rem;">Integración bancaria (APIs)</li>
+              <li style="font-size: 0.82rem;">Compliance y regulación</li>
+              <li style="font-size: 0.82rem;">Adquisición de usuarios</li>
+              <li style="font-size: 0.82rem;">Prevención de fraude</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.25rem; border-top: 3px solid var(--color-gold); grid-row: span 2;">
+          <h4 style="font-size: 0.9rem; color: var(--color-gold-dark); margin-bottom: 1rem;">💎 Propuesta de Valor</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);"><strong>Una app, todos los bancos</strong> — Elimina fragmentación</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);"><strong>Pagos en &lt;3 segundos</strong> — QR, NFC, contactos</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);"><strong>PoS virtual gratuito</strong> — Sin hardware</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);"><strong>Comisiones 60-75% menores</strong></li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);"><strong>Inclusión financiera</strong> — USSD, WhatsApp</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0;"><strong>0% errores humanos</strong> en transacciones</li>
+          </ul>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="card" style="padding: 1.25rem; border-top: 3px solid var(--color-success);">
+            <h4 style="font-size: 0.9rem; color: var(--color-success); margin-bottom: 1rem;">❤️ Relación con Clientes</h4>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+              <li style="font-size: 0.82rem;">Autoservicio digital</li>
+              <li style="font-size: 0.82rem;">Soporte in-app con IA</li>
+              <li style="font-size: 0.82rem;">Comunidad de comerciantes</li>
+              <li style="font-size: 0.82rem;">Programa de lealtad</li>
+              <li style="font-size: 0.82rem;">Soporte prioritario (Enterprise)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.25rem; border-top: 3px solid #8B5CF6; grid-row: span 2;">
+          <h4 style="font-size: 0.9rem; color: #8B5CF6; margin-bottom: 1rem;">👥 Segmentos de Clientes</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">Consumidores bancarizados (18M)</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">Trabajadores informales (8M)</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">Microcomercio y ambulantes</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">PYMES y comercios establecidos</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border-light);">Bancos (white-label)</li>
+            <li style="font-size: 0.82rem; padding: 0.4rem 0;">Empresas (analíticas B2B)</li>
+          </ul>
+        </div>
+
+        <!-- Row 2 bottom: Key Resources | Channels -->
+        <div class="card" style="padding: 1.25rem; border-top: 3px solid var(--color-teal);">
+          <h4 style="font-size: 0.9rem; color: var(--color-teal); margin-bottom: 1rem;">🔑 Recursos Clave</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li style="font-size: 0.82rem;">Plataforma tecnológica</li>
+            <li style="font-size: 0.82rem;">APIs de integración bancaria</li>
+            <li style="font-size: 0.82rem;">Equipo de ingeniería</li>
+            <li style="font-size: 0.82rem;">Licencias regulatorias</li>
+            <li style="font-size: 0.82rem;">Base de datos transaccional</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding: 1.25rem; border-top: 3px solid #EC4899;">
+          <h4 style="font-size: 0.9rem; color: #EC4899; margin-bottom: 1rem;">📣 Canales</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li style="font-size: 0.82rem;">App móvil (iOS/Android)</li>
+            <li style="font-size: 0.82rem;">Web app / links de pago</li>
+            <li style="font-size: 0.82rem;">USSD para teléfonos básicos</li>
+            <li style="font-size: 0.82rem;">WhatsApp (links de cobro)</li>
+            <li style="font-size: 0.82rem;">Redes sociales y referidos</li>
+          </ul>
+        </div>
+
+        <!-- Row 3: Cost Structure | Revenue Streams -->
+        <div class="card" style="padding: 1.25rem; border-top: 3px solid var(--color-danger); grid-column: span 2;">
+          <h4 style="font-size: 0.9rem; color: var(--color-danger); margin-bottom: 1rem;">💸 Estructura de Costos</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li style="font-size: 0.82rem;">Infraestructura cloud (30%)</li>
+              <li style="font-size: 0.82rem;">Equipo de desarrollo (25%)</li>
+              <li style="font-size: 0.82rem;">Marketing y adquisición (20%)</li>
+            </ul>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li style="font-size: 0.82rem;">Compliance y legal (10%)</li>
+              <li style="font-size: 0.82rem;">Soporte al cliente (8%)</li>
+              <li style="font-size: 0.82rem;">Administrativo y otros (7%)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.25rem; border-top: 3px solid var(--color-success); grid-column: span 3;">
+          <h4 style="font-size: 0.9rem; color: var(--color-success); margin-bottom: 1rem;">💰 Fuentes de Ingreso</h4>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li style="font-size: 0.82rem;">Comisiones por transacción</li>
+              <li style="font-size: 0.82rem;">Suscripciones comerciales</li>
+            </ul>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li style="font-size: 0.82rem;">Suscripción premium personal</li>
+              <li style="font-size: 0.82rem;">Servicios financieros</li>
+            </ul>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li style="font-size: 0.82rem;">Data & Analytics B2B</li>
+              <li style="font-size: 0.82rem;">White-label / Licencias API</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-3 text-center" style="font-size: 0.85rem; color: var(--color-text-lighter);">Business Model Canvas adaptado del framework de Alexander Osterwalder — aplicado al contexto fintech venezolano.</p>
+    </div>
+  </section>
+
+  <!-- ═══ Conclusión / CTA ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="highlight-box" style="text-align: center;">
+        <div style="position: relative; z-index: 1;">
+          <h2 style="color: #fff; margin-bottom: 1rem;">Un Modelo Diseñado para Escalar</h2>
+          <p style="max-width: 750px; margin: 0 auto 2rem; font-size: 1.15rem;">Seis fuentes de ingreso, unit economics superiores a la industria y efectos de red que reducen el CAC con el tiempo. <strong style="color: #fff;">NexoPay no solo genera ingresos — construye un ecosistema.</strong></p>
+          <div class="kpi-row" style="max-width: 900px; margin: 0 auto;">
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2rem;">6</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Fuentes de Ingreso</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2rem;">23.6x</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">LTV / CAC</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light); font-size: 2rem;">70%</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Margen Bruto</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #34D399; -webkit-text-fill-color: #34D399; font-size: 2rem;">$50M+</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Potencial Año 3+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Page Navigation ═══ -->
+  <div class="container">
+    <div class="page-nav">
+      <a href="03-problema-solucion.html"><span class="label">← Anterior</span><span class="title">Problema y Solución</span></a>
+      <a href="05-tecnologia.html" class="next"><span class="label">Siguiente →</span><span class="title">Tecnología</span></a>
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer" style="padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 NexoPay. Todos los derechos reservados. Documento confidencial para inversionistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Confidential Bar ═══ -->
+  <div class="confidential-bar">⚠ Documento Confidencial — Solo para Inversionistas Autorizados — NexoPay © 2026</div>
+
+</body>
+</html>

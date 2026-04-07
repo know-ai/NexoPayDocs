@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta de Inversión — NexoPay</title>
+  <meta name="description" content="Ronda seed de $2.5M USD con valoración pre-money de $8M. Retorno proyectado de 15x en 5 años. Invertir en NexoPay.">
+  <meta property="og:title" content="Propuesta de Inversión — NexoPay">
+  <meta property="og:description" content="Ronda seed de $2.5M USD con valoración pre-money de $8M. Retorno proyectado de 15x en 5 años. Invertir en NexoPay.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexoPay — Inversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-icon">N</div><span><span class="logo-text-nexo">Nexo</span><span class="logo-text-pay">Pay</span></span></a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.navbar-nav').classList.toggle('open')">☰</button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-analisis-mercado.html">Mercado</a></li>
+        <li><a href="03-problema-solucion.html">Solución</a></li>
+        <li><a href="04-modelo-negocio.html">Negocio</a></li>
+        <li><a href="05-tecnologia.html">Tecnología</a></li>
+        <li><a href="06-regulatorio-legal.html">Legal</a></li>
+        <li><a href="07-analisis-competitivo.html">Competencia</a></li>
+        <li><a href="08-proyecciones-financieras.html">Finanzas</a></li>
+        <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
+        <li><a href="10-propuesta-inversion.html" class="active">Inversión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ Page Hero ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a><span class="separator">/</span><span class="current">Propuesta de Inversión</span>
+      </div>
+      <span class="section-number">Sección 10</span>
+      <h1>Propuesta de Inversión</h1>
+      <p class="lead">La oportunidad definitiva para liderar la revolución de pagos digitales en Venezuela — un mercado de 28 millones de personas sin una plataforma unificada. Este es el momento.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1 — LA OPORTUNIDAD EN NÚMEROS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">La Oportunidad</span>
+        <h2>Una Oportunidad de Mercado Sin Precedentes</h2>
+        <p>Venezuela presenta la convergencia perfecta de factores: alta adopción digital, mercado masivo y cero competidores unificados. Los números hablan por sí solos.</p>
+      </div>
+
+      <div class="kpi-row" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="kpi-item" style="border-top: 3px solid var(--color-accent);">
+          <div class="kpi-value" style="font-size: 2.8rem;">31M+</div>
+          <div class="kpi-label">Transacciones diarias</div>
+        </div>
+        <div class="kpi-item" style="border-top: 3px solid var(--color-cyan);">
+          <div class="kpi-value" style="font-size: 2.8rem; background: linear-gradient(135deg, #06B6D4, #22D3EE); -webkit-background-clip: text; background-clip: text;">28.4M</div>
+          <div class="kpi-label">Población total</div>
+        </div>
+        <div class="kpi-item" style="border-top: 3px solid var(--color-success);">
+          <div class="kpi-value" style="font-size: 2.8rem; background: linear-gradient(135deg, #10B981, #34D399); -webkit-background-clip: text; background-clip: text;">95%+</div>
+          <div class="kpi-label">Adopción digital</div>
+        </div>
+        <div class="kpi-item" style="border-top: 3px solid var(--color-gold);">
+          <div class="kpi-value gold" style="font-size: 2.8rem;">$4.8B</div>
+          <div class="kpi-label">TAM estimado</div>
+        </div>
+        <div class="kpi-item" style="border-top: 3px solid var(--color-danger);">
+          <div class="kpi-value" style="font-size: 2.8rem; background: linear-gradient(135deg, #EF4444, #F87171); -webkit-background-clip: text; background-clip: text;">0</div>
+          <div class="kpi-label">Competidores unificados</div>
+        </div>
+      </div>
+
+      <div class="highlight-box mt-5">
+        <div style="position: relative; z-index: 1;">
+          <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">El mercado de pagos venezolano está donde estaba Brasil antes de PIX</h3>
+          <p style="font-size: 1.1rem; max-width: 800px;">PIX procesó 26 mil millones de transacciones en su primer año y transformó completamente el ecosistema financiero brasileño. Venezuela, con 31 millones de transacciones diarias fragmentadas entre decenas de aplicaciones, está lista para su propio momento PIX. <strong style="color: #fff;">NexoPay será ese catalizador.</strong></p>
+        </div>
+      </div>
+
+      <div class="callout callout-info mt-4">
+        <div class="callout-title">Ventana de Oportunidad Única</div>
+        <p>La combinación de alta penetración móvil, ausencia de un líder dominante y apertura regulatoria crea una ventana de 12-18 meses para capturar el mercado. Quien entre primero con una plataforma unificada definirá las reglas del juego.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2 — RONDA DE INVERSIÓN SEED
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Ronda Seed</span>
+        <h2>Términos de la Inversión</h2>
+        <p>Una estructura transparente y favorable diseñada para alinear los intereses de fundadores e inversionistas hacia el crecimiento exponencial.</p>
+      </div>
+
+      <div class="grid grid-2" style="align-items: start;">
+        <div class="pricing-card featured" style="text-align: left;">
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <span class="badge badge-gold" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">Ronda Seed — 2026</span>
+            <div class="price" style="margin-top: 1.5rem;">$2.5M<span> USD</span></div>
+            <p style="margin-top: 0.5rem;">Monto total buscado</p>
+          </div>
+
+          <div class="divider-gradient" style="margin: 1.5rem 0;"></div>
+
+          <ul class="feature-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Valoración Pre-Money</strong>
+                <p style="margin: 0; font-size: 0.9rem;">$8,000,000 USD</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Equity Ofrecido</strong>
+                <p style="margin: 0; font-size: 0.9rem;">23.8% del capital social</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Instrumento</strong>
+                <p style="margin: 0; font-size: 0.9rem;">SAFE (Simple Agreement for Future Equity)</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Valuation Cap</strong>
+                <p style="margin: 0; font-size: 0.9rem;">$10,000,000 USD</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Descuento</strong>
+                <p style="margin: 0; font-size: 0.9rem;">20% sobre la siguiente ronda de financiamiento</p>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Participación Mínima</strong>
+                <p style="margin: 0; font-size: 0.9rem;">$50,000 USD por inversionista</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="card card-dark" style="margin-bottom: 1.5rem;">
+            <div class="card-icon" style="background: rgba(245,158,11,0.15); color: var(--color-gold-light);">⚡</div>
+            <h4>¿Por Qué SAFE?</h4>
+            <p>El instrumento SAFE permite cerrar la ronda de inversión de forma rápida y eficiente, sin las complejidades de una ronda de equity priced. Desarrollado por Y Combinator, es el estándar en Silicon Valley para rondas seed. Los inversionistas obtienen la protección de un cap y descuento, mientras la empresa preserva agilidad operativa.</p>
+          </div>
+
+          <div class="card card-accent" style="margin-bottom: 1.5rem;">
+            <h4>Cap Table Post-Inversión</h4>
+            <div style="margin-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span><strong>Fundadores</strong></span>
+                <span class="badge badge-primary">61.2%</span>
+              </div>
+              <div class="progress-bar" style="height: 10px;">
+                <div class="progress-bar-fill" style="width: 61.2%;"></div>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span><strong>Inversionistas Seed</strong></span>
+                <span class="badge badge-gold">23.8%</span>
+              </div>
+              <div class="progress-bar" style="height: 10px;">
+                <div class="progress-bar-fill gold" style="width: 23.8%;"></div>
+              </div>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span><strong>Pool de Opciones (Equipo)</strong></span>
+                <span class="badge badge-success">15.0%</span>
+              </div>
+              <div class="progress-bar" style="height: 10px;">
+                <div class="progress-bar-fill success" style="width: 15%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout-success">
+            <div class="callout-title">Estructura Favorable</div>
+            <p style="margin-bottom: 0;">El SAFE con cap de $10M y 20% de descuento asegura que los inversionistas seed obtengan los mejores términos posibles en la empresa, con protección ante dilución en rondas posteriores.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3 — USO DE FONDOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Asignación de Capital</span>
+        <h2>Uso Detallado de los Fondos</h2>
+        <p>Cada dólar tiene un propósito claro. La asignación prioriza el desarrollo tecnológico como motor de crecimiento, seguido de adquisición de usuarios y cumplimiento regulatorio.</p>
+      </div>
+
+      <div class="grid grid-2" style="align-items: start; gap: 3rem;">
+        <div>
+          <!-- Desarrollo Tecnológico -->
+          <div class="card card-accent" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div class="card-icon" style="margin-bottom: 0;">💻</div>
+                <div>
+                  <h4 style="margin-bottom: 0;">Desarrollo Tecnológico</h4>
+                  <span class="badge badge-primary">45% — $1,125,000</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-bar" style="height: 12px; margin-bottom: 1.25rem;">
+              <div class="progress-bar-fill" style="width: 45%;"></div>
+            </div>
+            <ul class="icon-list">
+              <li><span class="icon">⚙</span> <div><strong>Backend & APIs</strong> — Infraestructura de microservicios, procesamiento de pagos en tiempo real ($350K)</div></li>
+              <li><span class="icon">📱</span> <div><strong>App Móvil</strong> — iOS y Android nativas, UX premium, biometría ($300K)</div></li>
+              <li><span class="icon">☁</span> <div><strong>Infraestructura Cloud</strong> — AWS/GCP, alta disponibilidad, CDN, monitoreo ($225K)</div></li>
+              <li><span class="icon">🔒</span> <div><strong>Seguridad & Compliance</strong> — Encriptación, auditorías, certificaciones PCI-DSS ($250K)</div></li>
+            </ul>
+          </div>
+
+          <!-- Marketing y Adquisición -->
+          <div class="card card-gold" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div class="card-icon gold" style="margin-bottom: 0;">📢</div>
+                <div>
+                  <h4 style="margin-bottom: 0;">Marketing y Adquisición</h4>
+                  <span class="badge badge-gold">20% — $500,000</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-bar" style="height: 12px; margin-bottom: 1.25rem;">
+              <div class="progress-bar-fill gold" style="width: 20%;"></div>
+            </div>
+            <ul class="icon-list">
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🎯</span> <div><strong>Adquisición de Usuarios</strong> — Campañas digitales, referidos, incentivos de adopción ($200K)</div></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🏷</span> <div><strong>Marca y Posicionamiento</strong> — Branding, PR, presencia en medios ($150K)</div></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🤝</span> <div><strong>Alianzas Comerciales</strong> — Integraciones con comercios, partnership bancarios ($150K)</div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <!-- Legal y Licencias -->
+          <div class="card" style="border-top: 3px solid var(--color-success); margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div class="card-icon success" style="margin-bottom: 0;">⚖</div>
+                <div>
+                  <h4 style="margin-bottom: 0;">Legal y Licencias</h4>
+                  <span class="badge badge-success">15% — $375,000</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-bar" style="height: 12px; margin-bottom: 1.25rem;">
+              <div class="progress-bar-fill success" style="width: 15%;"></div>
+            </div>
+            <ul class="icon-list">
+              <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🏛</span> <div><strong>Licencias Sudeban/BCV</strong> — Solicitud y obtención de licencias regulatorias ($150K)</div></li>
+              <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">📋</span> <div><strong>Estructura Corporativa</strong> — Constitución legal, propiedad intelectual ($125K)</div></li>
+              <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">📄</span> <div><strong>Contratos y Compliance</strong> — Acuerdos comerciales, KYC/AML ($100K)</div></li>
+            </ul>
+          </div>
+
+          <!-- Operaciones -->
+          <div class="card" style="border-top: 3px solid var(--color-cyan); margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div class="card-icon cyan" style="margin-bottom: 0;">🏢</div>
+                <div>
+                  <h4 style="margin-bottom: 0;">Operaciones</h4>
+                  <span class="badge badge-cyan">10% — $250,000</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-bar" style="height: 12px; margin-bottom: 1.25rem;">
+              <div class="progress-bar-fill" style="width: 10%; background: linear-gradient(90deg, #06B6D4, #22D3EE);"></div>
+            </div>
+            <ul class="icon-list">
+              <li><span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">🖥</span> <div><strong>Oficina y Equipamiento</strong> — Espacio de trabajo, hardware, herramientas ($100K)</div></li>
+              <li><span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">👥</span> <div><strong>Administración y RRHH</strong> — Contabilidad, nómina, beneficios ($150K)</div></li>
+            </ul>
+          </div>
+
+          <!-- Reserva -->
+          <div class="card" style="border-top: 3px solid var(--color-text-lighter);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div class="card-icon" style="margin-bottom: 0; background: rgba(148,163,184,0.1); color: var(--color-text-lighter);">🛡</div>
+                <div>
+                  <h4 style="margin-bottom: 0;">Reserva / Contingencia</h4>
+                  <span class="badge" style="background: rgba(148,163,184,0.1); color: var(--color-text-light);">10% — $250,000</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-bar" style="height: 12px; margin-bottom: 1.25rem;">
+              <div class="progress-bar-fill" style="width: 10%; background: linear-gradient(90deg, #94A3B8, #CBD5E1);"></div>
+            </div>
+            <p style="font-size: 0.95rem;">Buffer estratégico para necesidades imprevistas, oportunidades de mercado que requieran acción rápida, o extensión de runway si las condiciones del mercado lo requieren.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warning mt-4">
+        <div class="callout-title">Eficiencia de Capital</div>
+        <p style="margin-bottom: 0;">Con $2.5M buscamos alcanzar 500K+ usuarios activos y demostrar product-market fit antes de levantar una Serie A. Nuestro runway estimado es de 18-24 meses, tiempo suficiente para alcanzar métricas que justifiquen una valoración de $40M+ en la siguiente ronda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       4 — RETORNO PARA EL INVERSIONISTA
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number" style="background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3);">Retorno Proyectado</span>
+        <h2>Potencial de Retorno para el Inversionista</h2>
+        <p style="color: rgba(255,255,255,0.75);">Proyecciones conservadoras basadas en comparables regionales. El modelo de NexoPay tiene el potencial de generar retornos excepcionales para los inversionistas de la ronda seed.</p>
+      </div>
+
+      <!-- Growth Chart -->
+      <div class="card-glass" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <h3 style="text-align: center; margin-bottom: 2rem;">Trayectoria de Valoración Proyectada</h3>
+        <div class="chart-bar-container" style="height: 300px; border-bottom-color: rgba(255,255,255,0.15);">
+          <div class="chart-bar">
+            <div class="chart-bar-value" style="color: rgba(255,255,255,0.9);">$8M</div>
+            <div class="chart-bar-fill" style="height: 5%; background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));" title="Pre-money"></div>
+            <div class="chart-bar-label" style="color: rgba(255,255,255,0.5);">Hoy<br>(Pre-Money)</div>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-value" style="color: var(--color-cyan-light);">$12M</div>
+            <div class="chart-bar-fill cyan" style="height: 8%;"></div>
+            <div class="chart-bar-label" style="color: rgba(255,255,255,0.5);">Año 1<br><span style="color: var(--color-success);">+50%</span></div>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-value" style="color: var(--color-accent-light);">$40M</div>
+            <div class="chart-bar-fill" style="height: 24%;"></div>
+            <div class="chart-bar-label" style="color: rgba(255,255,255,0.5);">Año 2<br><span style="color: var(--color-success);">5x</span></div>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-value" style="color: var(--color-gold-light);">$120M</div>
+            <div class="chart-bar-fill gold" style="height: 56%;"></div>
+            <div class="chart-bar-label" style="color: rgba(255,255,255,0.5);">Año 3<br><span style="color: var(--color-gold-light);">15x</span></div>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-value" style="color: var(--color-gold-light);">$500M+</div>
+            <div class="chart-bar-fill" style="height: 100%; background: linear-gradient(180deg, #F59E0B, #2563EB);"></div>
+            <div class="chart-bar-label" style="color: rgba(255,255,255,0.5);">Año 5<br><span style="color: var(--color-gold-light);">62x+</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-bottom: 2.5rem;">
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="font-size: 3.5rem; color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light);">85%+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">IRR Proyectado</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Tasa Interna de Retorno</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="font-size: 3.5rem; color: var(--color-success); -webkit-text-fill-color: var(--color-success);">15x+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Múltiplo en 5 Años</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Retorno sobre inversión</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="font-size: 3.5rem; color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light);">$500M+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Valoración Objetivo Año 5</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Camino a unicornio</div>
+        </div>
+      </div>
+
+      <div class="table-container" style="border-color: rgba(255,255,255,0.1); margin-bottom: 2rem;">
+        <table>
+          <thead>
+            <tr>
+              <th>Período</th>
+              <th>Valoración Estimada</th>
+              <th>Retorno (papel)</th>
+              <th>Múltiplo</th>
+              <th>Hito Clave</th>
+            </tr>
+          </thead>
+          <tbody style="background: var(--color-surface);">
+            <tr>
+              <td><strong>Año 1</strong></td>
+              <td>$12,000,000</td>
+              <td style="color: var(--color-success); font-weight: 700;">+50%</td>
+              <td><span class="badge badge-success">1.5x</span></td>
+              <td>MVP lanzado, 100K+ usuarios</td>
+            </tr>
+            <tr>
+              <td><strong>Año 2</strong></td>
+              <td>$40,000,000</td>
+              <td style="color: var(--color-success); font-weight: 700;">+400%</td>
+              <td><span class="badge badge-primary">5x</span></td>
+              <td>Serie A cerrada, 500K+ usuarios</td>
+            </tr>
+            <tr>
+              <td><strong>Año 3</strong></td>
+              <td>$120,000,000</td>
+              <td style="color: var(--color-gold-dark); font-weight: 700;">+1,400%</td>
+              <td><span class="badge badge-gold">15x</span></td>
+              <td>Líder de mercado, 2M+ usuarios</td>
+            </tr>
+            <tr>
+              <td><strong>Año 5</strong></td>
+              <td>$500,000,000+</td>
+              <td style="color: var(--color-gold-dark); font-weight: 700;">+6,150%</td>
+              <td><span class="badge badge-gold">62x+</span></td>
+              <td>Expansión regional, camino a unicornio</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card-glass">
+          <h4>Comparables: PIX (Brasil)</h4>
+          <p>PIX fue lanzado en noviembre de 2020 y en menos de 2 años se convirtió en el método de pago más utilizado en Brasil con 130M+ usuarios. Empresas que construyeron sobre PIX como Nubank alcanzaron valoraciones de $40B+.</p>
+          <span class="badge" style="background: rgba(16,185,129,0.2); color: #34D399;">Validación del modelo</span>
+        </div>
+        <div class="card-glass">
+          <h4>Comparables: Nequi (Colombia)</h4>
+          <p>Nequi alcanzó 17M+ de usuarios en Colombia, un mercado comparable en tamaño a Venezuela. Su valoración implícita supera los $2B. NexoPay apunta a replicar esta trayectoria con ventajas competitivas únicas.</p>
+          <span class="badge" style="background: rgba(37,99,235,0.2); color: #93C5FD;">Comparable directo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       5 — ESTRATEGIA DE SALIDA
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Liquidez</span>
+        <h2>Estrategia de Salida</h2>
+        <p>Múltiples caminos hacia la liquidez para los inversionistas, cada uno respaldado por precedentes reales en el ecosistema fintech latinoamericano.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card card-accent">
+          <div class="card-icon">🏦</div>
+          <h3>Adquisición Estratégica</h3>
+          <p>Venta a un grupo bancario regional (Banesco, Mercantil), procesador de pagos global (Visa, Mastercard, MercadoPago) o empresa tecnológica buscando entrada al mercado venezolano.</p>
+          <div class="divider-gradient" style="margin: 1rem 0;"></div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="badge badge-primary">Visa</span>
+            <span class="badge badge-primary">Mastercard</span>
+            <span class="badge badge-gold">MercadoPago</span>
+            <span class="badge badge-success">Bancolombia</span>
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Valoración esperada:</strong> 8-15x ingresos anuales</p>
+        </div>
+
+        <div class="card card-gold">
+          <div class="card-icon gold">📈</div>
+          <h3>Oferta Pública (IPO)</h3>
+          <p>Una vez alcanzando escala regional con presencia en múltiples mercados LATAM, una oferta pública en NYSE o NASDAQ como lo hicieron dLocal y Nubank.</p>
+          <div class="divider-gradient" style="margin: 1rem 0;"></div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="badge badge-gold">NYSE</span>
+            <span class="badge badge-gold">NASDAQ</span>
+            <span class="badge badge-primary">BMV</span>
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Timeline estimado:</strong> 5-7 años post-seed</p>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-cyan);">
+          <div class="card-icon cyan">🔄</div>
+          <h3>Fusión Estratégica</h3>
+          <p>Combinación con un jugador fintech regional para crear un campeón latinoamericano de pagos digitales. Sinergias en tecnología, base de usuarios y licencias regulatorias.</p>
+          <div class="divider-gradient" style="margin: 1rem 0;"></div>
+          <p style="font-size: 0.9rem;"><strong>Precedente:</strong> Fusiones en el espacio fintech LATAM han generado valoraciones premium por las sinergias operativas y la dificultad de obtener licencias en múltiples jurisdicciones.</p>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-success);">
+          <div class="card-icon success">💰</div>
+          <h3>Dividendos</h3>
+          <p>Una vez alcanzando rentabilidad operativa (proyectada para el Año 3), la empresa puede distribuir dividendos a los accionistas, proporcionando retornos de efectivo antes de un evento de liquidez total.</p>
+          <div class="divider-gradient" style="margin: 1rem 0;"></div>
+          <p style="font-size: 0.9rem;"><strong>Margen neto proyectado:</strong> 15-25% a partir del Año 3, permitiendo distribuciones significativas.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box mt-5">
+        <div style="position: relative; z-index: 1;">
+          <h3>Exits Comparables en LatAm Fintech</h3>
+          <div class="grid grid-4 mt-3" style="gap: 1rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--color-gold-light);">$45B</div>
+              <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Nubank (IPO 2021)</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--color-gold-light);">$10B</div>
+              <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">dLocal (IPO 2021)</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--color-gold-light);">$2.5B</div>
+              <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Nequi (Valoración)</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--color-gold-light);">$8.6B</div>
+              <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Mercado Crédito</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       6 — ¿POR QUÉ INVERTIR AHORA?
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Timing</span>
+        <h2>¿Por Qué Invertir Ahora?</h2>
+        <p>La convergencia de factores de mercado, tecnología y regulación crea una ventana de oportunidad irrepetible. Esperar tiene un costo.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card card-accent">
+          <div class="card-icon">🚀</div>
+          <h4>First-Mover Advantage</h4>
+          <p>La ventana de primer movimiento se está cerrando. Competidores regionales están evaluando Venezuela. Quien construya la plataforma primero capturará efectos de red irreversibles.</p>
+          <span class="badge badge-danger" style="margin-top: 0.5rem;">Ventana: 12-18 meses</span>
+        </div>
+
+        <div class="card card-accent">
+          <div class="card-icon gold">📊</div>
+          <h4>Economía Digital en Auge</h4>
+          <p>Venezuela está experimentando un boom de digitalización. Las transacciones electrónicas crecieron 340% en los últimos 3 años, y la adopción de pagos móviles supera el 95%.</p>
+          <span class="badge badge-success" style="margin-top: 0.5rem;">Crecimiento: 340%</span>
+        </div>
+
+        <div class="card card-accent">
+          <div class="card-icon success">⚖</div>
+          <h4>Entorno Regulatorio Favorable</h4>
+          <p>La Sudeban y el BCV están definiendo marcos regulatorios para fintech. Participar ahora permite influir en las reglas y obtener licencias antes que la competencia.</p>
+          <span class="badge badge-primary" style="margin-top: 0.5rem;">Marco en desarrollo</span>
+        </div>
+
+        <div class="card card-accent">
+          <div class="card-icon cyan">💡</div>
+          <h4>Costos Tecnológicos Mínimos</h4>
+          <p>Cloud computing, APIs bancarias y herramientas de desarrollo están en mínimos históricos. Construir una plataforma de pagos hoy cuesta una fracción de lo que costaba hace 5 años.</p>
+          <span class="badge badge-cyan" style="margin-top: 0.5rem;">Costo: -70% vs 2019</span>
+        </div>
+
+        <div class="card card-accent">
+          <div class="card-icon" style="background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(139,92,246,0.05) 100%); color: #8B5CF6;">🌍</div>
+          <h4>Precedentes Globales Validados</h4>
+          <p>PIX (Brasil), UPI (India), M-Pesa (Kenia) — cada sistema de pagos unificados ha transformado su mercado. El modelo está probado a escala global.</p>
+          <span class="badge" style="background: rgba(139,92,246,0.1); color: #8B5CF6; margin-top: 0.5rem;">Modelo validado</span>
+        </div>
+
+        <div class="card card-accent">
+          <div class="card-icon" style="background: linear-gradient(135deg, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0.05) 100%); color: var(--color-gold);">👨‍💻</div>
+          <h4>Equipo Listo para Ejecutar</h4>
+          <p>El equipo fundador combina experiencia en banca, tecnología y regulación venezolana. No hay período de aprendizaje — estamos listos para ejecutar desde el día uno.</p>
+          <span class="badge badge-gold" style="margin-top: 0.5rem;">Equipo completo</span>
+        </div>
+      </div>
+
+      <div class="blockquote mt-4">
+        "En mercados emergentes, el timing lo es todo. Las empresas que definieron los pagos digitales en Brasil, India y África no fueron las mejor financiadas — fueron las primeras en ejecutar con una visión unificada."
+        <cite>— Análisis de Mercados Emergentes, McKinsey & Company</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       7 — PROTECCIÓN DEL INVERSIONISTA
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Governance</span>
+        <h2>Protección del Inversionista</h2>
+        <p>Términos diseñados para proteger su inversión y asegurar la alineación completa entre fundadores e inversionistas.</p>
+      </div>
+
+      <div class="grid grid-2" style="align-items: start;">
+        <div>
+          <div class="card" style="border-left: 4px solid var(--color-accent);">
+            <h3 style="margin-bottom: 1.5rem;">Derechos y Protecciones</h3>
+            <ul class="feature-list">
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Asiento en el Directorio</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">El inversionista líder obtiene un asiento en la junta directiva con voz y voto en decisiones estratégicas clave.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Reportes Trimestrales</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">Estados financieros, métricas operativas (KPIs), progreso del roadmap y análisis de mercado cada trimestre.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Cláusulas Anti-Dilución</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">Protección weighted average anti-dilution en caso de rondas futuras a menor valoración (down rounds).</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Preferencia de Liquidación</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">1x non-participating liquidation preference — los inversionistas recuperan su capital primero en cualquier evento de liquidez.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" style="border-left: 4px solid var(--color-gold);">
+            <h3 style="margin-bottom: 1.5rem;">Alineación de Intereses</h3>
+            <ul class="feature-list">
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Vesting de Fundadores</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">Vesting de 4 años con cliff de 1 año. Las acciones de los fundadores se liberan gradualmente, asegurando compromiso a largo plazo.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Derechos de Información</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">Acceso completo a libros contables, actas del directorio, proyecciones financieras y métricas en tiempo real via dashboard.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Derecho de Preferencia (ROFR)</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">Right of first refusal para participar proporcionalmente en rondas futuras de financiamiento, protegiendo su posición.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Aprobación de Gastos Mayores</strong>
+                  <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--color-text-light);">Cualquier gasto superior a $50,000 requiere aprobación del directorio, asegurando disciplina fiscal.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info mt-4">
+        <div class="callout-title">Transparencia Total</div>
+        <p style="margin-bottom: 0;">Creemos que la transparencia genera confianza. Todos los inversionistas tendrán acceso a un dashboard en tiempo real con métricas clave: usuarios activos, volumen de transacciones, revenue, burn rate y runway. Sin sorpresas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       8 — SIGUIENTES PASOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Proceso</span>
+        <h2>Siguientes Pasos</h2>
+        <p>Un proceso claro, eficiente y profesional para cerrar la ronda en 4-6 semanas.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-number">1</div>
+          <h4>Reunión Introductoria</h4>
+          <p style="font-size: 0.9rem;">Presentación detallada, Q&A con el equipo fundador, demostración del prototipo.</p>
+          <span class="badge badge-primary">Semana 1</span>
+          <span class="process-step-arrow">→</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: var(--gradient-gold); box-shadow: 0 4px 15px rgba(245,158,11,0.25);">2</div>
+          <h4>Due Diligence</h4>
+          <p style="font-size: 0.9rem;">Acceso al data room virtual, revisión financiera, legal y tecnológica completa.</p>
+          <span class="badge badge-gold">Semanas 2-3</span>
+          <span class="process-step-arrow">→</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #06B6D4, #0891B2); box-shadow: 0 4px 15px rgba(6,182,212,0.25);">3</div>
+          <h4>Term Sheet</h4>
+          <p style="font-size: 0.9rem;">Negociación y firma de los términos principales de la inversión.</p>
+          <span class="badge badge-cyan">Semana 3-4</span>
+          <span class="process-step-arrow">→</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #10B981, #059669); box-shadow: 0 4px 15px rgba(16,185,129,0.25);">4</div>
+          <h4>Cierre Legal</h4>
+          <p style="font-size: 0.9rem;">Documentación legal final, firma de SAFE y contratos complementarios.</p>
+          <span class="badge badge-success">Semana 4-5</span>
+          <span class="process-step-arrow">→</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED); box-shadow: 0 4px 15px rgba(139,92,246,0.25);">5</div>
+          <h4>Fondos & Arranque</h4>
+          <p style="font-size: 0.9rem;">Transferencia de fondos, activación del plan operativo, primera reunión de directorio.</p>
+          <span class="badge" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">Semana 5-6</span>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-5">
+        <div class="card card-dark">
+          <h4>Data Room Disponible</h4>
+          <ul class="icon-list" style="color: rgba(255,255,255,0.8);">
+            <li><span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-accent-light);">📊</span> <span>Modelo financiero detallado (5 años)</span></li>
+            <li><span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-accent-light);">📋</span> <span>Documentación legal corporativa</span></li>
+            <li><span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-accent-light);">🔬</span> <span>Análisis de mercado completo</span></li>
+            <li><span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-accent-light);">💻</span> <span>Arquitectura técnica y roadmap</span></li>
+            <li><span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-accent-light);">👥</span> <span>CVs del equipo fundador</span></li>
+            <li><span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-accent-light);">📜</span> <span>Análisis regulatorio detallado</span></li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-gold);">
+          <h4>Timeline del Proceso</h4>
+          <div class="timeline" style="padding-left: 2.5rem;">
+            <div class="timeline-item" style="padding-bottom: 1.5rem;">
+              <div class="timeline-dot" style="left: -2.5rem; width: 28px; height: 28px; font-size: 0.65rem;">1</div>
+              <div style="padding-left: 0.5rem;">
+                <strong>Semana 1:</strong> Reunión introductoria y demo
+              </div>
+            </div>
+            <div class="timeline-item" style="padding-bottom: 1.5rem;">
+              <div class="timeline-dot gold" style="left: -2.5rem; width: 28px; height: 28px; font-size: 0.65rem;">2</div>
+              <div style="padding-left: 0.5rem;">
+                <strong>Semanas 2-3:</strong> Due diligence y data room
+              </div>
+            </div>
+            <div class="timeline-item" style="padding-bottom: 1.5rem;">
+              <div class="timeline-dot cyan" style="left: -2.5rem; width: 28px; height: 28px; font-size: 0.65rem;">3</div>
+              <div style="padding-left: 0.5rem;">
+                <strong>Semanas 3-4:</strong> Negociación de term sheet
+              </div>
+            </div>
+            <div class="timeline-item" style="padding-bottom: 1.5rem;">
+              <div class="timeline-dot success" style="left: -2.5rem; width: 28px; height: 28px; font-size: 0.65rem;">4</div>
+              <div style="padding-left: 0.5rem;">
+                <strong>Semanas 4-5:</strong> Cierre legal y firma
+              </div>
+            </div>
+            <div class="timeline-item" style="padding-bottom: 0;">
+              <div class="timeline-dot" style="left: -2.5rem; width: 28px; height: 28px; font-size: 0.65rem; background: #8B5CF6;">5</div>
+              <div style="padding-left: 0.5rem;">
+                <strong>Semanas 5-6:</strong> Transferencia y arranque
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warning mt-4">
+        <div class="callout-title">Urgencia: Slots Limitados</div>
+        <p style="margin-bottom: 0;">La ronda seed tiene un cap de $2.5M con participación mínima de $50K. Estamos priorizando inversionistas estratégicos que aporten valor más allá del capital: conexiones en el sector financiero, experiencia en regulación o acceso a mercados regionales. Los slots se están llenando.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       9 — GRAN CIERRE / CALL TO ACTION
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="highlight-box" style="padding: 4rem; text-align: center; background: linear-gradient(135deg, rgba(37,99,235,0.2) 0%, rgba(6,182,212,0.15) 50%, rgba(245,158,11,0.1) 100%); border: 1px solid rgba(255,255,255,0.1);">
+        <div style="position: relative; z-index: 1;">
+          <span class="badge badge-gold" style="font-size: 0.9rem; padding: 0.5rem 1.5rem; margin-bottom: 1.5rem; display: inline-flex;">La Oportunidad de una Generación</span>
+
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 1.5rem; line-height: 1.2;">
+            31 millones de transacciones diarias<br>esperan una mejor experiencia
+          </h2>
+
+          <p style="font-size: 1.2rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8;">
+            Venezuela tiene más transacciones digitales diarias que la mayoría de los países de América Latina, pero ninguna plataforma unificada que las conecte. NexoPay será el puente entre 28 millones de personas y el futuro de los pagos digitales.
+          </p>
+
+          <div class="kpi-row" style="max-width: 800px; margin: 0 auto 3rem; grid-template-columns: repeat(3, 1fr);">
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2.2rem;">$2.5M</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Inversión</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2.2rem;">15x+</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Retorno Proyectado</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-success); -webkit-text-fill-color: var(--color-success); font-size: 2.2rem;">$500M+</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Valoración Objetivo</div>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.5rem; color: var(--color-gold-light); margin-bottom: 2rem;">
+            Sea parte de la revolución fintech en Venezuela
+          </h3>
+
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;">
+            <a href="mailto:investors@nexopay.com" class="btn btn-gold btn-lg">
+              ✉ Contactar al Equipo
+            </a>
+            <a href="mailto:investors@nexopay.com?subject=NexoPay%20—%20Solicitud%20de%20Reunión" class="btn btn-outline btn-lg">
+              📅 Agendar Reunión
+            </a>
+          </div>
+
+          <div class="divider-gradient" style="margin: 2rem auto; max-width: 200px; opacity: 0.4;"></div>
+
+          <div style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8;">
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;"><strong style="color: #fff;">Contacto para Inversionistas</strong></p>
+            <p style="margin-bottom: 0.25rem; color: rgba(255,255,255,0.6);">investors@nexopay.com</p>
+            <p style="margin-bottom: 0.25rem; color: rgba(255,255,255,0.6);">+58 (412) 555-0199</p>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.6);">Caracas, Venezuela</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blockquote mt-5" style="border-left-color: var(--color-gold); background: rgba(245,158,11,0.05);">
+        "Las mejores inversiones se hacen cuando la oportunidad es evidente pero la mayoría aún no se ha movido. Venezuela está en ese punto exacto para los pagos digitales. NexoPay es el vehículo para capturar esa oportunidad."
+        <cite>— Equipo Fundador, NexoPay</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Page Navigation ═══ -->
+  <div class="container">
+    <div class="page-nav">
+      <a href="09-hoja-de-ruta.html"><span class="label">← Anterior</span><span class="title">Hoja de Ruta</span></a>
+      <a href="index.html" class="next"><span class="label">Siguiente →</span><span class="title">Volver al Inicio</span></a>
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer" style="padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 NexoPay. Todos los derechos reservados. Documento confidencial para inversionistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Confidential Bar ═══ -->
+  <div class="confidential-bar">⚠ Documento Confidencial — Solo para Inversionistas Autorizados — NexoPay © 2026</div>
+
+</body>
+</html>

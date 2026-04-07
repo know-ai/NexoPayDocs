@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitectura Tecnológica — NexoPay</title>
+  <meta name="description" content="Arquitectura cloud-native con Flutter, Go, AWS y microservicios. Seguridad PCI DSS Level 1 para 31M+ transacciones diarias.">
+  <meta property="og:title" content="Arquitectura Tecnológica — NexoPay">
+  <meta property="og:description" content="Arquitectura cloud-native con Flutter, Go, AWS y microservicios. Seguridad PCI DSS Level 1 para 31M+ transacciones diarias.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexoPay — Inversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-icon">N</div>
+        <span><span class="logo-text-nexo">Nexo</span><span class="logo-text-pay">Pay</span></span>
+      </a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.navbar-nav').classList.toggle('open')">☰</button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-analisis-mercado.html">Mercado</a></li>
+        <li><a href="03-problema-solucion.html">Solución</a></li>
+        <li><a href="04-modelo-negocio.html">Negocio</a></li>
+        <li><a href="05-tecnologia.html" class="active">Tecnología</a></li>
+        <li><a href="06-regulatorio-legal.html">Legal</a></li>
+        <li><a href="07-analisis-competitivo.html">Competencia</a></li>
+        <li><a href="08-proyecciones-financieras.html">Finanzas</a></li>
+        <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
+        <li><a href="10-propuesta-inversion.html">Inversión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ Page Hero ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a><span class="separator">/</span><span class="current">Arquitectura Tecnológica</span>
+      </div>
+      <span class="section-number">Sección 05</span>
+      <h1>Arquitectura Tecnológica</h1>
+      <p class="lead">Infraestructura cloud-native de microservicios diseñada para procesar 31M+ transacciones diarias con 99.99% de disponibilidad y tiempos de respuesta inferiores a 3 segundos.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1 — VISIÓN TECNOLÓGICA
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Visión</span>
+        <h2>Visión Tecnológica</h2>
+        <p>Una plataforma construida desde cero con principios cloud-native, capaz de escalar horizontalmente para absorber toda la demanda del ecosistema de pagos venezolano.</p>
+      </div>
+
+      <div class="blockquote">
+        "La tecnología de NexoPay no es un producto — es una infraestructura financiera nacional. Cada decisión arquitectónica se toma con la escala de un país entero como objetivo."
+        <cite>— Principio de Ingeniería, NexoPay</cite>
+      </div>
+
+      <div class="kpi-row mt-4">
+        <div class="kpi-item">
+          <div class="kpi-value">31M+</div>
+          <div class="kpi-label">Transacciones Diarias Objetivo</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">99.99%</div>
+          <div class="kpi-label">Uptime Garantizado</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: linear-gradient(135deg, #10B981, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">&lt;3s</div>
+          <div class="kpi-label">Tiempo de Procesamiento</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="color: var(--color-success); -webkit-text-fill-color: var(--color-success);">100K</div>
+          <div class="kpi-label">TPS Pico Soportado</div>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-4">
+        <div class="card card-accent">
+          <div class="card-icon">☁️</div>
+          <h4>Cloud-Native</h4>
+          <p>Arquitectura diseñada para la nube desde el día uno. Contenedores orquestados por Kubernetes, servicios desacoplados y despliegue continuo sin ventanas de mantenimiento.</p>
+          <span class="badge badge-primary">Principio Core</span>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon gold">🔀</div>
+          <h4>Microservicios</h4>
+          <p>Cada dominio funcional opera como un servicio independiente con su propia base de datos, desplegable y escalable de forma autónoma sin afectar al resto del sistema.</p>
+          <span class="badge badge-gold">Arquitectura</span>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon cyan">⚡</div>
+          <h4>Event-Driven</h4>
+          <p>Comunicación asíncrona entre servicios mediante Apache Kafka. Desacoplamiento total que permite absorber picos de tráfico sin degradación del rendimiento.</p>
+          <span class="badge badge-cyan">Rendimiento</span>
+        </div>
+      </div>
+
+      <div class="callout callout-info mt-4">
+        <div class="callout-title">Filosofía de Diseño: "Diseñado para el Fracaso"</div>
+        <p style="margin-bottom: 0;">Cada componente asume que cualquier otro puede fallar en cualquier momento. Circuit breakers, reintentos automáticos, colas de mensajes persistentes y replicación multi-zona garantizan que <strong>ningún punto único de falla pueda detener la plataforma</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2 — STACK TECNOLÓGICO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Stack</span>
+        <h2>Stack Tecnológico</h2>
+        <p>Cada tecnología fue seleccionada con criterios rigurosos de rendimiento, mantenibilidad, talento disponible y madurez en producción a escala.</p>
+      </div>
+
+      <!-- Frontend Mobile -->
+      <span class="badge badge-primary">Frontend Móvil</span>
+      <h3 class="mt-2">Flutter — Cross-Platform iOS y Android</h3>
+      <div class="grid grid-2 mt-3">
+        <div>
+          <p>Flutter de Google permite desarrollar una sola base de código que compila a binarios nativos para iOS y Android. La experiencia del usuario es indistinguible de una app nativa, con animaciones a 60fps y acceso completo a hardware (cámara, NFC, biometría).</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><div><strong>Codebase único</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Reduce 40% el tiempo de desarrollo vs. equipos nativos separados</p></div></li>
+            <li><span class="check">✓</span><div><strong>Rendimiento nativo</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Motor gráfico Skia renderiza a 60fps sin bridge de JavaScript</p></div></li>
+            <li><span class="check">✓</span><div><strong>Hot Reload</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Ciclos de desarrollo sub-segundo aceleran iteración de UI/UX</p></div></li>
+            <li><span class="check">✓</span><div><strong>Dart como lenguaje</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Tipo seguro, AOT compilation, null safety nativo</p></div></li>
+          </ul>
+          <div class="callout callout-warning mt-3">
+            <div class="callout-title">Alternativa Evaluada: React Native</div>
+            <p style="margin-bottom: 0;">Se descartó por el overhead del bridge JavaScript-Nativo en operaciones criptográficas críticas para pagos. Flutter compila directamente a código máquina ARM, eliminando latencia en procesamiento de transacciones sensibles.</p>
+          </div>
+        </div>
+        <div>
+          <div class="tech-stack">
+            <div class="tech-item">
+              <div class="tech-icon">🎯</div>
+              <span class="tech-name">Flutter</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🔷</div>
+              <span class="tech-name">Dart</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🍎</div>
+              <span class="tech-name">iOS</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🤖</div>
+              <span class="tech-name">Android</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">📲</div>
+              <span class="tech-name">NFC SDK</span>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🔐</div>
+              <span class="tech-name">Biometría</span>
+            </div>
+          </div>
+
+          <div class="stat-card mt-3">
+            <div class="stat-value">40%</div>
+            <div class="stat-label">Reducción en Tiempo de Desarrollo</div>
+            <div class="stat-sublabel">vs. desarrollo nativo separado iOS + Android</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-gradient"></div>
+
+      <!-- Backend -->
+      <span class="badge badge-gold">Backend</span>
+      <h3 class="mt-2">Go + Node.js + Python — El Trío Optimizado</h3>
+      <p class="lead" style="max-width: 800px;">Tres lenguajes, cada uno en su fortaleza: Go para la velocidad bruta del procesamiento de pagos, Node.js para la flexibilidad del API gateway, y Python para la inteligencia de datos.</p>
+
+      <div class="grid grid-3 mt-3">
+        <div class="card card-gold">
+          <div class="card-icon gold">⚡</div>
+          <h4>Go (Golang)</h4>
+          <p>Motor de procesamiento de pagos. Concurrencia nativa con goroutines que maneja miles de transacciones simultáneas con consumo mínimo de memoria.</p>
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Casos de uso:</strong> Payment engine, settlement, reconciliación, validaciones en tiempo real</span>
+          </div>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon">🌐</div>
+          <h4>Node.js</h4>
+          <p>API Gateway y BFF (Backend for Frontend). Event loop no-bloqueante ideal para manejar miles de conexiones concurrentes en tiempo real con bajo overhead.</p>
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Casos de uso:</strong> API Gateway, WebSockets, webhook dispatch, rate limiting</span>
+          </div>
+        </div>
+        <div class="card" style="border-top: 3px solid #8B5CF6;">
+          <div class="card-icon" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">🧠</div>
+          <h4>Python</h4>
+          <p>Motor de analíticas y machine learning. Ecosistema incomparable de librerías para detección de fraude, scoring crediticio y procesamiento de datos a escala.</p>
+          <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
+            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Casos de uso:</strong> Modelos de fraude, analytics, reporting, ML pipelines</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-gradient"></div>
+
+      <!-- Databases -->
+      <span class="badge badge-success">Datos</span>
+      <h3 class="mt-2">Capa de Datos — Polígota y Resiliente</h3>
+
+      <div class="tech-stack mt-3">
+        <div class="tech-item">
+          <div class="tech-icon">🐘</div>
+          <span class="tech-name">PostgreSQL</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">🔴</div>
+          <span class="tech-name">Redis</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">📨</div>
+          <span class="tech-name">Kafka</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">🍃</div>
+          <span class="tech-name">MongoDB</span>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">🔍</div>
+          <span class="tech-name">Elasticsearch</span>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-3">
+        <div class="card">
+          <h4>🐘 PostgreSQL — Base de Datos Primaria</h4>
+          <p>Almacena todas las transacciones, cuentas de usuario, perfiles KYC y datos de comercios. Soporte ACID completo para integridad financiera. Replicación síncrona multi-AZ.</p>
+          <ul class="icon-list">
+            <li><span class="icon">💰</span><span>Transacciones con consistencia ACID garantizada</span></li>
+            <li><span class="icon">🔄</span><span>Replicación streaming con failover automático &lt;30s</span></li>
+            <li><span class="icon">📊</span><span>Particionamiento por rango temporal para consultas históricas</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>🔴 Redis — Caché y Sesiones</h4>
+          <p>Caché de lectura para datos de alta frecuencia (saldos, tipos de cambio, sesiones), colas de tareas ligeras y rate limiting distribuido.</p>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">⚡</span><span>Latencia sub-milisegundo en operaciones de lectura</span></li>
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">🔑</span><span>Gestión de sesiones con TTL automático</span></li>
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">🚦</span><span>Rate limiting por token bucket distribuido</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-2">
+        <div class="card">
+          <h4>📨 Apache Kafka — Event Streaming</h4>
+          <p>Backbone de comunicación entre microservicios. Cada transacción genera eventos que alimentan analytics, notificaciones, auditoría y detección de fraude en paralelo.</p>
+          <div class="progress-bar mt-2"><div class="progress-bar-fill" style="width: 95%;"></div></div>
+          <p style="font-size: 0.85rem; color: var(--color-text-lighter); margin-top: 0.5rem; margin-bottom: 0;">Throughput: 500K+ mensajes/segundo con retención de 30 días</p>
+        </div>
+        <div class="card">
+          <h4>🍃 MongoDB — Logs y Analytics</h4>
+          <p>Almacena logs de auditoría, eventos de analytics y datos no-estructurados que requieren esquema flexible y alta velocidad de escritura.</p>
+          <div class="progress-bar mt-2"><div class="progress-bar-fill gold" style="width: 80%;"></div></div>
+          <p style="font-size: 0.85rem; color: var(--color-text-lighter); margin-top: 0.5rem; margin-bottom: 0;">Escritura optimizada: 200K+ documentos/segundo en cluster</p>
+        </div>
+      </div>
+
+      <div class="divider-gradient"></div>
+
+      <!-- Cloud & DevOps -->
+      <span class="badge badge-cyan">Infraestructura</span>
+      <h3 class="mt-2">Cloud y DevOps</h3>
+
+      <div class="grid grid-2 mt-3">
+        <div>
+          <div class="card card-accent">
+            <h4>☁️ AWS — Proveedor Cloud Primario</h4>
+            <p>Amazon Web Services como cloud principal por su certificación PCI DSS, presencia en Latinoamérica (São Paulo, región más cercana) y madurez en servicios financieros.</p>
+            <div class="tech-stack mt-3" style="justify-content: flex-start;">
+              <div class="tech-item" style="min-width: auto; padding: 0.75rem;">
+                <div class="tech-icon" style="width: 36px; height: 36px; font-size: 1.1rem;">🖥️</div>
+                <span class="tech-name">EC2/EKS</span>
+              </div>
+              <div class="tech-item" style="min-width: auto; padding: 0.75rem;">
+                <div class="tech-icon" style="width: 36px; height: 36px; font-size: 1.1rem;">🗄️</div>
+                <span class="tech-name">RDS</span>
+              </div>
+              <div class="tech-item" style="min-width: auto; padding: 0.75rem;">
+                <div class="tech-icon" style="width: 36px; height: 36px; font-size: 1.1rem;">⚡</div>
+                <span class="tech-name">ElastiCache</span>
+              </div>
+              <div class="tech-item" style="min-width: auto; padding: 0.75rem;">
+                <div class="tech-icon" style="width: 36px; height: 36px; font-size: 1.1rem;">📦</div>
+                <span class="tech-name">S3</span>
+              </div>
+              <div class="tech-item" style="min-width: auto; padding: 0.75rem;">
+                <div class="tech-icon" style="width: 36px; height: 36px; font-size: 1.1rem;">🌐</div>
+                <span class="tech-name">CloudFront</span>
+              </div>
+            </div>
+            <p class="mt-2" style="font-size: 0.88rem; color: var(--color-text-lighter); margin-bottom: 0;"><strong>Multi-región:</strong> Failover automático a región secundaria (us-east-1) con replicación cross-region de datos críticos.</p>
+          </div>
+        </div>
+        <div>
+          <div class="card card-gold">
+            <h4>🔧 Pipeline DevOps</h4>
+            <p>Automatización completa desde commit hasta producción. Zero-downtime deployments con canary releases y rollback automático ante anomalías.</p>
+            <ul class="icon-list">
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🐳</span><span><strong>Docker</strong> — Contenedores inmutables para cada servicio</span></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">☸️</span><span><strong>Kubernetes (EKS)</strong> — Orquestación, auto-healing, auto-scaling</span></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🏗️</span><span><strong>Terraform</strong> — Infraestructura como código, reproducible</span></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🔄</span><span><strong>GitHub Actions</strong> — CI/CD con tests automáticos en cada PR</span></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">📈</span><span><strong>Prometheus + Grafana</strong> — Monitoreo y alertas en tiempo real</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3 — ARQUITECTURA DE MICROSERVICIOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Microservicios</span>
+        <h2>Arquitectura de Microservicios</h2>
+        <p>Ocho servicios independientes que componen el sistema completo de NexoPay, comunicados por eventos asíncronos y orquestados por Kubernetes.</p>
+      </div>
+
+      <!-- Visual Architecture Diagram -->
+      <div class="card" style="padding: 2.5rem; background: var(--color-surface-alt); border: 2px solid var(--color-border);">
+        <h4 class="text-center mb-4">Diagrama de Arquitectura — Flujo de Datos</h4>
+
+        <div class="flow-diagram">
+          <div class="flow-node" style="border-color: var(--color-gold); background: rgba(245,158,11,0.05);">📱 App Móvil<br><small style="color: var(--color-text-lighter);">Flutter</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node" style="border-color: var(--color-accent); background: rgba(37,99,235,0.05);">🌐 API Gateway<br><small style="color: var(--color-text-lighter);">Node.js</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node" style="border-color: var(--color-success); background: rgba(16,185,129,0.05);">📨 Kafka<br><small style="color: var(--color-text-lighter);">Event Bus</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node" style="border-color: #8B5CF6; background: rgba(139,92,246,0.05);">💰 Payment Service<br><small style="color: var(--color-text-lighter);">Go</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node" style="border-color: var(--color-cyan); background: rgba(6,182,212,0.05);">🏦 Bancos<br><small style="color: var(--color-text-lighter);">ISO 8583/20022</small></div>
+        </div>
+
+        <div class="divider" style="margin: 1.5rem 0;"></div>
+
+        <div class="flow-diagram" style="gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <div class="flow-node" style="min-width: 120px; padding: 0.75rem 1rem; font-size: 0.82rem;">👤 User Service</div>
+          <div class="flow-node" style="min-width: 120px; padding: 0.75rem 1rem; font-size: 0.82rem;">🔔 Notification</div>
+          <div class="flow-node" style="min-width: 120px; padding: 0.75rem 1rem; font-size: 0.82rem;">📊 Analytics</div>
+          <div class="flow-node" style="min-width: 120px; padding: 0.75rem 1rem; font-size: 0.82rem;">📷 QR Service</div>
+          <div class="flow-node" style="min-width: 120px; padding: 0.75rem 1rem; font-size: 0.82rem;">🏪 PoS Service</div>
+          <div class="flow-node" style="min-width: 120px; padding: 0.75rem 1rem; font-size: 0.82rem; border-color: var(--color-danger);">🛡️ Fraud Detection</div>
+        </div>
+      </div>
+
+      <!-- Service Details -->
+      <div class="grid grid-2 mt-4">
+        <div class="card card-accent">
+          <div class="card-icon">🌐</div>
+          <h4>API Gateway</h4>
+          <p>Punto de entrada único para todas las peticiones. Gestiona autenticación JWT, rate limiting, enrutamiento inteligente y transformación de payloads.</p>
+          <ul class="icon-list">
+            <li><span class="icon">🔐</span><span>Validación de tokens JWT con rotación automática de claves</span></li>
+            <li><span class="icon">🚦</span><span>Rate limiting por usuario: 100 req/min estándar, 1000 req/min premium</span></li>
+            <li><span class="icon">🔀</span><span>Routing basado en headers, versión de API y geolocalización</span></li>
+            <li><span class="icon">📝</span><span>Logging estructurado de cada request para auditoría PCI DSS</span></li>
+          </ul>
+        </div>
+        <div class="card card-gold">
+          <div class="card-icon gold">💰</div>
+          <h4>Payment Service</h4>
+          <p>Corazón del sistema. Procesa cada transacción, gestiona estados (pendiente, confirmada, fallida, revertida) y ejecuta la liquidación con los bancos.</p>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">⚡</span><span>Procesamiento en &lt;800ms promedio (p99 &lt;2.5s)</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🔄</span><span>Máquina de estados idempotente para evitar doble cobro</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">📋</span><span>Reconciliación automática cada 15 minutos con bancos</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-2">
+        <div class="card">
+          <div class="card-icon success">👤</div>
+          <h4>User Service</h4>
+          <p>Registro, verificación KYC (Know Your Customer), gestión de perfiles y control de acceso basado en roles.</p>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">📋</span><span>KYC en 3 niveles: básico (cédula), medio (selfie), completo (documentos)</span></li>
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🔒</span><span>Datos sensibles encriptados at-rest con AES-256</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon cyan">🏦</div>
+          <h4>Bank Integration Service</h4>
+          <p>Adaptadores especializados para cada banco venezolano. Abstrae las diferencias entre APIs, protocolos y formatos de mensaje.</p>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">🔗</span><span>Patrón Adapter por cada integración bancaria</span></li>
+            <li><span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">🔄</span><span>Circuit breaker con fallback automático entre canales</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-4 mt-2">
+        <div class="card" style="padding: 1.5rem;">
+          <h4 style="font-size: 1rem;">🔔 Notification Service</h4>
+          <p style="font-size: 0.88rem;">Push, SMS y email transaccional. Entrega garantizada con cola persistente y reintentos exponenciales.</p>
+          <span class="badge badge-primary">Push + SMS + Email</span>
+        </div>
+        <div class="card" style="padding: 1.5rem;">
+          <h4 style="font-size: 1rem;">📊 Analytics Service</h4>
+          <p style="font-size: 0.88rem;">Dashboards en tiempo real para comercios y reportes agregados para el equipo interno y clientes B2B.</p>
+          <span class="badge badge-gold">Real-time</span>
+        </div>
+        <div class="card" style="padding: 1.5rem;">
+          <h4 style="font-size: 1rem;">📷 QR Service</h4>
+          <p style="font-size: 0.88rem;">Generación de QR estáticos y dinámicos con monto, validación criptográfica y expiración configurable.</p>
+          <span class="badge badge-success">Estático + Dinámico</span>
+        </div>
+        <div class="card" style="padding: 1.5rem;">
+          <h4 style="font-size: 1rem;">🏪 PoS Service</h4>
+          <p style="font-size: 0.88rem;">Terminal virtual, gestión de empleados, reportes de caja y conexión con impresoras Bluetooth de recibos.</p>
+          <span class="badge badge-cyan">Virtual Terminal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       4 — INTEGRACIÓN BANCARIA
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Bancos</span>
+        <h2>Integración Bancaria</h2>
+        <p>Conectar con el ecosistema bancario venezolano es el desafío técnico más complejo. NexoPay emplea múltiples estrategias de integración según la capacidad de cada institución.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+          <h3>Estrategias de Conexión</h3>
+          <p>Venezuela cuenta con 60+ instituciones financieras con niveles muy dispares de madurez tecnológica. La arquitectura contempla tres canales de integración que se activan según la disponibilidad.</p>
+
+          <div class="process-steps mt-3" style="flex-direction: column; gap: 0;">
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 40px; height: 40px; font-size: 0.85rem;">1</div>
+              <div>
+                <h4 style="margin-bottom: 0.15rem;">Cámara de Compensación Electrónica (BCV)</h4>
+                <p style="margin: 0; font-size: 0.88rem;">Plataforma interbancaria del Banco Central. Canal preferido para transferencias entre bancos con liquidación en T+0.</p>
+              </div>
+            </div>
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 40px; height: 40px; font-size: 0.85rem; background: var(--gradient-gold);">2</div>
+              <div>
+                <h4 style="margin-bottom: 0.15rem;">APIs Directas con Bancos</h4>
+                <p style="margin: 0; font-size: 0.88rem;">Integración API-to-API con bancos que ofrecen interfaces programáticas. Latencia mínima, máximo control.</p>
+              </div>
+            </div>
+            <div class="process-step" style="text-align: left; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0;">
+              <div class="process-step-number" style="margin: 0; flex-shrink: 0; width: 40px; height: 40px; font-size: 0.85rem; background: linear-gradient(135deg, #10B981, #059669);">3</div>
+              <div>
+                <h4 style="margin-bottom: 0.15rem;">Screen Scraping (Fallback)</h4>
+                <p style="margin: 0; font-size: 0.88rem;">Automatización de banca en línea como último recurso, con acuerdos de partnership para operación dentro del marco legal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h4>Protocolos y Estándares</h4>
+            <ul class="icon-list">
+              <li><span class="icon">📋</span><span><strong>ISO 8583</strong> — Estándar para mensajes de transacciones con tarjeta. Usado por la mayoría de redes de pago venezolanas.</span></li>
+              <li><span class="icon">📄</span><span><strong>ISO 20022</strong> — Formato XML/JSON de nueva generación para transferencias. Adoptado progresivamente por bancos modernos.</span></li>
+              <li><span class="icon">🌐</span><span><strong>SWIFT gpi</strong> — Para transacciones internacionales y remesas con rastreo end-to-end.</span></li>
+              <li><span class="icon">🔗</span><span><strong>REST/SOAP</strong> — APIs propietarias de cada banco con wrappers de normalización.</span></li>
+              <li><span class="icon">🔒</span><span><strong>VPN site-to-site</strong> — Túneles encriptados dedicados para cada conexión bancaria.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="mt-4 mb-3">Mapa de Integración por Banco</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Banco</th>
+              <th>Tipo</th>
+              <th>Canal de Integración</th>
+              <th>Protocolo</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Banco de Venezuela</strong></td>
+              <td>Público</td>
+              <td>Cámara BCV + API directa</td>
+              <td>ISO 8583</td>
+              <td><span class="badge badge-success">Prioridad Alta</span></td>
+            </tr>
+            <tr>
+              <td><strong>Banesco</strong></td>
+              <td>Privado</td>
+              <td>API directa (Banesco API)</td>
+              <td>REST + ISO 20022</td>
+              <td><span class="badge badge-success">Prioridad Alta</span></td>
+            </tr>
+            <tr>
+              <td><strong>Mercantil</strong></td>
+              <td>Privado</td>
+              <td>API directa</td>
+              <td>REST</td>
+              <td><span class="badge badge-success">Prioridad Alta</span></td>
+            </tr>
+            <tr>
+              <td><strong>Provincial (BBVA)</strong></td>
+              <td>Privado</td>
+              <td>API directa (BBVA Open Platform)</td>
+              <td>REST + ISO 20022</td>
+              <td><span class="badge badge-primary">Fase 1</span></td>
+            </tr>
+            <tr>
+              <td><strong>BNC</strong></td>
+              <td>Público</td>
+              <td>Cámara BCV</td>
+              <td>ISO 8583</td>
+              <td><span class="badge badge-primary">Fase 1</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bicentenario</strong></td>
+              <td>Público</td>
+              <td>Cámara BCV</td>
+              <td>ISO 8583</td>
+              <td><span class="badge badge-primary">Fase 1</span></td>
+            </tr>
+            <tr>
+              <td><strong>Exterior</strong></td>
+              <td>Privado</td>
+              <td>API directa</td>
+              <td>REST</td>
+              <td><span class="badge badge-gold">Fase 2</span></td>
+            </tr>
+            <tr>
+              <td><strong>Venezolano de Crédito</strong></td>
+              <td>Privado</td>
+              <td>Screen scraping + partnership</td>
+              <td>SOAP</td>
+              <td><span class="badge badge-gold">Fase 2</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bancaribe</strong></td>
+              <td>Privado</td>
+              <td>API directa</td>
+              <td>REST</td>
+              <td><span class="badge badge-gold">Fase 2</span></td>
+            </tr>
+            <tr>
+              <td><strong>Otros (50+ bancos)</strong></td>
+              <td>Varios</td>
+              <td>Cámara BCV (canal universal)</td>
+              <td>ISO 8583</td>
+              <td><span class="badge badge-cyan">Progresivo</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-success mt-3">
+        <div class="callout-title">Ventaja Estratégica: La Cámara del BCV como Canal Universal</div>
+        <p style="margin-bottom: 0;">La Cámara de Compensación Electrónica del Banco Central de Venezuela permite realizar transferencias interbancarias sin necesidad de integración directa con cada banco. Esto significa que NexoPay puede operar con <strong>todos los bancos del sistema financiero</strong> desde el día uno, añadiendo integraciones directas progresivamente para mejorar latencia y funcionalidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       5 — SEGURIDAD
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number" style="background: rgba(245,158,11,0.2); border-color: rgba(245,158,11,0.3);">Seguridad</span>
+        <h2 style="color: #fff;">Seguridad y Cumplimiento</h2>
+        <p style="color: rgba(255,255,255,0.75);">La seguridad no es una feature — es el cimiento de la confianza del usuario y del inversor. NexoPay implementa múltiples capas de protección que exceden los estándares de la industria.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🛡️</div>
+          <h4>PCI DSS Nivel 1</h4>
+          <p>Máximo nivel de cumplimiento del estándar de seguridad de datos de la industria de tarjetas de pago. Auditoría anual por QSA certificado.</p>
+          <span class="badge badge-gold" style="background: rgba(245,158,11,0.2);">Certificación Target</span>
+        </div>
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🔐</div>
+          <h4>Cifrado End-to-End</h4>
+          <p>TLS 1.3 en tránsito, AES-256-GCM para datos at-rest. Las claves se rotan automáticamente cada 24 horas mediante AWS KMS.</p>
+          <span class="badge badge-success" style="background: rgba(16,185,129,0.2);">TLS 1.3 + AES-256</span>
+        </div>
+        <div class="card-glass">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🎭</div>
+          <h4>Tokenización</h4>
+          <p>Datos de cuentas bancarias y tarjetas nunca se almacenan en texto plano. Tokens irrecuperables sustituyen toda información financiera sensible.</p>
+          <span class="badge badge-primary" style="background: rgba(37,99,235,0.2);">Zero Plain-Text</span>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-3">
+        <div class="card-glass">
+          <h4>Autenticación Multi-Capa</h4>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-cyan-light);">👆</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>Huella dactilar</strong> — Sensor nativo del dispositivo, datos nunca salen del enclave seguro</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-cyan-light);">🤳</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>Reconocimiento facial</strong> — Face ID / Android BiometricPrompt para transacciones de alto valor</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-cyan-light);">📱</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>MFA con OTP</strong> — Código de un solo uso vía SMS o app authenticator para operaciones sensibles</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(37,99,235,0.2); color: var(--color-cyan-light);">🔑</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>Device binding</strong> — Cada cuenta se vincula al hardware del dispositivo, impidiendo clonación</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-glass">
+          <h4>Detección de Fraude con ML</h4>
+          <ul class="icon-list">
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">🧠</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>Modelo de riesgo en tiempo real</strong> — Evalúa cada transacción en &lt;50ms con 200+ features</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">📊</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>Behavioral analytics</strong> — Patrones de uso, geolocalización, velocidad de escritura y biometría de comportamiento</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">🚨</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>Alertas automáticas</strong> — Bloqueo preventivo ante anomalías con notificación inmediata al usuario</span>
+            </li>
+            <li>
+              <span class="icon" style="background: rgba(245,158,11,0.2); color: var(--color-gold-light);">🔄</span>
+              <span style="color: rgba(255,255,255,0.85);"><strong>Reentrenamiento continuo</strong> — El modelo se actualiza semanalmente con nuevos patrones de fraude</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-3">
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: #fff; -webkit-text-fill-color: #fff;">SOC 2</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Type II Compliance Target</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Año 2 de operación</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light);">4x/año</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Penetration Testing</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Por firma externa certificada</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light);">🇻🇪</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Residencia de Datos</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Servidores en Venezuela (requisito legal)</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; padding: 1.5rem 2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg);">
+        <h4 style="color: #fff; margin-bottom: 0.75rem;">Bug Bounty Program</h4>
+        <p style="color: rgba(255,255,255,0.75); margin-bottom: 0;">Programa de recompensas para investigadores de seguridad que reporten vulnerabilidades de forma responsable. Recompensas de <strong style="color: #fff;">$100 a $10,000</strong> según severidad (CVSS). Lanzamiento previsto en paralelo con el MVP público.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       6 — APIs Y PROTOCOLOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">APIs</span>
+        <h2>APIs y Protocolos</h2>
+        <p>Un ecosistema de APIs diseñado para eficiencia interna y apertura a terceros, convirtiendo a NexoPay en plataforma y no solo en producto.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card card-accent">
+          <h4>🌐 RESTful API</h4>
+          <p>API principal para operaciones CRUD y transacciones. Documentación OpenAPI 3.0 con playground interactivo.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><div><strong>Versionamiento por URL</strong><p style="font-size: 0.85rem; margin-bottom: 0;">/api/v1/, /api/v2/ — deprecación gradual con 6 meses de soporte</p></div></li>
+            <li><span class="check">✓</span><div><strong>Paginación cursor-based</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Eficiente para datasets grandes sin offset performance degradation</p></div></li>
+            <li><span class="check">✓</span><div><strong>Rate limiting granular</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Por API key, por endpoint, por IP — con headers X-RateLimit informativos</p></div></li>
+          </ul>
+        </div>
+        <div class="card card-gold">
+          <h4>📱 GraphQL para Móvil</h4>
+          <p>Capa GraphQL optimizada para la app Flutter. Permite que el cliente solicite exactamente los datos que necesita, reduciendo transferencia de red en conexiones móviles.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><div><strong>Queries optimizadas</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Un solo request reemplaza 3-5 llamadas REST para pantallas complejas</p></div></li>
+            <li><span class="check">✓</span><div><strong>Subscriptions vía WebSocket</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Actualización de saldos y notificaciones en tiempo real</p></div></li>
+            <li><span class="check">✓</span><div><strong>Persisted queries</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Queries pre-registradas para reducir parsing overhead y mejorar seguridad</p></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-2">
+        <div class="card">
+          <h4>⚡ WebSockets</h4>
+          <p>Conexión persistente bidireccional para actualizaciones en tiempo real: confirmación de pagos, cambios de saldo, notificaciones push in-app.</p>
+          <span class="badge badge-primary">Baja Latencia</span>
+          <span class="badge badge-success">Tiempo Real</span>
+        </div>
+        <div class="card">
+          <h4>🔗 gRPC Inter-Service</h4>
+          <p>Comunicación binaria de alto rendimiento entre microservicios internos. Protocol Buffers para serialización eficiente con tipado estricto y generación de código.</p>
+          <span class="badge badge-gold">10x más rápido que REST</span>
+          <span class="badge badge-cyan">Interno</span>
+        </div>
+      </div>
+
+      <div class="highlight-box mt-4">
+        <div style="position: relative; z-index: 1;">
+          <div class="grid grid-2" style="gap: 3rem;">
+            <div>
+              <h3 style="color: #fff;">Portal de Desarrolladores</h3>
+              <p>Plataforma self-service para que terceros integren NexoPay en sus aplicaciones: e-commerce, ERPs, apps de delivery y más.</p>
+              <ul class="icon-list">
+                <li><span class="icon" style="background: rgba(255,255,255,0.15); color: #fff;">📖</span><span style="color: rgba(255,255,255,0.85);">Documentación interactiva con ejemplos en 5 lenguajes</span></li>
+                <li><span class="icon" style="background: rgba(255,255,255,0.15); color: #fff;">🧪</span><span style="color: rgba(255,255,255,0.85);">Sandbox con datos de prueba y transacciones simuladas</span></li>
+                <li><span class="icon" style="background: rgba(255,255,255,0.15); color: #fff;">🔑</span><span style="color: rgba(255,255,255,0.85);">API keys con scopes granulares y rotación automática</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="color: #fff;">Sistema de Webhooks</h3>
+              <p>Notificaciones HTTP automatizadas para comercios cuando ocurren eventos relevantes en sus transacciones.</p>
+              <ul class="icon-list">
+                <li><span class="icon" style="background: rgba(255,255,255,0.15); color: #fff;">📩</span><span style="color: rgba(255,255,255,0.85);">Eventos: payment.completed, payment.failed, refund.created</span></li>
+                <li><span class="icon" style="background: rgba(255,255,255,0.15); color: #fff;">🔄</span><span style="color: rgba(255,255,255,0.85);">Reintentos con backoff exponencial (5 intentos en 24h)</span></li>
+                <li><span class="icon" style="background: rgba(255,255,255,0.15); color: #fff;">✅</span><span style="color: rgba(255,255,255,0.85);">Firma HMAC-SHA256 para verificar autenticidad del payload</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       7 — ESCALABILIDAD
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Escala</span>
+        <h2>Escalabilidad y Resiliencia</h2>
+        <p>Diseñada para crecer de miles a millones de transacciones sin re-arquitectura. Cada componente escala horizontalmente de forma independiente.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card card-accent">
+          <h4>📈 Auto-Scaling con Kubernetes</h4>
+          <p>Horizontal Pod Autoscaler ajusta la cantidad de instancias de cada servicio basándose en métricas de CPU, memoria y latencia de respuesta.</p>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem;">
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.9rem;">API Gateway (min 3 → max 50 pods)</span>
+                <strong>Auto</strong>
+              </div>
+              <div class="progress-bar"><div class="progress-bar-fill" style="width: 60%;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.9rem;">Payment Service (min 5 → max 100 pods)</span>
+                <strong>Auto</strong>
+              </div>
+              <div class="progress-bar"><div class="progress-bar-fill gold" style="width: 80%;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.9rem;">Notification Service (min 2 → max 30 pods)</span>
+                <strong>Auto</strong>
+              </div>
+              <div class="progress-bar"><div class="progress-bar-fill success" style="width: 45%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-gold">
+          <h4>💾 Estrategia de Database Sharding</h4>
+          <p>Particionamiento horizontal de la base de datos para distribuir la carga de escritura y mantener tiempos de consulta constantes al crecer.</p>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🔑</span><span><strong>Shard key: user_id</strong> — Distribución uniforme con hash consistente</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">📊</span><span><strong>Read replicas</strong> — Consultas de analytics se dirigen a réplicas de solo lectura</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">📅</span><span><strong>Particionamiento temporal</strong> — Datos históricos en cold storage (S3 + Athena)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-3">
+        <div class="stat-card">
+          <div class="stat-value">100K</div>
+          <div class="stat-label">TPS Target</div>
+          <div class="stat-sublabel">Transacciones por segundo en carga pico</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value gold">&lt;1 min</div>
+          <div class="stat-label">RPO</div>
+          <div class="stat-sublabel">Recovery Point Objective — pérdida máxima de datos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="background: linear-gradient(135deg, #10B981, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">&lt;5 min</div>
+          <div class="stat-label">RTO</div>
+          <div class="stat-sublabel">Recovery Time Objective — restauración del servicio</div>
+        </div>
+      </div>
+
+      <div class="card mt-4" style="background: var(--color-surface); border: 2px solid var(--color-border);">
+        <h4>🔥 Plan de Recuperación ante Desastres (DRP)</h4>
+        <div class="grid grid-2 mt-2" style="gap: 1.5rem;">
+          <div>
+            <h4 style="font-size: 1rem; color: var(--color-accent);">Estrategia Active-Passive Multi-Región</h4>
+            <ul class="icon-list">
+              <li><span class="icon">🌎</span><span><strong>Región primaria:</strong> AWS São Paulo (sa-east-1) — menor latencia a Venezuela</span></li>
+              <li><span class="icon">🌍</span><span><strong>Región secundaria:</strong> AWS Virginia (us-east-1) — failover automático</span></li>
+              <li><span class="icon">🔄</span><span><strong>Replicación:</strong> Datos críticos replicados sincrónicamente cross-region</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; color: var(--color-gold);">Procedimientos de Failover</h4>
+            <ul class="icon-list">
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🤖</span><span><strong>Detección automática:</strong> Health checks cada 10s, failover a los 30s de anomalía</span></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🧪</span><span><strong>Chaos engineering:</strong> Simulacros de desastre mensuales en producción</span></li>
+              <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">📋</span><span><strong>Runbooks automatizados:</strong> Playbooks de recuperación ejecutados por bots</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info mt-3">
+        <div class="callout-title">CDN para Activos Estáticos</div>
+        <p style="margin-bottom: 0;">Amazon CloudFront distribuye activos estáticos (imágenes QR, archivos de la app, recursos web) desde 400+ edge locations globales. Reduce latencia percibida en un <strong>70%</strong> para usuarios en cualquier punto de Venezuela.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       8 — MODO OFFLINE
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Offline</span>
+        <h2>Modo Offline y Conectividad Reducida</h2>
+        <p>En Venezuela, la conectividad a internet no es universal ni constante. NexoPay funciona incluso sin conexión, garantizando que nadie quede excluido del sistema de pagos.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+          <div class="card card-accent">
+            <div class="card-icon">📵</div>
+            <h4>Cola de Transacciones Local</h4>
+            <p>Cuando no hay conexión a internet, las transacciones se almacenan de forma segura en la base de datos SQLite local del dispositivo, cifradas con la clave del usuario.</p>
+            <ul class="feature-list">
+              <li><span class="check">✓</span><div><strong>Almacenamiento encriptado local</strong><p style="font-size: 0.85rem; margin-bottom: 0;">SQLite con cifrado AES-256 en el dispositivo</p></div></li>
+              <li><span class="check">✓</span><div><strong>Hasta 50 transacciones en cola</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Límite configurable por perfil de riesgo del usuario</p></div></li>
+              <li><span class="check">✓</span><div><strong>Validación local</strong><p style="font-size: 0.85rem; margin-bottom: 0;">Verificación de saldo local y límites antes de encolar</p></div></li>
+            </ul>
+          </div>
+
+          <div class="callout callout-warning mt-3">
+            <div class="callout-title">Resolución de Conflictos</div>
+            <p style="margin-bottom: 0;">Cuando la conectividad retorna, un algoritmo de sincronización <strong>last-write-wins con vector clocks</strong> procesa las transacciones encoladas en orden. Si un conflicto se detecta (ej: saldo insuficiente al sincronizar), el usuario recibe notificación inmediata con opciones de resolución.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card card-gold">
+            <div class="card-icon gold">📱</div>
+            <h4>USSD — Teléfonos Básicos</h4>
+            <p>Canal de fallback para usuarios sin smartphone o sin datos móviles. Funciona con cualquier teléfono celular a través de códigos USSD del operador.</p>
+            <div style="background: var(--color-surface-alt); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; font-family: var(--font-mono); font-size: 0.85rem;">
+              <p style="color: var(--color-text); margin-bottom: 0.5rem;"><strong>*123*1#</strong> → Consultar saldo</p>
+              <p style="color: var(--color-text); margin-bottom: 0.5rem;"><strong>*123*2*MONTO*CEDULA#</strong> → Enviar pago</p>
+              <p style="color: var(--color-text); margin-bottom: 0.5rem;"><strong>*123*3#</strong> → Últimas 5 transacciones</p>
+              <p style="color: var(--color-text); margin-bottom: 0;"><strong>*123*4*CEDULA#</strong> → Solicitar cobro</p>
+            </div>
+          </div>
+
+          <div class="card mt-3">
+            <h4>🔄 Sincronización Inteligente</h4>
+            <ul class="icon-list">
+              <li><span class="icon">📶</span><span><strong>Detección de conectividad</strong> — Monitoreo continuo WiFi/4G/3G/2G</span></li>
+              <li><span class="icon">⚡</span><span><strong>Sync parcial</strong> — Prioriza transacciones pendientes sobre datos de analytics</span></li>
+              <li><span class="icon">📦</span><span><strong>Delta sync</strong> — Solo transfiere cambios, no el dataset completo</span></li>
+              <li><span class="icon">🔋</span><span><strong>Battery-aware</strong> — Pospone sync masivo si batería &lt;15%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box mt-4" style="text-align: center;">
+        <div style="position: relative; z-index: 1;">
+          <h3 style="color: #fff; margin-bottom: 1rem;">Conectividad No es un Requisito — Es una Mejora</h3>
+          <p style="max-width: 750px; margin: 0 auto; font-size: 1.05rem;">NexoPay está diseñada para funcionar en el <strong style="color: #fff;">peor escenario de conectividad de Venezuela</strong>. El modo offline con USSD como fallback universal garantiza que el 100% de la población pueda realizar transacciones básicas, independientemente de su dispositivo o cobertura de internet.</p>
+          <div class="kpi-row mt-3" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2rem;">100%</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Cobertura de Población</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2rem;">50</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Txn Offline Max</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light); font-size: 2rem;">USSD</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Fallback Universal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Conclusión Tecnológica ═══ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="highlight-box" style="text-align: center;">
+        <div style="position: relative; z-index: 1;">
+          <h2 style="color: #fff; margin-bottom: 1rem;">Infraestructura de Clase Mundial para Venezuela</h2>
+          <p style="max-width: 800px; margin: 0 auto 2rem; font-size: 1.15rem;">La arquitectura tecnológica de NexoPay no es un prototipo — es un sistema de producción diseñado con los mismos estándares que las plataformas de pago más exitosas del mundo. <strong style="color: #fff;">Cada decisión técnica está orientada a escala, seguridad y resiliencia.</strong></p>
+          <div class="kpi-row" style="max-width: 900px; margin: 0 auto;">
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2rem;">8</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Microservicios</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2rem;">99.99%</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Uptime Target</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light); font-size: 2rem;">PCI DSS</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Nivel 1</div>
+            </div>
+            <div class="kpi-item" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+              <div class="kpi-value" style="color: #34D399; -webkit-text-fill-color: #34D399; font-size: 2rem;">&lt;3s</div>
+              <div class="kpi-label" style="color: rgba(255,255,255,0.6);">Procesamiento</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Page Navigation ═══ -->
+  <div class="container">
+    <div class="page-nav">
+      <a href="04-modelo-negocio.html"><span class="label">← Anterior</span><span class="title">Modelo de Negocio</span></a>
+      <a href="06-regulatorio-legal.html" class="next"><span class="label">Siguiente →</span><span class="title">Marco Regulatorio y Legal</span></a>
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer" style="padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 NexoPay. Todos los derechos reservados. Documento confidencial para inversionistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Confidential Bar ═══ -->
+  <div class="confidential-bar">⚠ Documento Confidencial — Solo para Inversionistas Autorizados — NexoPay © 2026</div>
+
+</body>
+</html>

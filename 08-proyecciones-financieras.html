@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecciones Financieras — NexoPay</title>
+  <meta name="description" content="Proyecciones financieras a 5 años: de $1.8M a $95M en ingresos, IRR 85%+, ROI 15x para inversionistas.">
+  <meta property="og:title" content="Proyecciones Financieras — NexoPay">
+  <meta property="og:description" content="Proyecciones financieras a 5 años: de $1.8M a $95M en ingresos, IRR 85%+, ROI 15x para inversionistas.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexoPay — Inversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-icon">N</div><span><span class="logo-text-nexo">Nexo</span><span class="logo-text-pay">Pay</span></span></a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.navbar-nav').classList.toggle('open')">☰</button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-analisis-mercado.html">Mercado</a></li>
+        <li><a href="03-problema-solucion.html">Solución</a></li>
+        <li><a href="04-modelo-negocio.html">Negocio</a></li>
+        <li><a href="05-tecnologia.html">Tecnología</a></li>
+        <li><a href="06-regulatorio-legal.html">Legal</a></li>
+        <li><a href="07-analisis-competitivo.html">Competencia</a></li>
+        <li><a href="08-proyecciones-financieras.html" class="active">Finanzas</a></li>
+        <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
+        <li><a href="10-propuesta-inversion.html">Inversión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ Page Hero ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a><span class="separator">/</span><span class="current">Proyecciones Financieras</span>
+      </div>
+      <span class="section-number">Sección 08</span>
+      <h1>Proyecciones Financieras</h1>
+      <p class="lead">Un modelo financiero riguroso a 5 años que demuestra la viabilidad económica de NexoPay, con proyecciones de ingresos, estructura de costos, análisis de break-even y escenarios de retorno para inversionistas.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1 — SUPUESTOS CLAVE
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Base del Modelo</span>
+        <h2>Supuestos Clave</h2>
+        <p>Cada proyección se fundamenta en supuestos conservadores y verificables, derivados de datos reales del mercado venezolano y benchmarks internacionales de fintechs similares.</p>
+      </div>
+
+      <div class="blockquote">
+        "Un modelo financiero es tan sólido como sus supuestos. Hemos construido el nuestro sobre datos verificables del BCV, SUDEBAN y benchmarks de PIX, Nequi y Mercado Pago para garantizar credibilidad ante inversionistas."
+        <cite>— Equipo Financiero, NexoPay</cite>
+      </div>
+
+      <div class="grid grid-2 mt-5">
+        <div class="card card-accent">
+          <div class="card-icon">📊</div>
+          <h3>Supuestos de Mercado</h3>
+          <ul class="icon-list">
+            <li><span class="icon">📈</span><span><strong>31M de transacciones diarias</strong> en el mercado venezolano, con crecimiento del 15% anual compuesto</span></li>
+            <li><span class="icon">🏦</span><span><strong>Penetración bancaria del 65%</strong> — aprox. 19M de adultos con al menos una cuenta bancaria activa</span></li>
+            <li><span class="icon">📱</span><span><strong>85% de penetración móvil</strong> — smartphones como principal canal de acceso financiero</span></li>
+            <li><span class="icon">💵</span><span><strong>Economía bimonetaria</strong> — 45% de transacciones en USD, 55% en bolívares, con tendencia creciente al dólar</span></li>
+          </ul>
+        </div>
+        <div class="card card-gold">
+          <div class="card-icon gold">💰</div>
+          <h3>Supuestos de Captura de Mercado</h3>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">Y1</span><span><strong>Año 1: 0.5%</strong> — Lanzamiento en Caracas + 3 ciudades piloto</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">Y2</span><span><strong>Año 2: 2.0%</strong> — Expansión nacional, alianzas bancarias</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">Y3</span><span><strong>Año 3: 5.0%</strong> — Lanzamiento de servicios financieros</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">Y4</span><span><strong>Año 4: 8.0%</strong> — Dominancia en mercado nacional</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">Y5</span><span><strong>Año 5: 12.0%</strong> — Plataforma consolidada + expansión regional</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-4">
+        <div class="card">
+          <div class="card-icon cyan">💳</div>
+          <h3>Comisiones por Transacción</h3>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">%</span><span><strong>PoS / Comercio: 0.5%</strong> — Debajo del promedio del mercado (1.5-3%)</span></li>
+            <li><span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">$</span><span><strong>P2P: $0.02 por transacción</strong> — Solo por transferencias superiores a $50</span></li>
+            <li><span class="icon" style="background: rgba(6,182,212,0.1); color: var(--color-cyan);">🔄</span><span><strong>Remesas: 1.5%</strong> — Significativamente menor que Western Union (5-8%)</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon success">🔄</div>
+          <h3>Conversión a Suscripciones</h3>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🏪</span><span><strong>15% Comercios Pro</strong> — $29/mes con analíticas avanzadas y facturación</span></li>
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🏢</span><span><strong>5% Enterprise</strong> — $149/mes con API, multi-sucursal y soporte dedicado</span></li>
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">👤</span><span><strong>8% Premium personal</strong> — $4.99/mes con límites elevados y cashback</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3>Costos Operativos</h3>
+          <ul class="icon-list">
+            <li><span class="icon">👥</span><span><strong>Equipo:</strong> 15 personas (Y1) → 120 personas (Y5)</span></li>
+            <li><span class="icon">☁️</span><span><strong>Infraestructura:</strong> AWS + redundancia local, escalable</span></li>
+            <li><span class="icon">⚖️</span><span><strong>Legal:</strong> Licencias SUDEBAN, auditorías, compliance</span></li>
+            <li><span class="icon">📢</span><span><strong>Marketing:</strong> CAC objetivo $2.50 → $1.20 por usuario</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-info mt-4">
+        <div class="callout-title">📐 Metodología de Proyección</div>
+        <p>Las proyecciones utilizan un modelo bottom-up basado en unidades (usuarios × transacciones × comisión), validado con top-down (% del TAM). Ambos enfoques convergen dentro de un margen del ±12%, lo que refuerza la confiabilidad del modelo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2 — PROYECCIÓN DE USUARIOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Crecimiento</span>
+        <h2>Proyección de Usuarios</h2>
+        <p>Una curva de adopción agresiva pero realista, sustentada por la necesidad urgente del mercado y el efecto red inherente a las plataformas de pago.</p>
+      </div>
+
+      <h3 class="text-center mb-3">Usuarios Personales (en millones)</h3>
+      <div class="chart-bar-container" style="height: 280px;">
+        <div class="chart-bar">
+          <div class="chart-bar-value">250K</div>
+          <div class="chart-bar-fill" style="height: 6%;"></div>
+          <div class="chart-bar-label">Año 1</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">1.2M</div>
+          <div class="chart-bar-fill" style="height: 15%;"></div>
+          <div class="chart-bar-label">Año 2</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">3.5M</div>
+          <div class="chart-bar-fill" style="height: 40%;"></div>
+          <div class="chart-bar-label">Año 3</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">6M</div>
+          <div class="chart-bar-fill" style="height: 65%;"></div>
+          <div class="chart-bar-label">Año 4</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">10M</div>
+          <div class="chart-bar-fill" style="height: 100%;"></div>
+          <div class="chart-bar-label">Año 5</div>
+        </div>
+      </div>
+
+      <h3 class="text-center mb-3 mt-5">Comercios Afiliados (en miles)</h3>
+      <div class="chart-bar-container" style="height: 280px;">
+        <div class="chart-bar">
+          <div class="chart-bar-value">15K</div>
+          <div class="chart-bar-fill gold" style="height: 5%;"></div>
+          <div class="chart-bar-label">Año 1</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">75K</div>
+          <div class="chart-bar-fill gold" style="height: 18%;"></div>
+          <div class="chart-bar-label">Año 2</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">200K</div>
+          <div class="chart-bar-fill gold" style="height: 42%;"></div>
+          <div class="chart-bar-label">Año 3</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">350K</div>
+          <div class="chart-bar-fill gold" style="height: 72%;"></div>
+          <div class="chart-bar-label">Año 4</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">500K</div>
+          <div class="chart-bar-fill gold" style="height: 100%;"></div>
+          <div class="chart-bar-label">Año 5</div>
+        </div>
+      </div>
+
+      <div class="table-container mt-5">
+        <table>
+          <thead>
+            <tr>
+              <th>Métrica</th>
+              <th>Año 1</th>
+              <th>Año 2</th>
+              <th>Año 3</th>
+              <th>Año 4</th>
+              <th>Año 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Usuarios personales</strong></td>
+              <td>250,000</td>
+              <td>1,200,000</td>
+              <td>3,500,000</td>
+              <td>6,000,000</td>
+              <td>10,000,000</td>
+            </tr>
+            <tr>
+              <td><strong>Comercios afiliados</strong></td>
+              <td>15,000</td>
+              <td>75,000</td>
+              <td>200,000</td>
+              <td>350,000</td>
+              <td>500,000</td>
+            </tr>
+            <tr>
+              <td><strong>Usuarios Premium (8%)</strong></td>
+              <td>20,000</td>
+              <td>96,000</td>
+              <td>280,000</td>
+              <td>480,000</td>
+              <td>800,000</td>
+            </tr>
+            <tr>
+              <td><strong>Comercios Pro (15%)</strong></td>
+              <td>2,250</td>
+              <td>11,250</td>
+              <td>30,000</td>
+              <td>52,500</td>
+              <td>75,000</td>
+            </tr>
+            <tr>
+              <td><strong>Comercios Enterprise (5%)</strong></td>
+              <td>750</td>
+              <td>3,750</td>
+              <td>10,000</td>
+              <td>17,500</td>
+              <td>25,000</td>
+            </tr>
+            <tr>
+              <td><strong>Transacciones diarias procesadas</strong></td>
+              <td>155,000</td>
+              <td>713,000</td>
+              <td>2,070,000</td>
+              <td>3,680,000</td>
+              <td>5,700,000</td>
+            </tr>
+            <tr>
+              <td><strong>% del mercado capturado</strong></td>
+              <td>0.5%</td>
+              <td>2.0%</td>
+              <td>5.0%</td>
+              <td>8.0%</td>
+              <td>12.0%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kpi-row mt-4">
+        <div class="kpi-item">
+          <div class="kpi-value">40x</div>
+          <div class="kpi-label">Crecimiento de usuarios en 5 años</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value">33x</div>
+          <div class="kpi-label">Crecimiento de comercios en 5 años</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value">380%</div>
+          <div class="kpi-label">Crecimiento promedio anual de usuarios</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value">12%</div>
+          <div class="kpi-label">Market share al Año 5</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3 — PROYECCIÓN DE INGRESOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Revenue Forecast</span>
+        <h2>Proyección de Ingresos</h2>
+        <p>Un modelo de ingresos diversificado que escala exponencialmente a medida que se activan nuevas líneas de negocio y el efecto red amplifica la monetización.</p>
+      </div>
+
+      <h3 class="text-center mb-3">Ingresos Anuales Proyectados (USD millones)</h3>
+      <div class="chart-bar-container" style="height: 300px;">
+        <div class="chart-bar">
+          <div class="chart-bar-value">$1.8M</div>
+          <div class="chart-bar-fill success" style="height: 4%;"></div>
+          <div class="chart-bar-label">Año 1</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">$8.5M</div>
+          <div class="chart-bar-fill success" style="height: 12%;"></div>
+          <div class="chart-bar-label">Año 2</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">$24M</div>
+          <div class="chart-bar-fill success" style="height: 30%;"></div>
+          <div class="chart-bar-label">Año 3</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">$52M</div>
+          <div class="chart-bar-fill success" style="height: 58%;"></div>
+          <div class="chart-bar-label">Año 4</div>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-value">$95M</div>
+          <div class="chart-bar-fill success" style="height: 100%;"></div>
+          <div class="chart-bar-label">Año 5</div>
+        </div>
+      </div>
+
+      <h3 class="mt-5 mb-3">Desglose de Ingresos por Línea de Negocio</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Fuente de Ingreso</th>
+              <th>Año 1</th>
+              <th>Año 2</th>
+              <th>Año 3</th>
+              <th>Año 4</th>
+              <th>Año 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Comisiones PoS (0.5%)</strong></td>
+              <td>$820K</td>
+              <td>$3.8M</td>
+              <td>$10.2M</td>
+              <td>$21.5M</td>
+              <td>$38.0M</td>
+            </tr>
+            <tr>
+              <td><strong>Comisiones P2P ($0.02)</strong></td>
+              <td>$180K</td>
+              <td>$950K</td>
+              <td>$2.8M</td>
+              <td>$5.2M</td>
+              <td>$8.5M</td>
+            </tr>
+            <tr>
+              <td><strong>Suscripciones Comercios Pro</strong></td>
+              <td>$390K</td>
+              <td>$1.96M</td>
+              <td>$5.22M</td>
+              <td>$9.1M</td>
+              <td>$13.1M</td>
+            </tr>
+            <tr>
+              <td><strong>Suscripciones Enterprise</strong></td>
+              <td>$134K</td>
+              <td>$670K</td>
+              <td>$1.79M</td>
+              <td>$3.13M</td>
+              <td>$4.47M</td>
+            </tr>
+            <tr>
+              <td><strong>Suscripciones Premium Personal</strong></td>
+              <td>$120K</td>
+              <td>$575K</td>
+              <td>$1.68M</td>
+              <td>$2.87M</td>
+              <td>$4.79M</td>
+            </tr>
+            <tr>
+              <td><strong>Servicios Financieros (créditos, seguros)</strong></td>
+              <td>—</td>
+              <td>$120K</td>
+              <td>$1.5M</td>
+              <td>$6.8M</td>
+              <td>$15.2M</td>
+            </tr>
+            <tr>
+              <td><strong>Analíticas & Data (B2B)</strong></td>
+              <td>—</td>
+              <td>$180K</td>
+              <td>$560K</td>
+              <td>$1.8M</td>
+              <td>$4.5M</td>
+            </tr>
+            <tr>
+              <td><strong>Remesas & FX</strong></td>
+              <td>$156K</td>
+              <td>$245K</td>
+              <td>$1.25M</td>
+              <td>$3.58M</td>
+              <td>$6.44M</td>
+            </tr>
+            <tr style="background: rgba(37,99,235,0.05); font-weight: 700;">
+              <td><strong>TOTAL INGRESOS</strong></td>
+              <td><strong>$1.8M</strong></td>
+              <td><strong>$8.5M</strong></td>
+              <td><strong>$24.0M</strong></td>
+              <td><strong>$52.0M</strong></td>
+              <td><strong>$95.0M</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-2 mt-5">
+        <div class="card card-accent">
+          <h4>📈 Evolución del Mix de Ingresos</h4>
+          <p>En el Año 1, las comisiones transaccionales representan el 56% del ingreso. Para el Año 5, los servicios financieros y analíticas crecen hasta representar el 26% — diversificando el modelo y aumentando márgenes.</p>
+          <div class="mt-3">
+            <p style="margin-bottom: 0.5rem;"><strong>Año 1 — Transacciones: 56% | Suscripciones: 36% | Otros: 8%</strong></p>
+            <div class="progress-bar"><div class="progress-bar-fill" style="width: 56%;"></div></div>
+            <p style="margin-bottom: 0.5rem; margin-top: 1rem;"><strong>Año 3 — Transacciones: 54% | Suscripciones: 36% | Servicios: 10%</strong></p>
+            <div class="progress-bar"><div class="progress-bar-fill gold" style="width: 54%;"></div></div>
+            <p style="margin-bottom: 0.5rem; margin-top: 1rem;"><strong>Año 5 — Transacciones: 49% | Suscripciones: 24% | Servicios: 27%</strong></p>
+            <div class="progress-bar"><div class="progress-bar-fill success" style="width: 49%;"></div></div>
+          </div>
+        </div>
+        <div class="card card-gold">
+          <h4>🚀 Motores de Crecimiento por Fase</h4>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">1</span><span><strong>Año 1-2:</strong> Comisiones transaccionales + primeras suscripciones Pro. Motor: adquisición agresiva de usuarios y comercios.</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">2</span><span><strong>Año 3:</strong> Lanzamiento de servicios financieros (microcréditos, seguros). Motor: datos + base de usuarios masiva.</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">3</span><span><strong>Año 4-5:</strong> Dominancia de mercado + expansión internacional (Colombia, Perú). Motor: efecto red + plataforma consolidada.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-success mt-4">
+        <div class="callout-title">💡 CAGR de Ingresos: 170%</div>
+        <p>La tasa de crecimiento anual compuesta (CAGR) del 170% está alineada con fintechs de alto crecimiento en mercados emergentes. PIX Brasil creció 200%+ en sus primeros 3 años; Nequi Colombia logró 180%+ en adopción. NexoPay opera en un mercado con demanda reprimida aún mayor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       4 — ESTRUCTURA DE COSTOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Costos</span>
+        <h2>Estructura de Costos</h2>
+        <p>Una estructura de costos diseñada para escalar eficientemente: los costos fijos se diluyen mientras el ingreso por usuario crece con el efecto red.</p>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Categoría de Costo</th>
+              <th>Año 1</th>
+              <th>Año 2</th>
+              <th>Año 3</th>
+              <th>Año 4</th>
+              <th>Año 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>👥 Personal (Ingeniería)</strong></td>
+              <td>$480K</td>
+              <td>$1.2M</td>
+              <td>$2.8M</td>
+              <td>$4.5M</td>
+              <td>$6.8M</td>
+            </tr>
+            <tr>
+              <td><strong>👥 Personal (Operaciones)</strong></td>
+              <td>$180K</td>
+              <td>$420K</td>
+              <td>$950K</td>
+              <td>$1.6M</td>
+              <td>$2.4M</td>
+            </tr>
+            <tr>
+              <td><strong>👥 Personal (Legal & Compliance)</strong></td>
+              <td>$120K</td>
+              <td>$280K</td>
+              <td>$520K</td>
+              <td>$780K</td>
+              <td>$1.1M</td>
+            </tr>
+            <tr>
+              <td><strong>👥 Personal (Marketing & Ventas)</strong></td>
+              <td>$150K</td>
+              <td>$380K</td>
+              <td>$850K</td>
+              <td>$1.4M</td>
+              <td>$2.0M</td>
+            </tr>
+            <tr>
+              <td><strong>☁️ Infraestructura (AWS, DB, CDN)</strong></td>
+              <td>$240K</td>
+              <td>$680K</td>
+              <td>$1.5M</td>
+              <td>$2.8M</td>
+              <td>$4.2M</td>
+            </tr>
+            <tr>
+              <td><strong>📢 Marketing & Adquisición</strong></td>
+              <td>$350K</td>
+              <td>$1.1M</td>
+              <td>$2.4M</td>
+              <td>$3.8M</td>
+              <td>$5.0M</td>
+            </tr>
+            <tr>
+              <td><strong>⚖️ Licencias, Auditorías & Legal</strong></td>
+              <td>$200K</td>
+              <td>$350K</td>
+              <td>$580K</td>
+              <td>$750K</td>
+              <td>$950K</td>
+            </tr>
+            <tr>
+              <td><strong>🏢 Oficina & Operaciones</strong></td>
+              <td>$120K</td>
+              <td>$250K</td>
+              <td>$450K</td>
+              <td>$680K</td>
+              <td>$900K</td>
+            </tr>
+            <tr>
+              <td><strong>🔒 Seguridad & Contingencia</strong></td>
+              <td>$80K</td>
+              <td>$190K</td>
+              <td>$400K</td>
+              <td>$650K</td>
+              <td>$950K</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05); font-weight: 700;">
+              <td><strong>TOTAL COSTOS OPERATIVOS</strong></td>
+              <td><strong>$1.92M</strong></td>
+              <td><strong>$4.85M</strong></td>
+              <td><strong>$10.45M</strong></td>
+              <td><strong>$16.96M</strong></td>
+              <td><strong>$24.3M</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-3 mt-5">
+        <div class="stat-card">
+          <div class="stat-value">48%</div>
+          <div class="stat-label">Personal como % de costos (Y1)</div>
+          <div class="stat-sublabel">Disminuye a 51% en Y5 por escala</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value gold">18%</div>
+          <div class="stat-label">Marketing como % de costos (Y1)</div>
+          <div class="stat-sublabel">CAC baja de $2.50 a $1.20</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="background: var(--color-cyan); -webkit-background-clip: text;">12%</div>
+          <div class="stat-label">Infraestructura como % de costos (Y1)</div>
+          <div class="stat-sublabel">Escala sub-linealmente</div>
+        </div>
+      </div>
+
+      <div class="callout callout-warning mt-4">
+        <div class="callout-title">📊 Eficiencia Operativa</div>
+        <p>El ratio de costos sobre ingresos mejora dramáticamente: de 107% en el Año 1 (pre-break-even) a solo 26% en el Año 5. Esto refleja el apalancamiento operativo inherente a las plataformas de pagos digitales — una vez construida la infraestructura, el costo marginal por transacción tiende a cero.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       5 — ESTADO DE RESULTADOS PROYECTADO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">P&L</span>
+        <h2>Estado de Resultados Proyectado</h2>
+        <p>La evolución desde una startup pre-revenue hasta una empresa altamente rentable con márgenes superiores al 70% en un horizonte de 5 años.</p>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Año 1</th>
+              <th>Año 2</th>
+              <th>Año 3</th>
+              <th>Año 4</th>
+              <th>Año 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ingresos Totales</strong></td>
+              <td>$1.80M</td>
+              <td>$8.50M</td>
+              <td>$24.00M</td>
+              <td>$52.00M</td>
+              <td>$95.00M</td>
+            </tr>
+            <tr>
+              <td><strong>Costo de Ventas (COGS)</strong></td>
+              <td>($0.42M)</td>
+              <td>($1.70M)</td>
+              <td>($4.32M)</td>
+              <td>($8.32M)</td>
+              <td>($13.30M)</td>
+            </tr>
+            <tr style="background: rgba(16,185,129,0.05);">
+              <td><strong>Margen Bruto</strong></td>
+              <td>$1.38M</td>
+              <td>$6.80M</td>
+              <td>$19.68M</td>
+              <td>$43.68M</td>
+              <td>$81.70M</td>
+            </tr>
+            <tr style="background: rgba(16,185,129,0.05);">
+              <td><strong>% Margen Bruto</strong></td>
+              <td>76.7%</td>
+              <td>80.0%</td>
+              <td>82.0%</td>
+              <td>84.0%</td>
+              <td>86.0%</td>
+            </tr>
+            <tr>
+              <td><strong>Gastos de Personal</strong></td>
+              <td>($0.93M)</td>
+              <td>($2.28M)</td>
+              <td>($5.12M)</td>
+              <td>($8.28M)</td>
+              <td>($12.30M)</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing & Ventas</strong></td>
+              <td>($0.35M)</td>
+              <td>($1.10M)</td>
+              <td>($2.40M)</td>
+              <td>($3.80M)</td>
+              <td>($5.00M)</td>
+            </tr>
+            <tr>
+              <td><strong>Infraestructura & Tecnología</strong></td>
+              <td>($0.24M)</td>
+              <td>($0.68M)</td>
+              <td>($1.50M)</td>
+              <td>($2.80M)</td>
+              <td>($4.20M)</td>
+            </tr>
+            <tr>
+              <td><strong>G&A (Legal, Oficina, Otros)</strong></td>
+              <td>($0.40M)</td>
+              <td>($0.79M)</td>
+              <td>($1.43M)</td>
+              <td>($2.08M)</td>
+              <td>($2.80M)</td>
+            </tr>
+            <tr style="background: rgba(37,99,235,0.05);">
+              <td><strong>EBITDA</strong></td>
+              <td><span style="color: var(--color-danger);">($0.54M)</span></td>
+              <td>$1.95M</td>
+              <td>$9.23M</td>
+              <td>$26.72M</td>
+              <td>$57.40M</td>
+            </tr>
+            <tr style="background: rgba(37,99,235,0.05);">
+              <td><strong>% Margen EBITDA</strong></td>
+              <td><span style="color: var(--color-danger);">-30%</span></td>
+              <td>22.9%</td>
+              <td>38.5%</td>
+              <td>51.4%</td>
+              <td>60.4%</td>
+            </tr>
+            <tr>
+              <td><strong>Depreciación & Amortización</strong></td>
+              <td>($0.08M)</td>
+              <td>($0.15M)</td>
+              <td>($0.30M)</td>
+              <td>($0.50M)</td>
+              <td>($0.80M)</td>
+            </tr>
+            <tr>
+              <td><strong>Impuestos (ISLR estimado)</strong></td>
+              <td>$0</td>
+              <td>($0.36M)</td>
+              <td>($1.79M)</td>
+              <td>($5.24M)</td>
+              <td>($11.32M)</td>
+            </tr>
+            <tr style="background: rgba(245,158,11,0.08); font-weight: 700;">
+              <td><strong>UTILIDAD NETA</strong></td>
+              <td><strong style="color: var(--color-danger);">($0.62M)</strong></td>
+              <td><strong>$1.44M</strong></td>
+              <td><strong>$7.14M</strong></td>
+              <td><strong>$20.98M</strong></td>
+              <td><strong>$45.28M</strong></td>
+            </tr>
+            <tr style="background: rgba(245,158,11,0.08); font-weight: 700;">
+              <td><strong>% Margen Neto</strong></td>
+              <td><strong style="color: var(--color-danger);">-34.4%</strong></td>
+              <td><strong>16.9%</strong></td>
+              <td><strong>29.8%</strong></td>
+              <td><strong>40.3%</strong></td>
+              <td><strong>47.7%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kpi-row mt-5">
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: var(--color-danger); -webkit-background-clip: text;">-$0.62M</div>
+          <div class="kpi-label">Utilidad Neta Año 1</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value">$7.14M</div>
+          <div class="kpi-label">Utilidad Neta Año 3</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: var(--gradient-gold); -webkit-background-clip: text;">$45.28M</div>
+          <div class="kpi-label">Utilidad Neta Año 5</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-value" style="background: linear-gradient(135deg, #10B981, #059669); -webkit-background-clip: text;">60.4%</div>
+          <div class="kpi-label">Margen EBITDA Año 5</div>
+        </div>
+      </div>
+
+      <div class="highlight-box mt-5">
+        <h3>📊 Trayectoria de Márgenes</h3>
+        <p>NexoPay sigue la trayectoria clásica de plataformas de pago: márgenes negativos iniciales que se convierten en márgenes extraordinarios una vez alcanzada la masa crítica. El margen bruto se mantiene consistentemente por encima del 76%, reflejando la naturaleza asset-light del modelo.</p>
+        <div class="grid grid-3 mt-4" style="gap: 1.5rem;">
+          <div class="card-glass">
+            <h4>Margen Bruto</h4>
+            <div style="font-size: 2.5rem; font-weight: 800; color: #fff;">86%</div>
+            <p>al Año 5 — mejora por economías de escala en procesamiento</p>
+          </div>
+          <div class="card-glass">
+            <h4>Margen EBITDA</h4>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-gold-light);">60%</div>
+            <p>al Año 5 — apalancamiento operativo del modelo digital</p>
+          </div>
+          <div class="card-glass">
+            <h4>Margen Neto</h4>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-cyan-light);">48%</div>
+            <p>al Año 5 — superior al benchmark de fintechs maduras</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       6 — ANÁLISIS DE BREAK-EVEN
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Break-Even</span>
+        <h2>Análisis de Break-Even</h2>
+        <p>Determinamos el punto exacto donde NexoPay alcanza la autosuficiencia financiera, con un análisis detallado de costos fijos vs. variables y los volúmenes necesarios para la rentabilidad.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card card-accent">
+          <h3>💰 Costos Fijos Mensuales (Año 1)</h3>
+          <ul class="icon-list">
+            <li><span class="icon">👥</span><span><strong>Nómina base:</strong> $77,500/mes</span></li>
+            <li><span class="icon">☁️</span><span><strong>Infraestructura mínima:</strong> $20,000/mes</span></li>
+            <li><span class="icon">🏢</span><span><strong>Oficina & servicios:</strong> $10,000/mes</span></li>
+            <li><span class="icon">⚖️</span><span><strong>Legal & compliance:</strong> $16,667/mes</span></li>
+            <li><span class="icon">🔒</span><span><strong>Seguridad:</strong> $6,667/mes</span></li>
+          </ul>
+          <div class="divider-gradient"></div>
+          <p style="font-size: 1.3rem;"><strong>Total fijos: $130,834/mes</strong></p>
+        </div>
+        <div class="card card-gold">
+          <h3>📊 Costos Variables por Transacción</h3>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">💳</span><span><strong>Procesamiento de pago:</strong> $0.003 por transacción</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🔐</span><span><strong>Verificación KYC/AML:</strong> $0.001 por transacción</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">📡</span><span><strong>SMS/Notificaciones:</strong> $0.0005 por transacción</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🛡️</span><span><strong>Fraude & reversiones:</strong> $0.002 por transacción</span></li>
+          </ul>
+          <div class="divider-gradient"></div>
+          <p style="font-size: 1.3rem;"><strong>Total variable: $0.0065 por transacción</strong></p>
+        </div>
+      </div>
+
+      <div class="card mt-5" style="border-top: 3px solid var(--color-success);">
+        <h3>📍 Punto de Break-Even</h3>
+        <div class="grid grid-3 mt-3">
+          <div>
+            <h4>Transacciones Necesarias</h4>
+            <p style="font-size: 2rem; font-weight: 800; color: var(--color-accent);">~850,000</p>
+            <p>transacciones diarias para cubrir costos fijos + variables</p>
+          </div>
+          <div>
+            <h4>Timeline Esperado</h4>
+            <p style="font-size: 2rem; font-weight: 800; color: var(--color-success);">Mes 18-24</p>
+            <p>alcance del break-even operativo con 500K+ usuarios activos</p>
+          </div>
+          <div>
+            <h4>Usuarios Requeridos</h4>
+            <p style="font-size: 2rem; font-weight: 800; color: var(--color-gold);">~600,000</p>
+            <p>usuarios activos con 1.4 transacciones promedio diarias</p>
+          </div>
+        </div>
+        <div class="progress-bar mt-4" style="height: 12px;">
+          <div class="progress-bar-fill success" style="width: 40%;"></div>
+        </div>
+        <p class="text-center mt-2" style="font-size: 0.85rem; color: var(--color-text-lighter);">Progreso estimado al break-even: Meta Mes 18 (mínimo) — Mes 24 (conservador)</p>
+      </div>
+
+      <h3 class="mt-5 mb-3">Análisis de Sensibilidad: Escenarios al Break-Even</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Escenario Pesimista</th>
+              <th>Escenario Base</th>
+              <th>Escenario Optimista</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mes de break-even</strong></td>
+              <td>Mes 28</td>
+              <td>Mes 20</td>
+              <td>Mes 14</td>
+            </tr>
+            <tr>
+              <td><strong>Usuarios al break-even</strong></td>
+              <td>800,000</td>
+              <td>600,000</td>
+              <td>450,000</td>
+            </tr>
+            <tr>
+              <td><strong>Transacciones diarias requeridas</strong></td>
+              <td>1,100,000</td>
+              <td>850,000</td>
+              <td>620,000</td>
+            </tr>
+            <tr>
+              <td><strong>Burn rate mensual promedio</strong></td>
+              <td>$165,000</td>
+              <td>$130,834</td>
+              <td>$115,000</td>
+            </tr>
+            <tr>
+              <td><strong>Cash requerido hasta break-even</strong></td>
+              <td>$4.6M</td>
+              <td>$2.6M</td>
+              <td>$1.6M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-success mt-4">
+        <div class="callout-title">✅ Runway Garantizado</div>
+        <p>Con una ronda seed de $2.5M, NexoPay tiene runway suficiente para alcanzar el break-even incluso en el escenario pesimista (Mes 28), con margen adicional para una ronda Serie A antes de agotar caja. En el escenario base, el break-even se alcanza con $100K+ en reserva.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       7 — TRES ESCENARIOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Escenarios</span>
+        <h2>Tres Escenarios de Proyección</h2>
+        <p>Presentamos tres escenarios para que los inversionistas evalúen el rango completo de posibles outcomes, desde el conservador hasta el optimista.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card" style="border-top: 3px solid var(--color-text-lighter);">
+          <span class="badge badge-danger">⚠️ Conservador</span>
+          <h3 class="mt-3">60% de Base</h3>
+          <p>Adopción más lenta, regulación restrictiva, competencia inesperada. Representa el piso del modelo.</p>
+          <div class="divider-gradient"></div>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">📉</span><span>Usuarios Y5: <strong>6M</strong></span></li>
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">💰</span><span>Revenue Y5: <strong>$57M</strong></span></li>
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">📊</span><span>EBITDA Y5: <strong>$31M</strong></span></li>
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">🔄</span><span>Break-even: <strong>Mes 28</strong></span></li>
+            <li><span class="icon" style="background: rgba(239,68,68,0.1); color: var(--color-danger);">📈</span><span>ROI 5 años: <strong>8x</strong></span></li>
+          </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--color-accent); box-shadow: var(--shadow-glow);">
+          <span class="badge badge-primary">⭐ Base (Más Probable)</span>
+          <h3 class="mt-3">Escenario Base</h3>
+          <p>Adopción según plan, regulación favorable, ejecución según roadmap. Escenario de mayor probabilidad.</p>
+          <div class="divider-gradient"></div>
+          <ul class="icon-list">
+            <li><span class="icon">👥</span><span>Usuarios Y5: <strong>10M</strong></span></li>
+            <li><span class="icon">💰</span><span>Revenue Y5: <strong>$95M</strong></span></li>
+            <li><span class="icon">📊</span><span>EBITDA Y5: <strong>$57.4M</strong></span></li>
+            <li><span class="icon">🔄</span><span>Break-even: <strong>Mes 18-24</strong></span></li>
+            <li><span class="icon">📈</span><span>ROI 5 años: <strong>15x+</strong></span></li>
+          </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--color-success);">
+          <span class="badge badge-success">🚀 Optimista</span>
+          <h3 class="mt-3">150% de Base</h3>
+          <p>Adopción viral, alianzas estratégicas tempranas, expansión regional acelerada. Upside significativo.</p>
+          <div class="divider-gradient"></div>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🚀</span><span>Usuarios Y5: <strong>15M</strong></span></li>
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">💰</span><span>Revenue Y5: <strong>$142.5M</strong></span></li>
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">📊</span><span>EBITDA Y5: <strong>$92M</strong></span></li>
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">🔄</span><span>Break-even: <strong>Mes 12</strong></span></li>
+            <li><span class="icon" style="background: rgba(16,185,129,0.1); color: var(--color-success);">📈</span><span>ROI 5 años: <strong>25x+</strong></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="mt-5 mb-3">Comparación Detallada de Escenarios (5 Años)</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Métrica</th>
+              <th>🔴 Conservador (60%)</th>
+              <th>🔵 Base (100%)</th>
+              <th>🟢 Optimista (150%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Usuarios Y1</strong></td>
+              <td>150,000</td>
+              <td>250,000</td>
+              <td>375,000</td>
+            </tr>
+            <tr>
+              <td><strong>Usuarios Y3</strong></td>
+              <td>2,100,000</td>
+              <td>3,500,000</td>
+              <td>5,250,000</td>
+            </tr>
+            <tr>
+              <td><strong>Usuarios Y5</strong></td>
+              <td>6,000,000</td>
+              <td>10,000,000</td>
+              <td>15,000,000</td>
+            </tr>
+            <tr>
+              <td><strong>Revenue Y1</strong></td>
+              <td>$1.08M</td>
+              <td>$1.80M</td>
+              <td>$2.70M</td>
+            </tr>
+            <tr>
+              <td><strong>Revenue Y3</strong></td>
+              <td>$14.40M</td>
+              <td>$24.00M</td>
+              <td>$36.00M</td>
+            </tr>
+            <tr>
+              <td><strong>Revenue Y5</strong></td>
+              <td>$57.00M</td>
+              <td>$95.00M</td>
+              <td>$142.50M</td>
+            </tr>
+            <tr>
+              <td><strong>EBITDA Y5</strong></td>
+              <td>$31.00M</td>
+              <td>$57.40M</td>
+              <td>$92.00M</td>
+            </tr>
+            <tr>
+              <td><strong>Margen EBITDA Y5</strong></td>
+              <td>54.4%</td>
+              <td>60.4%</td>
+              <td>64.6%</td>
+            </tr>
+            <tr>
+              <td><strong>Utilidad Neta Y5</strong></td>
+              <td>$24.80M</td>
+              <td>$45.28M</td>
+              <td>$73.60M</td>
+            </tr>
+            <tr>
+              <td><strong>Break-even</strong></td>
+              <td>Mes 28</td>
+              <td>Mes 18-24</td>
+              <td>Mes 12</td>
+            </tr>
+            <tr>
+              <td><strong>ROI a 5 años</strong></td>
+              <td>8x</td>
+              <td>15x+</td>
+              <td>25x+</td>
+            </tr>
+            <tr>
+              <td><strong>IRR</strong></td>
+              <td>55%</td>
+              <td>85%+</td>
+              <td>120%+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info mt-4">
+        <div class="callout-title">📌 Nota sobre Probabilidades</div>
+        <p>Asignamos una probabilidad del <strong>20%</strong> al escenario conservador, <strong>55%</strong> al base, y <strong>25%</strong> al optimista. El valor esperado ponderado del ROI a 5 años es de <strong>~15.4x</strong>, lo que refuerza la tesis de inversión incluso considerando los riesgos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       8 — MÉTRICAS CLAVE PARA INVERSIONISTAS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number" style="color: var(--color-gold-light); background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3);">Métricas de Inversión</span>
+        <h2>Métricas Clave para Inversionistas</h2>
+        <p>Los indicadores financieros que demuestran que NexoPay es una oportunidad de inversión excepcional en el ecosistema fintech de América Latina.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light);">85%+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">IRR (Tasa Interna de Retorno)</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Escenario base</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: #fff; -webkit-text-fill-color: #fff;">15x+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">ROI al Año 5</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Sobre inversión seed</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light);">2.5 años</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Payback Period</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Recuperación total de inversión</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-success); -webkit-text-fill-color: var(--color-success);">170%</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Revenue CAGR</div>
+          <div class="stat-sublabel" style="color: rgba(255,255,255,0.4);">Tasa compuesta anual</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-5">
+        <div class="card-glass">
+          <h4>📊 Métricas de Eficiencia</h4>
+          <ul class="icon-list" style="color: rgba(255,255,255,0.85);">
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">📈</span><span><strong>LTV/CAC Ratio:</strong> 18x — Cada dólar invertido en adquisición genera $18 en valor de vida del cliente</span></li>
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">💰</span><span><strong>Margen Bruto Y5:</strong> 86% — Superior al benchmark del sector (70-80%)</span></li>
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">🔄</span><span><strong>Revenue per User (ARPU):</strong> $9.50/año (Y5) — Con tendencia creciente por servicios financieros</span></li>
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">📉</span><span><strong>Churn Rate estimado:</strong> &lt;3% mensual — Efecto red reduce abandono progresivamente</span></li>
+          </ul>
+        </div>
+        <div class="card-glass">
+          <h4>🏆 Comparación con Benchmarks</h4>
+          <ul class="icon-list" style="color: rgba(255,255,255,0.85);">
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">🇧🇷</span><span><strong>Nubank (IPO):</strong> Valoración 40x revenue — NexoPay al Y5 implicaría valoración de $3.8B</span></li>
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">🇦🇷</span><span><strong>Mercado Pago:</strong> Margen EBITDA ~35% — NexoPay proyecta 60%+ al Y5</span></li>
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">🇨🇴</span><span><strong>Nequi:</strong> 18M usuarios en 5 años — NexoPay apunta a 10M en mercado más pequeño pero con menos competencia</span></li>
+            <li><span class="icon" style="background: rgba(255,255,255,0.1); color: #fff;">🌎</span><span><strong>Fintechs LATAM (media):</strong> CAGR 80-120% — NexoPay a 170% por demanda reprimida</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-5">
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2.2rem;">$45.28M</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Utilidad Neta Año 5</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2.2rem;">$95M</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Revenue Año 5</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-success); -webkit-text-fill-color: var(--color-success); font-size: 2.2rem;">75%+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.7);">Gross Margin Promedio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       9 — USO DE FONDOS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Seed Round</span>
+        <h2>Uso de Fondos</h2>
+        <p>Cada dólar de la ronda seed de $2.5M está asignado estratégicamente para maximizar el camino al break-even y posicionar a NexoPay para una Serie A exitosa.</p>
+      </div>
+
+      <div class="highlight-box">
+        <div class="text-center">
+          <div style="font-size: 3.5rem; font-weight: 900; color: #fff;">$2.5M</div>
+          <p style="font-size: 1.3rem; color: rgba(255,255,255,0.85); margin-top: 0.5rem;">Ronda Seed — Pre-Serie A</p>
+        </div>
+        <div class="grid grid-3 mt-4" style="gap: 1.5rem;">
+          <div class="card-glass" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 800; color: var(--color-gold-light);">45%</div>
+            <h4>$1,125,000</h4>
+            <p>Desarrollo Tecnológico</p>
+          </div>
+          <div class="card-glass" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 800; color: var(--color-cyan-light);">20%</div>
+            <h4>$500,000</h4>
+            <p>Marketing & Adquisición</p>
+          </div>
+          <div class="card-glass" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 800; color: #fff;">15%</div>
+            <h4>$375,000</h4>
+            <p>Legal & Licencias</p>
+          </div>
+        </div>
+        <div class="grid grid-2 mt-3" style="gap: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          <div class="card-glass" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 800; color: var(--color-success);">10%</div>
+            <h4>$250,000</h4>
+            <p>Operaciones</p>
+          </div>
+          <div class="card-glass" style="text-align: center;">
+            <div style="font-size: 2rem; font-weight: 800; color: rgba(255,255,255,0.6);">10%</div>
+            <h4>$250,000</h4>
+            <p>Reserva & Contingencia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2 mt-5">
+        <div class="card card-accent">
+          <h3>💻 Desarrollo Tecnológico — $1.125M (45%)</h3>
+          <p>La mayor inversión, porque el producto es el principal driver de crecimiento.</p>
+          <ul class="icon-list">
+            <li><span class="icon">⚙️</span><span><strong>Core platform:</strong> Backend, APIs de pagos, integración bancaria — $450K</span></li>
+            <li><span class="icon">📱</span><span><strong>Apps móviles:</strong> iOS + Android nativos, UI/UX premium — $280K</span></li>
+            <li><span class="icon">🔒</span><span><strong>Seguridad:</strong> HSM, cifrado, certificación PCI DSS — $195K</span></li>
+            <li><span class="icon">☁️</span><span><strong>Infraestructura:</strong> AWS, DevOps, monitoring, DR — $200K</span></li>
+          </ul>
+          <div class="progress-bar mt-3">
+            <div class="progress-bar-fill" style="width: 45%;"></div>
+          </div>
+        </div>
+        <div class="card card-gold">
+          <h3>📢 Marketing & Adquisición — $500K (20%)</h3>
+          <p>Estrategia de growth enfocada en CAC eficiente y viralidad orgánica.</p>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🎯</span><span><strong>Performance marketing:</strong> Digital ads, influencers locales — $200K</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🤝</span><span><strong>Alianzas comerciales:</strong> Convenios con comercios ancla — $120K</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">🎁</span><span><strong>Programa de referidos:</strong> Incentivos de adopción viral — $100K</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.1); color: var(--color-gold);">📰</span><span><strong>PR & Branding:</strong> Posicionamiento de marca — $80K</span></li>
+          </ul>
+          <div class="progress-bar mt-3">
+            <div class="progress-bar-fill gold" style="width: 20%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-4">
+        <div class="card">
+          <h4>⚖️ Legal & Licencias — $375K</h4>
+          <p>Obtención de todas las licencias regulatorias necesarias para operar como plataforma de pagos en Venezuela.</p>
+          <ul class="icon-list">
+            <li><span class="icon">📋</span><span>Licencia SUDEBAN — $150K</span></li>
+            <li><span class="icon">🔍</span><span>Auditorías & compliance — $100K</span></li>
+            <li><span class="icon">📄</span><span>Asesoría legal corporativa — $125K</span></li>
+          </ul>
+          <div class="progress-bar mt-3">
+            <div class="progress-bar-fill" style="width: 15%; background: linear-gradient(90deg, #64748B, #94A3B8);"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h4>🏢 Operaciones — $250K</h4>
+          <p>Infraestructura operativa para el equipo fundador y las primeras contrataciones clave.</p>
+          <ul class="icon-list">
+            <li><span class="icon">🖥️</span><span>Oficina & equipamiento — $80K</span></li>
+            <li><span class="icon">👥</span><span>Reclutamiento inicial — $100K</span></li>
+            <li><span class="icon">🔧</span><span>Herramientas & SaaS — $70K</span></li>
+          </ul>
+          <div class="progress-bar mt-3">
+            <div class="progress-bar-fill success" style="width: 10%;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h4>🛡️ Reserva & Contingencia — $250K</h4>
+          <p>Colchón financiero para imprevistos regulatorios, fluctuaciones cambiarias o oportunidades estratégicas.</p>
+          <ul class="icon-list">
+            <li><span class="icon">💰</span><span>Buffer cambiario — $100K</span></li>
+            <li><span class="icon">⚡</span><span>Oportunidades emergentes — $80K</span></li>
+            <li><span class="icon">🔄</span><span>Contingencia operativa — $70K</span></li>
+          </ul>
+          <div class="progress-bar mt-3">
+            <div class="progress-bar-fill" style="width: 10%; background: linear-gradient(90deg, #94A3B8, #CBD5E1);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warning mt-5">
+        <div class="callout-title">🎯 Hitos que Desbloquea la Ronda Seed</div>
+        <p>Con $2.5M, NexoPay alcanzará: <strong>(1)</strong> Producto lanzado y operativo en 4 ciudades, <strong>(2)</strong> 250K+ usuarios activos, <strong>(3)</strong> 15K+ comercios afiliados, <strong>(4)</strong> Licencia SUDEBAN obtenida, <strong>(5)</strong> Revenue mensual recurrente de $150K+. Estos hitos posicionan a NexoPay para una Serie A de $10-15M con una valoración de $50-80M.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       RESUMEN EJECUTIVO FINANCIERO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number" style="color: var(--color-gold-light); background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3);">Conclusión Financiera</span>
+        <h2>La Oportunidad en Números</h2>
+        <p>NexoPay representa una oportunidad de inversión asimétrica: riesgo acotado por la demanda comprobada del mercado y upside excepcional por la ausencia de competencia directa.</p>
+      </div>
+
+      <div class="blockquote" style="background: rgba(255,255,255,0.05); border-color: var(--color-gold-light); color: rgba(255,255,255,0.9);">
+        "En un mercado con 31 millones de transacciones diarias y cero plataformas unificadas, la pregunta no es si NexoPay será rentable — sino cuán rápido llegará a dominar. Nuestro modelo financiero demuestra que incluso en el escenario más conservador, los retornos superan ampliamente los benchmarks del sector."
+        <cite style="color: rgba(255,255,255,0.6);">— Equipo Fundador, NexoPay</cite>
+      </div>
+
+      <div class="process-steps mt-5">
+        <div class="process-step">
+          <div class="process-step-number">1</div>
+          <h4 style="color: #fff;">Seed $2.5M</h4>
+          <p style="color: rgba(255,255,255,0.7);">Producto + primeros 250K usuarios</p>
+          <span class="process-step-arrow" style="color: rgba(255,255,255,0.3);">→</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: var(--gradient-gold);">2</div>
+          <h4 style="color: #fff;">Break-Even Mes 20</h4>
+          <p style="color: rgba(255,255,255,0.7);">600K usuarios, autosuficiente</p>
+          <span class="process-step-arrow" style="color: rgba(255,255,255,0.3);">→</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #10B981, #059669);">3</div>
+          <h4 style="color: #fff;">Serie A $10-15M</h4>
+          <p style="color: rgba(255,255,255,0.7);">Escalar a 3.5M usuarios</p>
+          <span class="process-step-arrow" style="color: rgba(255,255,255,0.3);">→</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number" style="background: linear-gradient(135deg, #F59E0B, #D97706);">4</div>
+          <h4 style="color: #fff;">$95M Revenue Y5</h4>
+          <p style="color: rgba(255,255,255,0.7);">10M usuarios, 60% EBITDA margin</p>
+        </div>
+      </div>
+
+      <div class="grid grid-4 mt-5">
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-gold-light); -webkit-text-fill-color: var(--color-gold-light); font-size: 2rem;">$2.5M</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Inversión requerida</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: #fff; -webkit-text-fill-color: #fff; font-size: 2rem;">$95M</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Revenue proyectado Y5</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-success); -webkit-text-fill-color: var(--color-success); font-size: 2rem;">15x+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">Retorno proyectado</div>
+        </div>
+        <div class="stat-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+          <div class="stat-value" style="color: var(--color-cyan-light); -webkit-text-fill-color: var(--color-cyan-light); font-size: 2rem;">85%+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.6);">IRR estimado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Page Navigation ═══ -->
+  <div class="container">
+    <div class="page-nav">
+      <a href="07-analisis-competitivo.html"><span class="label">← Anterior</span><span class="title">Análisis Competitivo</span></a>
+      <a href="09-hoja-de-ruta.html" class="next"><span class="label">Siguiente →</span><span class="title">Hoja de Ruta</span></a>
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer" style="padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 NexoPay. Todos los derechos reservados. Documento confidencial para inversionistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Confidential Bar ═══ -->
+  <div class="confidential-bar">⚠ Documento Confidencial — Solo para Inversionistas Autorizados — NexoPay © 2026</div>
+
+</body>
+</html>

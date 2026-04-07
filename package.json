@@ -1,0 +1,20 @@
+{
+  "name": "nexopay-pitch",
+  "version": "1.0.0",
+  "description": "NexoPay — Documentación de inversión para la plataforma unificada de pagos digitales de Venezuela",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "node scripts/build.js"
+  },
+  "keywords": ["fintech", "venezuela", "payments", "investment", "pitch"],
+  "author": "NexoPay Team",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "compression": "^1.7.5",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0"
+  }
+}

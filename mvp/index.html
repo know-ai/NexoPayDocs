@@ -1099,8 +1099,472 @@
       animation: ripple 0.55s linear;
       pointer-events: none;
     }
-    @keyframes ripple {
-      to { transform: scale(4); opacity: 0; }
+    @keyframes ripple { to { transform: scale(4); opacity: 0; } }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: FLUTTER TRANSITIONS
+       ═══════════════════════════════════════ */
+    .app-screen {
+      transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .app-screen.slide-out-left {
+      opacity: 0;
+      transform: translateX(-60px) scale(0.94);
+    }
+    .app-screen.slide-in-up {
+      transform: translateY(0);
+    }
+    .app-screen:not(.active):not(.slide-out-left) {
+      transform: translateX(30px);
+    }
+    .app-screen.sub-view:not(.active) {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    .app-screen.sub-view.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: REALISTIC STATUS BAR
+       ═══════════════════════════════════════ */
+    .real-status-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 54px;
+      padding: 10px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 95;
+      font-family: 'Inter', sans-serif;
+    }
+    .real-status-bar .time {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--md-on-surface);
+    }
+    .real-status-bar.light .time,
+    .real-status-bar.light .status-icons-real { color: #fff; }
+    .status-icons-real {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--md-on-surface);
+    }
+    .status-icons-real .battery {
+      width: 22px; height: 10px;
+      border: 1.5px solid currentColor;
+      border-radius: 2px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 1px;
+    }
+    .status-icons-real .battery::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      width: 2px; height: 5px;
+      background: currentColor;
+      border-radius: 0 1px 1px 0;
+    }
+    .status-icons-real .battery-fill {
+      width: 78%;
+      height: 100%;
+      background: currentColor;
+      border-radius: 1px;
+    }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: STAGGERED ANIMATIONS
+       ═══════════════════════════════════════ */
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .stagger-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger-item:nth-child(1) { transition-delay: 0ms; }
+    .stagger-item:nth-child(2) { transition-delay: 60ms; }
+    .stagger-item:nth-child(3) { transition-delay: 120ms; }
+    .stagger-item:nth-child(4) { transition-delay: 180ms; }
+    .stagger-item:nth-child(5) { transition-delay: 240ms; }
+    .stagger-item:nth-child(6) { transition-delay: 300ms; }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: COUNTUP ANIMATION
+       ═══════════════════════════════════════ */
+    .countup { display: inline; }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: CONFETTI
+       ═══════════════════════════════════════ */
+    .confetti-container {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 110;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 8px; height: 8px;
+      top: -10px;
+      border-radius: 2px;
+      animation: confetti-fall 2.5s ease-in forwards;
+    }
+    @keyframes confetti-fall {
+      0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+      100% { transform: translateY(820px) rotate(720deg) scale(0.3); opacity: 0; }
+    }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: BIOMETRIC OVERLAY
+       ═══════════════════════════════════════ */
+    .biometric-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      backdrop-filter: blur(8px);
+    }
+    .biometric-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .bio-icon {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      border: 3px solid rgba(37,99,235,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      animation: bio-pulse 1.2s ease-in-out infinite;
+      position: relative;
+    }
+    .bio-icon::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 2px solid rgba(37,99,235,0.2);
+      animation: bio-ring 1.2s ease-in-out infinite;
+    }
+    .bio-icon::after {
+      content: '';
+      position: absolute;
+      inset: -24px;
+      border-radius: 50%;
+      border: 1px solid rgba(37,99,235,0.1);
+      animation: bio-ring 1.2s ease-in-out 0.2s infinite;
+    }
+    @keyframes bio-pulse {
+      0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+      50% { transform: scale(1.06); box-shadow: 0 0 30px rgba(37,99,235,0.3); }
+    }
+    @keyframes bio-ring {
+      0%,100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+    .bio-label {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+    .bio-sublabel {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.78rem;
+      margin-top: 6px;
+    }
+    .bio-progress {
+      width: 120px;
+      height: 3px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    .bio-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #2563EB, #22D3EE);
+      border-radius: 2px;
+      animation: bio-load 1.8s ease-in-out forwards;
+    }
+    @keyframes bio-load { to { width: 100%; } }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: MULTI-STEP ONBOARDING
+       ═══════════════════════════════════════ */
+    .onboarding-slider {
+      display: flex;
+      width: 300%;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .onboarding-slide {
+      width: calc(100% / 3);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .onboarding-slide .onboarding-visual {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 30px 20px;
+    }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: SPARKLINE + DONUT CHART
+       ═══════════════════════════════════════ */
+    .sparkline {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 28px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    .sparkline-bar {
+      width: 3px;
+      border-radius: 2px;
+      background: #34D399;
+      animation: spark-grow 0.6s ease forwards;
+      transform-origin: bottom;
+      transform: scaleY(0);
+    }
+    @keyframes spark-grow { to { transform: scaleY(1); } }
+    .sparkline-bar:nth-child(1) { height: 40%; animation-delay: 0ms; }
+    .sparkline-bar:nth-child(2) { height: 65%; animation-delay: 50ms; }
+    .sparkline-bar:nth-child(3) { height: 45%; animation-delay: 100ms; }
+    .sparkline-bar:nth-child(4) { height: 80%; animation-delay: 150ms; }
+    .sparkline-bar:nth-child(5) { height: 60%; animation-delay: 200ms; }
+    .sparkline-bar:nth-child(6) { height: 90%; animation-delay: 250ms; }
+    .sparkline-bar:nth-child(7) { height: 100%; animation-delay: 300ms; }
+
+    .donut-chart {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--md-primary) 0% 35%,
+        var(--md-success) 35% 55%,
+        var(--md-gold) 55% 75%,
+        var(--md-tertiary) 75% 90%,
+        var(--md-outline-variant) 90% 100%
+      );
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      animation: donut-spin-in 0.8s ease forwards;
+      transform: rotate(-90deg);
+    }
+    @keyframes donut-spin-in {
+      from { transform: rotate(-90deg) scale(0); opacity: 0; }
+      to { transform: rotate(0deg) scale(1); opacity: 1; }
+    }
+    .donut-chart-inner {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+    }
+    .donut-center-value { font-size: 0.72rem; font-weight: 800; color: var(--md-on-surface); }
+    .donut-center-label { font-size: 0.48rem; color: var(--md-on-surface-variant); }
+    .donut-legend {
+      display: flex; flex-direction: column; gap: 4px;
+      flex: 1;
+    }
+    .donut-legend-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.58rem; color: var(--md-on-surface-variant);
+    }
+    .donut-legend-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: BOTTOM SHEET
+       ═══════════════════════════════════════ */
+    .bottom-sheet-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 150;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .bottom-sheet-backdrop.active { opacity: 1; pointer-events: auto; }
+    .bottom-sheet {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: #fff;
+      border-radius: 24px 24px 0 0;
+      padding: 12px 20px 32px;
+      z-index: 160;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .bottom-sheet.active { transform: translateY(0); }
+    .bottom-sheet-handle {
+      width: 36px; height: 4px;
+      background: var(--md-outline-variant);
+      border-radius: 2px;
+      margin: 0 auto 16px;
+    }
+    .bottom-sheet-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--md-on-surface);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .bs-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 0.82rem;
+      border-bottom: 1px solid var(--md-surface-container);
+    }
+    .bs-row:last-of-type { border: none; }
+    .bs-label { color: var(--md-on-surface-variant); }
+    .bs-value { font-weight: 600; color: var(--md-on-surface); }
+    .bs-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0 8px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--md-on-surface);
+      border-top: 2px solid var(--md-on-surface);
+      margin-top: 4px;
+    }
+    .bs-bio-btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: var(--md-radius-full);
+      background: linear-gradient(135deg, #2563EB, #1A56DB);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+      transition: all 0.2s;
+    }
+    .bs-bio-btn:hover { box-shadow: 0 6px 24px rgba(37,99,235,0.45); transform: translateY(-1px); }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: NOTIFICATION BADGE
+       ═══════════════════════════════════════ */
+    .nav-icon-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-badge {
+      position: absolute;
+      top: -4px; right: -6px;
+      min-width: 16px; height: 16px;
+      background: var(--md-error);
+      color: #fff;
+      font-size: 0.52rem;
+      font-weight: 800;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+      border: 2px solid var(--md-surface);
+      animation: badge-pop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes badge-pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: PULL TO REFRESH
+       ═══════════════════════════════════════ */
+    .pull-refresh {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .pull-refresh.active {
+      height: 48px;
+      padding: 8px 0;
+    }
+    .pull-spinner {
+      width: 24px; height: 24px;
+      border: 3px solid var(--md-outline-variant);
+      border-top-color: var(--md-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .pull-label {
+      font-size: 0.68rem;
+      color: var(--md-on-surface-variant);
+      margin-left: 8px;
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       PREMIUM UX: NOTIFICATIONS SCREEN
+       ═══════════════════════════════════════ */
+    .notif-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--md-surface-container);
+    }
+    .notif-item.unread { background: var(--md-primary-container); margin: 0 -20px; padding: 14px 20px; border-radius: 12px; border: none; margin-bottom: 4px; }
+    .notif-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .notif-content { flex: 1; }
+    .notif-title { font-size: 0.82rem; font-weight: 600; color: var(--md-on-surface); }
+    .notif-desc { font-size: 0.7rem; color: var(--md-on-surface-variant); margin-top: 2px; line-height: 1.4; }
+    .notif-time { font-size: 0.6rem; color: var(--md-outline); margin-top: 4px; }
+    .notif-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--md-primary);
+      flex-shrink: 0;
+      margin-top: 6px;
     }
   </style>
 </head>
@@ -1135,6 +1599,7 @@
     <button class="screen-btn" data-screen="15">Biometría</button>
     <button class="screen-btn" data-screen="16">KYC</button>
     <button class="screen-btn" data-screen="17">Términos</button>
+    <button class="screen-btn" data-screen="18">Notificaciones</button>
     <button class="screen-btn" data-screen="9">Confirmación</button>
   </div>
 
@@ -1144,6 +1609,35 @@
         <div class="phone-notch"></div>
         <div class="phone-home-indicator"></div>
 
+        <!-- Global overlays -->
+        <div class="real-status-bar" id="realStatusBar">
+          <span class="time" id="statusTime">9:41</span>
+          <div class="status-icons-real">
+            <span>Digitel</span>
+            <span>●●●●○</span>
+            <span>WiFi</span>
+            <div class="battery"><div class="battery-fill"></div></div>
+          </div>
+        </div>
+        <div class="biometric-overlay" id="bioOverlay">
+          <div class="bio-icon" id="bioIcon">🆔</div>
+          <div class="bio-label" id="bioLabel">Verificando Face ID</div>
+          <div class="bio-sublabel">Mira directamente a la cámara</div>
+          <div class="bio-progress"><div class="bio-progress-bar"></div></div>
+        </div>
+        <div class="confetti-container" id="confettiContainer"></div>
+        <div class="bottom-sheet-backdrop" id="bsBackdrop" onclick="closeBottomSheet()"></div>
+        <div class="bottom-sheet" id="bottomSheet">
+          <div class="bottom-sheet-handle"></div>
+          <div class="bottom-sheet-title">Confirmar Pago</div>
+          <div class="bs-row"><span class="bs-label">Destinatario</span><span class="bs-value">María González</span></div>
+          <div class="bs-row"><span class="bs-label">Cédula</span><span class="bs-value">V-12.345.678</span></div>
+          <div class="bs-row"><span class="bs-label">Banco destino</span><span class="bs-value">Banesco (0134)</span></div>
+          <div class="bs-row"><span class="bs-label">Cuenta origen</span><span class="bs-value">Banesco ••4521</span></div>
+          <div class="bs-total"><span>Total</span><span>$150.00</span></div>
+          <button class="bs-bio-btn" onclick="confirmWithBio()">🔐 Confirmar con Face ID</button>
+        </div>
+
         <!-- ═══ SCREEN 0: SPLASH ═══ -->
         <div class="app-screen screen-splash active" data-screen-id="0">
           <div class="splash-logo">N</div>
@@ -1152,22 +1646,46 @@
           <div class="splash-loader"><div class="splash-loader-bar"></div></div>
         </div>
 
-        <!-- ═══ SCREEN 1: ONBOARDING ═══ -->
-        <div class="app-screen screen-onboarding" data-screen-id="1">
-          <div class="onboarding-visual">
-            <div class="onboarding-illustration">💳</div>
-          </div>
-          <div class="onboarding-content">
-            <h2>Paga desde cualquier banco</h2>
-            <p>Conecta todas tus cuentas bancarias en un solo lugar. Realiza Pagos Móviles sin importar el banco.</p>
-            <div class="onboarding-dots">
-              <div class="onboarding-dot active"></div>
-              <div class="onboarding-dot"></div>
-              <div class="onboarding-dot"></div>
+        <!-- ═══ SCREEN 1: ONBOARDING 3 PASOS ═══ -->
+        <div class="app-screen screen-onboarding" data-screen-id="1" style="overflow:hidden;">
+          <div class="onboarding-slider" id="onboardingSlider">
+            <div class="onboarding-slide">
+              <div class="onboarding-visual" style="background:linear-gradient(145deg,#EEF2FF,#DBEAFE);">
+                <div class="onboarding-illustration">💳</div>
+              </div>
+              <div class="onboarding-content">
+                <h2>Todos tus bancos, una sola app</h2>
+                <p>Conecta Banesco, Mercantil, Provincial y 60+ bancos. Realiza Pagos Móviles sin cambiar de aplicación.</p>
+              </div>
             </div>
-            <button class="m3-btn m3-btn-filled" style="width: 100%;" onclick="goToScreen(2)">Comenzar →</button>
-            <div style="margin-top: 12px; font-size: 0.78rem; color: var(--md-on-surface-variant);">
-              ¿Ya tienes cuenta? <a href="#" style="color: var(--md-primary); font-weight: 600; text-decoration: none;" onclick="goToScreen(2)">Inicia sesión</a>
+            <div class="onboarding-slide">
+              <div class="onboarding-visual" style="background:linear-gradient(145deg,#ECFDF5,#D1FAE5);">
+                <div class="onboarding-illustration" style="background:linear-gradient(135deg,#D1FAE5,#6EE7B7);">🏪</div>
+              </div>
+              <div class="onboarding-content">
+                <h2>Tu negocio cobra al instante</h2>
+                <p>Convierte tu teléfono en un Punto de Venta. Acepta pagos por QR, NFC y Pago Móvil sin equipos costosos.</p>
+              </div>
+            </div>
+            <div class="onboarding-slide">
+              <div class="onboarding-visual" style="background:linear-gradient(145deg,#F3E8FF,#E9D5FF);">
+                <div class="onboarding-illustration" style="background:linear-gradient(135deg,#E9D5FF,#C084FC);">🔐</div>
+              </div>
+              <div class="onboarding-content">
+                <h2>Seguridad de nivel bancario</h2>
+                <p>Face ID, huella digital y PIN protegen cada transacción. Cifrado de extremo a extremo y cumplimiento KYC/AML.</p>
+              </div>
+            </div>
+          </div>
+          <div style="padding:0 1.5rem 2rem;text-align:center;">
+            <div class="onboarding-dots" id="onboardingDots">
+              <div class="onboarding-dot active" data-ob="0"></div>
+              <div class="onboarding-dot" data-ob="1"></div>
+              <div class="onboarding-dot" data-ob="2"></div>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width:100%;" id="obNextBtn" onclick="nextOnboarding()">Siguiente →</button>
+            <div style="margin-top:12px;font-size:0.78rem;color:var(--md-on-surface-variant);">
+              ¿Ya tienes cuenta? <a href="#" style="color:var(--md-primary);font-weight:600;text-decoration:none;" onclick="goToScreen(2)">Inicia sesión</a>
             </div>
           </div>
         </div>
@@ -1197,8 +1715,8 @@
               <button class="login-social-btn">📧</button>
             </div>
             <div class="login-social" style="margin-top: 12px;">
-              <button class="m3-btn m3-btn-tonal" style="flex:1;" onclick="goToScreen(3)">🆔 Face ID</button>
-              <button class="m3-btn m3-btn-tonal" style="flex:1;" onclick="goToScreen(3)">🖐️ Huella</button>
+              <button class="m3-btn m3-btn-tonal" style="flex:1;" onclick="triggerBiometric('face')">🆔 Face ID</button>
+              <button class="m3-btn m3-btn-tonal" style="flex:1;" onclick="triggerBiometric('finger')">🖐️ Huella</button>
             </div>
           </div>
           <div class="login-bottom">
@@ -1208,18 +1726,25 @@
 
         <!-- ═══ SCREEN 3: HOME ═══ -->
         <div class="app-screen screen-home" data-screen-id="3">
+          <div class="pull-refresh" id="pullRefresh">
+            <div class="pull-spinner"></div>
+            <span class="pull-label">Actualizando saldos...</span>
+          </div>
           <div class="home-header">
             <div class="home-topbar">
               <div>
                 <div class="home-greeting">Buenos días 👋</div>
                 <div class="home-username">Carlos Rivero</div>
               </div>
-              <div class="home-avatar" onclick="goToScreen(8)">CR</div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <button onclick="goToScreen(18)" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.12);border:none;color:#fff;font-size:1rem;cursor:pointer;position:relative;">🔔<span class="nav-badge" style="border-color:rgba(11,29,58,0.8);top:-2px;right:-2px;">3</span></button>
+                <div class="home-avatar" onclick="goToScreen(8)">CR</div>
+              </div>
             </div>
             <div class="home-balance-card">
               <div class="home-balance-label">Saldo Total</div>
-              <div class="home-balance-value">$4,285<span style="font-size:1.2rem;color:rgba(255,255,255,0.5)">.50</span></div>
-              <div class="home-balance-change">↑ +12.5% este mes</div>
+              <div class="home-balance-value"><span class="countup" data-target="4285" data-prefix="$">$0</span><span style="font-size:1.2rem;color:rgba(255,255,255,0.5)">.50</span></div>
+              <div class="home-balance-change">↑ +12.5% este mes <div class="sparkline"><div class="sparkline-bar"></div><div class="sparkline-bar"></div><div class="sparkline-bar"></div><div class="sparkline-bar"></div><div class="sparkline-bar"></div><div class="sparkline-bar"></div><div class="sparkline-bar"></div></div></div>
               <div class="home-balance-carousel">
                 <button class="carousel-arrow" onclick="prevBankCard()">‹</button>
                 <div class="bank-card-slider">
@@ -1249,20 +1774,20 @@
             </div>
           </div>
 
-          <div class="home-actions">
-            <button class="home-action" onclick="goToScreen(4)">
+          <div class="home-actions" id="homeActions">
+            <button class="home-action stagger-item" onclick="goToScreen(4)">
               <div class="home-action-icon" style="background: #EEF2FF; color: var(--md-primary);">📲</div>
               <div class="home-action-label">Pago Móvil</div>
             </button>
-            <button class="home-action" onclick="goToScreen(5)">
+            <button class="home-action stagger-item" onclick="goToScreen(5)">
               <div class="home-action-icon" style="background: #ECFDF5; color: var(--md-success);">📷</div>
               <div class="home-action-label">Escanear QR</div>
             </button>
-            <button class="home-action" onclick="goToScreen(6)">
+            <button class="home-action stagger-item" onclick="goToScreen(6)">
               <div class="home-action-icon" style="background: #FEF3C7; color: var(--md-gold);">🏪</div>
               <div class="home-action-label">PoS Virtual</div>
             </button>
-            <button class="home-action" onclick="goToScreen(7)">
+            <button class="home-action stagger-item" onclick="goToScreen(7)">
               <div class="home-action-icon" style="background: #F3E8FF; color: var(--md-tertiary);">📊</div>
               <div class="home-action-label">Historial</div>
             </button>
@@ -1278,12 +1803,34 @@
             </div>
           </div>
 
+          <div class="home-section" style="margin-bottom:16px;">
+            <div class="home-section-header">
+              <div class="home-section-title">Distribución de gastos</div>
+              <div class="home-section-link">Abril 2026</div>
+            </div>
+            <div class="m3-card" style="display:flex;align-items:center;gap:16px;">
+              <div class="donut-chart">
+                <div class="donut-chart-inner">
+                  <div class="donut-center-value">$1,245</div>
+                  <div class="donut-center-label">gastos</div>
+                </div>
+              </div>
+              <div class="donut-legend">
+                <div class="donut-legend-item"><div class="donut-legend-dot" style="background:var(--md-primary)"></div>Comercios 35%</div>
+                <div class="donut-legend-item"><div class="donut-legend-dot" style="background:var(--md-success)"></div>Alimentos 20%</div>
+                <div class="donut-legend-item"><div class="donut-legend-dot" style="background:var(--md-gold)"></div>Servicios 20%</div>
+                <div class="donut-legend-item"><div class="donut-legend-dot" style="background:var(--md-tertiary)"></div>Transporte 15%</div>
+                <div class="donut-legend-item"><div class="donut-legend-dot" style="background:var(--md-outline-variant)"></div>Otros 10%</div>
+              </div>
+            </div>
+          </div>
+
           <div class="home-section" style="padding-bottom: 96px;">
             <div class="home-section-header">
               <div class="home-section-title">Recientes</div>
               <div class="home-section-link" onclick="goToScreen(7)">Ver todo</div>
             </div>
-            <div class="home-tx-item">
+            <div class="home-tx-item stagger-item">
               <div class="home-tx-icon" style="background: #FEE2E2;">🛒</div>
               <div class="home-tx-info">
                 <div class="home-tx-name">Supermercado Express</div>
@@ -1294,7 +1841,7 @@
                 <div class="home-tx-time">Hace 2h</div>
               </div>
             </div>
-            <div class="home-tx-item">
+            <div class="home-tx-item stagger-item">
               <div class="home-tx-icon" style="background: #D1FAE5;">💰</div>
               <div class="home-tx-info">
                 <div class="home-tx-name">María González</div>
@@ -1305,7 +1852,7 @@
                 <div class="home-tx-time">Hace 5h</div>
               </div>
             </div>
-            <div class="home-tx-item">
+            <div class="home-tx-item stagger-item">
               <div class="home-tx-icon" style="background: #EEF2FF;">📱</div>
               <div class="home-tx-info">
                 <div class="home-tx-name">José Hernández</div>
@@ -1316,7 +1863,7 @@
                 <div class="home-tx-time">Ayer</div>
               </div>
             </div>
-            <div class="home-tx-item">
+            <div class="home-tx-item stagger-item">
               <div class="home-tx-icon" style="background: #FEF3C7;">🏪</div>
               <div class="home-tx-info">
                 <div class="home-tx-name">Farmacia Central</div>
@@ -1330,11 +1877,11 @@
           </div>
 
           <div class="bottom-nav">
-            <button class="nav-item active" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
-            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
-            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
-            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
-            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+            <button class="nav-item active" onclick="goToScreen(3)"><div class="nav-icon-wrap"><span>🏠</span></div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon-wrap"><span>📷</span></div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon-wrap"><span>💸</span></div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon-wrap"><span>📋</span><span class="nav-badge">3</span></div><div class="nav-label">Historial</div></button>
+            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon-wrap"><span>👤</span></div><div class="nav-label">Perfil</div></button>
           </div>
         </div>
 
@@ -1376,7 +1923,7 @@
             <button class="pago-key">.</button><button class="pago-key">0</button><button class="pago-key" style="font-size:0.9rem;">⌫</button>
           </div>
           <div style="padding: 0 20px 24px;">
-            <button class="m3-btn m3-btn-filled" style="width: 100%; padding: 16px;" onclick="goToScreen(9)">Confirmar Pago →</button>
+            <button class="m3-btn m3-btn-filled" style="width: 100%; padding: 16px;" onclick="openBottomSheet()">Confirmar Pago →</button>
           </div>
         </div>
 
@@ -1422,11 +1969,11 @@
           </div>
 
           <div class="bottom-nav">
-            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
-            <button class="nav-item active" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
-            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
-            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
-            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon-wrap"><span>🏠</span></div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item active" onclick="goToScreen(5)"><div class="nav-icon-wrap"><span>📷</span></div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon-wrap"><span>💸</span></div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon-wrap"><span>📋</span><span class="nav-badge">3</span></div><div class="nav-label">Historial</div></button>
+            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon-wrap"><span>👤</span></div><div class="nav-label">Perfil</div></button>
           </div>
         </div>
 
@@ -1548,11 +2095,11 @@
           </div>
 
           <div class="bottom-nav">
-            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
-            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
-            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
-            <button class="nav-item active" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
-            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon-wrap"><span>🏠</span></div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon-wrap"><span>📷</span></div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon-wrap"><span>💸</span></div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item active" onclick="goToScreen(7)"><div class="nav-icon-wrap"><span>📋</span><span class="nav-badge">3</span></div><div class="nav-label">Historial</div></button>
+            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon-wrap"><span>👤</span></div><div class="nav-label">Perfil</div></button>
           </div>
         </div>
 
@@ -1622,11 +2169,11 @@
           </div>
 
           <div class="bottom-nav">
-            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
-            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
-            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
-            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
-            <button class="nav-item active" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon-wrap"><span>🏠</span></div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon-wrap"><span>📷</span></div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon-wrap"><span>💸</span></div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon-wrap"><span>📋</span><span class="nav-badge">3</span></div><div class="nav-label">Historial</div></button>
+            <button class="nav-item active" onclick="goToScreen(8)"><div class="nav-icon-wrap"><span>👤</span></div><div class="nav-label">Perfil</div></button>
           </div>
         </div>
 
@@ -1694,7 +2241,7 @@
         </div>
 
         <!-- ═══ SCREEN 12: MIS CUENTAS BANCARIAS ═══ -->
-        <div class="app-screen screen-profile" data-screen-id="12">
+        <div class="app-screen screen-profile sub-view" data-screen-id="12">
           <div class="detail-header">
             <button class="pago-back" onclick="goToScreen(8)">←</button>
             <div><div class="detail-title">Mis Cuentas Bancarias</div><div class="detail-subtitle">Gestiona tus bancos conectados</div></div>
@@ -1710,7 +2257,7 @@
         </div>
 
         <!-- ═══ SCREEN 13: MÉTODOS DE PAGO ═══ -->
-        <div class="app-screen screen-profile" data-screen-id="13">
+        <div class="app-screen screen-profile sub-view" data-screen-id="13">
           <div class="detail-header">
             <button class="pago-back" onclick="goToScreen(8)">←</button>
             <div><div class="detail-title">Métodos de Pago</div><div class="detail-subtitle">Tarjetas, cuentas y preferencias</div></div>
@@ -1726,7 +2273,7 @@
         </div>
 
         <!-- ═══ SCREEN 14: NEXOPAY PRO ═══ -->
-        <div class="app-screen screen-profile" data-screen-id="14">
+        <div class="app-screen screen-profile sub-view" data-screen-id="14">
           <div class="detail-header">
             <button class="pago-back" onclick="goToScreen(8)">←</button>
             <div><div class="detail-title">NexoPay Pro</div><div class="detail-subtitle">Beneficios premium para clientes frecuentes</div></div>
@@ -1747,7 +2294,7 @@
         </div>
 
         <!-- ═══ SCREEN 15: BIOMETRÍA Y PIN ═══ -->
-        <div class="app-screen screen-profile" data-screen-id="15">
+        <div class="app-screen screen-profile sub-view" data-screen-id="15">
           <div class="detail-header">
             <button class="pago-back" onclick="goToScreen(8)">←</button>
             <div><div class="detail-title">Biometría y PIN</div><div class="detail-subtitle">Seguridad de acceso y autorización</div></div>
@@ -1764,7 +2311,7 @@
         </div>
 
         <!-- ═══ SCREEN 16: VERIFICACIÓN KYC ═══ -->
-        <div class="app-screen screen-profile" data-screen-id="16">
+        <div class="app-screen screen-profile sub-view" data-screen-id="16">
           <div class="detail-header">
             <button class="pago-back" onclick="goToScreen(8)">←</button>
             <div><div class="detail-title">Verificación KYC</div><div class="detail-subtitle">Cumplimiento regulatorio seguro</div></div>
@@ -1781,7 +2328,7 @@
         </div>
 
         <!-- ═══ SCREEN 17: TÉRMINOS Y PRIVACIDAD ═══ -->
-        <div class="app-screen screen-profile" data-screen-id="17">
+        <div class="app-screen screen-profile sub-view" data-screen-id="17">
           <div class="detail-header">
             <button class="pago-back" onclick="goToScreen(8)">←</button>
             <div><div class="detail-title">Términos y Privacidad</div><div class="detail-subtitle">Transparencia y protección de datos</div></div>
@@ -1797,6 +2344,67 @@
             </div>
             <button class="m3-btn m3-btn-outlined" style="width:100%;margin-bottom:10px;">Ver documento completo</button>
             <button class="m3-btn m3-btn-filled" style="width:100%;">Aceptar y continuar</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 18: NOTIFICACIONES ═══ -->
+        <div class="app-screen screen-profile sub-view" data-screen-id="18">
+          <div class="detail-header">
+            <button class="pago-back" onclick="goToScreen(3)">←</button>
+            <div><div class="detail-title">Notificaciones</div><div class="detail-subtitle">Centro de alertas y actividad</div></div>
+          </div>
+          <div class="detail-content">
+            <div class="notif-item unread">
+              <div class="notif-icon" style="background:#D1FAE5;">💰</div>
+              <div class="notif-content">
+                <div class="notif-title">Pago recibido</div>
+                <div class="notif-desc">María González te envió $120.00 por Pago Móvil</div>
+                <div class="notif-time">Hace 2 horas</div>
+              </div>
+              <div class="notif-dot"></div>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-icon" style="background:#EEF2FF;">🔒</div>
+              <div class="notif-content">
+                <div class="notif-title">Inicio de sesión detectado</div>
+                <div class="notif-desc">Se detectó un inicio de sesión desde iPhone 15 Pro en Caracas</div>
+                <div class="notif-time">Hace 3 horas</div>
+              </div>
+              <div class="notif-dot"></div>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-icon" style="background:#FEF3C7;">⭐</div>
+              <div class="notif-content">
+                <div class="notif-title">NexoPay Pro: Cashback acreditado</div>
+                <div class="notif-desc">Recibiste $3.20 de cashback por tus compras de esta semana</div>
+                <div class="notif-time">Hace 5 horas</div>
+              </div>
+              <div class="notif-dot"></div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#FEE2E2;">📲</div>
+              <div class="notif-content">
+                <div class="notif-title">Pago enviado exitosamente</div>
+                <div class="notif-desc">Enviaste $35.00 a José Hernández vía Pago Móvil</div>
+                <div class="notif-time">Ayer, 6:45 PM</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#ECFDF5;">🎉</div>
+              <div class="notif-content">
+                <div class="notif-title">¡Bienvenido a NexoPay!</div>
+                <div class="notif-desc">Tu cuenta ha sido verificada. Ya puedes enviar y recibir pagos desde cualquier banco.</div>
+                <div class="notif-time">5 Abr 2026</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon" style="background:#F3E8FF;">📊</div>
+              <div class="notif-content">
+                <div class="notif-title">Resumen semanal disponible</div>
+                <div class="notif-desc">Revisa tus estadísticas: 12 transacciones, $847 procesados esta semana</div>
+                <div class="notif-time">4 Abr 2026</div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1840,12 +2448,22 @@
   <script>
     let currentScreen = 0;
     let currentBank = 0;
+    let obStep = 0;
+    let countUpDone = false;
+
+    const SUB_VIEWS = new Set([10, 11, 12, 13, 14, 15, 16, 17, 18]);
 
     function goToScreen(idx) {
       const screens = document.querySelectorAll('.app-screen');
       const btns = document.querySelectorAll('.screen-btn');
       const target = document.querySelector(`[data-screen-id="${idx}"]`);
       if (!target) return;
+
+      const prev = document.querySelector('.app-screen.active');
+      if (prev && prev !== target) {
+        prev.classList.add('slide-out-left');
+        setTimeout(() => prev.classList.remove('slide-out-left'), 400);
+      }
 
       screens.forEach(s => s.classList.remove('active'));
       btns.forEach(b => b.classList.remove('active'));
@@ -1855,22 +2473,179 @@
         if (parseInt(b.dataset.screen) === idx) b.classList.add('active');
       });
       currentScreen = idx;
+
+      updateStatusBar(idx);
+
+      if (idx === 3) {
+        triggerStagger();
+        triggerCountUp();
+        triggerPullRefresh();
+      }
+      if (idx === 9) setTimeout(launchConfetti, 400);
     }
 
+    /* ── Status bar realista con reloj ── */
+    function updateStatusBar(idx) {
+      const bar = document.getElementById('realStatusBar');
+      if (!bar) return;
+      const dark = [0, 3, 6].includes(idx);
+      bar.classList.toggle('light', dark);
+      bar.style.display = [0].includes(idx) ? 'none' : 'flex';
+    }
+    function updateClock() {
+      const el = document.getElementById('statusTime');
+      if (!el) return;
+      const now = new Date();
+      el.textContent = now.toLocaleTimeString('es-VE', { hour: '2-digit', minute: '2-digit', hour12: false });
+    }
+    updateClock();
+    setInterval(updateClock, 30000);
+
+    /* ── Staggered entrance animations ── */
+    function triggerStagger() {
+      document.querySelectorAll('.stagger-item').forEach(el => el.classList.remove('visible'));
+      setTimeout(() => {
+        document.querySelectorAll('.stagger-item').forEach(el => el.classList.add('visible'));
+      }, 150);
+    }
+
+    /* ── CountUp animation ── */
+    function triggerCountUp() {
+      if (countUpDone) return;
+      countUpDone = true;
+      document.querySelectorAll('.countup').forEach(el => {
+        const target = parseInt(el.dataset.target) || 0;
+        const prefix = el.dataset.prefix || '';
+        const duration = 1200;
+        const start = performance.now();
+        function tick(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const val = Math.round(eased * target);
+          el.textContent = prefix + val.toLocaleString('en-US');
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+
+    /* ── Pull-to-refresh ── */
+    function triggerPullRefresh() {
+      const pr = document.getElementById('pullRefresh');
+      if (!pr) return;
+      pr.classList.add('active');
+      setTimeout(() => pr.classList.remove('active'), 1800);
+    }
+
+    /* ── Confetti ── */
+    function launchConfetti() {
+      const c = document.getElementById('confettiContainer');
+      if (!c) return;
+      c.innerHTML = '';
+      const colors = ['#2563EB', '#22D3EE', '#34D399', '#FBBF24', '#F472B6', '#A78BFA', '#FB923C'];
+      for (let i = 0; i < 50; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 0.8 + 's';
+        piece.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+        const shapes = ['50%', '2px', '0'];
+        piece.style.borderRadius = shapes[Math.floor(Math.random() * shapes.length)];
+        piece.style.width = (5 + Math.random() * 6) + 'px';
+        piece.style.height = (5 + Math.random() * 6) + 'px';
+        c.appendChild(piece);
+      }
+      setTimeout(() => { c.innerHTML = ''; }, 3500);
+    }
+
+    /* ── Biometric animation ── */
+    function triggerBiometric(type) {
+      const overlay = document.getElementById('bioOverlay');
+      const icon = document.getElementById('bioIcon');
+      const label = document.getElementById('bioLabel');
+      if (!overlay) return;
+      icon.textContent = type === 'face' ? '🆔' : '🖐️';
+      label.textContent = type === 'face' ? 'Verificando Face ID' : 'Verificando huella digital';
+      overlay.classList.add('active');
+      setTimeout(() => {
+        overlay.classList.remove('active');
+        goToScreen(3);
+      }, 2000);
+    }
+
+    /* ── Bottom Sheet ── */
+    function openBottomSheet() {
+      document.getElementById('bsBackdrop')?.classList.add('active');
+      document.getElementById('bottomSheet')?.classList.add('active');
+    }
+    function closeBottomSheet() {
+      document.getElementById('bsBackdrop')?.classList.remove('active');
+      document.getElementById('bottomSheet')?.classList.remove('active');
+    }
+    function confirmWithBio() {
+      closeBottomSheet();
+      const overlay = document.getElementById('bioOverlay');
+      const icon = document.getElementById('bioIcon');
+      const label = document.getElementById('bioLabel');
+      if (overlay) {
+        icon.textContent = '🔐';
+        label.textContent = 'Autorizando pago...';
+        overlay.classList.add('active');
+        setTimeout(() => {
+          overlay.classList.remove('active');
+          goToScreen(9);
+        }, 2000);
+      }
+    }
+
+    /* ── Onboarding multi-step ── */
+    function nextOnboarding() {
+      obStep++;
+      if (obStep >= 3) { goToScreen(2); obStep = 0; updateOnboarding(); return; }
+      updateOnboarding();
+    }
+    function updateOnboarding() {
+      const slider = document.getElementById('onboardingSlider');
+      if (slider) slider.style.transform = `translateX(-${obStep * 33.333}%)`;
+      document.querySelectorAll('[data-ob]').forEach((d, i) => {
+        d.classList.toggle('active', i === obStep);
+        d.style.width = i === obStep ? '24px' : '8px';
+        d.style.background = i === obStep ? 'var(--md-primary)' : 'var(--md-outline-variant)';
+      });
+      const btn = document.getElementById('obNextBtn');
+      if (btn) btn.textContent = obStep === 2 ? 'Comenzar →' : 'Siguiente →';
+    }
+
+    /* ── Touch swipe for onboarding ── */
+    (function() {
+      const el = document.querySelector('[data-screen-id="1"]');
+      if (!el) return;
+      let startX = 0;
+      el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      el.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0 && obStep < 2) { obStep++; updateOnboarding(); }
+          else if (diff < 0 && obStep > 0) { obStep--; updateOnboarding(); }
+        }
+      }, { passive: true });
+    })();
+
+    /* ── Bank carousel ── */
     function updateBankCarousel() {
       const cards = document.querySelectorAll('.bank-card');
       const dots = document.querySelectorAll('.carousel-dot');
       cards.forEach((c, i) => c.classList.toggle('active', i === currentBank));
       dots.forEach((d, i) => d.classList.toggle('active', i === currentBank));
     }
-
     function nextBankCard() {
       const cards = document.querySelectorAll('.bank-card');
       if (!cards.length) return;
       currentBank = (currentBank + 1) % cards.length;
       updateBankCarousel();
     }
-
     function prevBankCard() {
       const cards = document.querySelectorAll('.bank-card');
       if (!cards.length) return;
@@ -1878,8 +2653,16 @@
       updateBankCarousel();
     }
 
+    /* ── Event listeners ── */
     document.querySelectorAll('.screen-btn').forEach(btn => {
       btn.addEventListener('click', () => goToScreen(parseInt(btn.dataset.screen)));
+    });
+
+    document.querySelectorAll('.carousel-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        currentBank = parseInt(dot.dataset.dot || '0');
+        updateBankCarousel();
+      });
     });
 
     document.querySelectorAll('button, .home-action, .profile-item, .qr-action-btn, .pos-method-card').forEach(el => {
@@ -1896,15 +2679,9 @@
       });
     });
 
-    document.querySelectorAll('.carousel-dot').forEach(dot => {
-      dot.addEventListener('click', () => {
-        currentBank = parseInt(dot.dataset.dot || '0');
-        updateBankCarousel();
-      });
-    });
     updateBankCarousel();
+    updateStatusBar(0);
 
-    // Auto-advance splash after 2s
     setTimeout(() => { if (currentScreen === 0) goToScreen(1); }, 2500);
   </script>
 

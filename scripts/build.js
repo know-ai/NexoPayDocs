@@ -4,7 +4,7 @@ const path = require('path');
 const SRC = __dirname + '/..';
 const DEST = SRC + '/public';
 
-const STATIC_DIRS = ['css', 'img'];
+const STATIC_DIRS = ['css', 'img', 'mvp'];
 const HTML_FILES = fs.readdirSync(SRC).filter(f => f.endsWith('.html'));
 
 function ensureDir(dir) {

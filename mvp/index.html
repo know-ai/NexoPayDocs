@@ -362,17 +362,19 @@
       backdrop-filter: blur(10px);
       margin-bottom: 1.5rem;
       animation: splash-pulse 2s ease-in-out infinite;
+      will-change: transform;
+      backface-visibility: hidden;
     }
     @keyframes splash-pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
-      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(37,99,235,0.3); }
+      0%, 100% { transform: scale3d(1,1,1); box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+      50% { transform: scale3d(1.05,1.05,1); box-shadow: 0 0 40px rgba(37,99,235,0.3); }
     }
     .splash-name { font-size: 2.2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; }
     .splash-name span { color: #22D3EE; }
     .splash-tagline { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 0.5rem; font-weight: 400; }
     .splash-loader { margin-top: 3rem; width: 40px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
-    .splash-loader-bar { height: 100%; width: 60%; background: linear-gradient(90deg, #2563EB, #22D3EE); border-radius: 2px; animation: splash-load 1.5s ease-in-out infinite; }
-    @keyframes splash-load { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
+    .splash-loader-bar { height: 100%; width: 60%; background: linear-gradient(90deg, #2563EB, #22D3EE); border-radius: 2px; animation: splash-load 1.5s ease-in-out infinite; will-change: transform; backface-visibility: hidden; }
+    @keyframes splash-load { 0% { transform: translate3d(-100%,0,0); } 100% { transform: translate3d(200%,0,0); } }
 
     /* ════════════════════════════════════════════
        SCREEN 1: ONBOARDING
@@ -1154,22 +1156,26 @@
       .phone-screen { border-radius: 0; }
       .phone-notch, .phone-home-indicator { display: none; }
 
-      .app-screen {
+      .app-screen,
+      .app-screen.sub-view {
         transform: none !important;
-        transition: opacity 0.25s ease !important;
+        transition: none !important;
       }
-      .app-screen.active {
+      .app-screen.active,
+      .app-screen.sub-view.active {
         transform: none !important;
       }
       .app-screen.slide-out-left {
-        transform: none !important;
-        opacity: 0 !important;
+        display: none !important;
       }
-      .app-screen.sub-view {
+
+      .ob-slide {
         transform: none !important;
-        transition: opacity 0.25s ease !important;
+        transition: none !important;
+        opacity: 0;
       }
-      .app-screen.sub-view.active {
+      .ob-slide.active {
+        opacity: 1 !important;
         transform: none !important;
       }
 
@@ -2598,7 +2604,9 @@
       const target = document.querySelector(`[data-screen-id="${idx}"]`);
       if (!target) return;
 
-      if (!isMobile()) {
+      const mobile = isMobile();
+
+      if (!mobile) {
         const prev = document.querySelector('.app-screen.active');
         if (prev && prev !== target) {
           prev.classList.add('slide-out-left');
@@ -2608,6 +2616,9 @@
 
       screens.forEach(s => s.classList.remove('active'));
       btns.forEach(b => b.classList.remove('active'));
+
+      if (mobile) { void target.offsetHeight; }
+
       target.classList.add('active');
       target.scrollTop = 0;
       btns.forEach(b => {

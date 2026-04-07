@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVP Prototipo Interactivo — NexoPay</title>
+  <meta name="description" content="Prototipo interactivo de alta fidelidad con 10 pantallas funcionales. Explora el MVP de NexoPay y experimenta el futuro de los pagos digitales en Venezuela.">
+  <meta property="og:title" content="MVP Prototipo Interactivo — NexoPay">
+  <meta property="og:description" content="Prototipo interactivo de alta fidelidad con 10 pantallas funcionales. Explora el MVP de NexoPay.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexoPay — Inversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-icon">N</div><span><span class="logo-text-nexo">Nexo</span><span class="logo-text-pay">Pay</span></span></a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.navbar-nav').classList.toggle('open')">☰</button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-analisis-mercado.html">Mercado</a></li>
+        <li><a href="03-problema-solucion.html">Solución</a></li>
+        <li><a href="04-modelo-negocio.html">Negocio</a></li>
+        <li><a href="05-tecnologia.html">Tecnología</a></li>
+        <li><a href="06-regulatorio-legal.html">Legal</a></li>
+        <li><a href="07-analisis-competitivo.html">Competencia</a></li>
+        <li><a href="08-proyecciones-financieras.html">Finanzas</a></li>
+        <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
+        <li><a href="10-propuesta-inversion.html">Inversión</a></li>
+        <li><a href="11-mvp-prototipo.html" class="active">MVP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ Page Hero ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a><span class="separator">/</span><span class="current">MVP Prototipo</span>
+      </div>
+      <span class="section-number">Sección 11</span>
+      <h1>MVP Prototipo Interactivo</h1>
+      <p class="lead">Explora el futuro de los pagos digitales en Venezuela. Un prototipo de alta fidelidad con 10 pantallas funcionales que demuestran la experiencia de usuario completa de NexoPay — desde el onboarding hasta la confirmación de pago.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1 — PROTOTIPO INTERACTIVO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Prototipo</span>
+        <h2>Accede al Prototipo Interactivo</h2>
+        <p>Nuestro MVP de alta fidelidad permite experimentar de primera mano cada flujo de la aplicación. Diseñado con atención al detalle para transmitir exactamente cómo se sentirá NexoPay en las manos de millones de venezolanos.</p>
+      </div>
+
+      <div class="highlight-box" style="text-align: center; padding: 3rem 2rem;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">📱</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Prototipo Interactivo de Alta Fidelidad</h3>
+        <p style="max-width: 600px; margin: 0 auto 1.5rem; color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7;">
+          10 pantallas completamente funcionales que simulan la experiencia real de NexoPay. Navega entre pantallas, interactúa con los elementos de la interfaz y descubre cómo cada detalle ha sido diseñado para maximizar la usabilidad y la velocidad de las transacciones.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+          <a href="mvp/index.html" class="btn btn-primary btn-lg" style="font-size: 1.15rem; padding: 1rem 2.5rem;">
+            Abrir Prototipo Interactivo →
+          </a>
+        </div>
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; color: var(--color-text-light); font-size: 0.9rem;">
+          <span>✓ 10 pantallas</span>
+          <span>✓ Navegación real</span>
+          <span>✓ Animaciones</span>
+          <span>✓ Mobile-first</span>
+        </div>
+      </div>
+
+      <div class="kpi-row" style="margin-top: 2.5rem;">
+        <div class="kpi-item" style="border-top: 3px solid var(--color-accent);">
+          <div class="kpi-value">10</div>
+          <div class="kpi-label">Pantallas funcionales</div>
+        </div>
+        <div class="kpi-item" style="border-top: 3px solid var(--color-cyan);">
+          <div class="kpi-value" style="background: linear-gradient(135deg, #06B6D4, #22D3EE); -webkit-background-clip: text; background-clip: text;">5</div>
+          <div class="kpi-label">Flujos de usuario</div>
+        </div>
+        <div class="kpi-item" style="border-top: 3px solid var(--color-success);">
+          <div class="kpi-value" style="background: linear-gradient(135deg, #10B981, #34D399); -webkit-background-clip: text; background-clip: text;">&lt;10s</div>
+          <div class="kpi-label">Tiempo por transacción</div>
+        </div>
+        <div class="kpi-item" style="border-top: 3px solid var(--color-gold);">
+          <div class="kpi-value gold">100%</div>
+          <div class="kpi-label">Mobile-first design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2 — PANTALLAS DEL MVP
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Pantallas</span>
+        <h2>Las 10 Pantallas del MVP</h2>
+        <p>Cada pantalla ha sido diseñada con precisión para cubrir el flujo completo del usuario, desde la primera interacción hasta la confirmación de pago exitoso.</p>
+      </div>
+
+      <div class="grid grid-2" style="gap: 1.5rem;">
+
+        <div class="card" style="border-left: 4px solid var(--color-accent);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">🚀</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">1. Splash Screen</h3>
+              <span class="badge badge-blue">Pantalla de carga</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Pantalla de carga con el logo animado de NexoPay. Transición fluida con efecto de desvanecimiento que transmite confianza y modernidad desde el primer segundo.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-cyan);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--color-cyan), var(--color-cyan-light)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">👋</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">2. Onboarding</h3>
+              <span class="badge badge-cyan">Bienvenida</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Carrusel de bienvenida con la propuesta de valor en 3 pasos. Ilustraciones claras que explican cómo NexoPay unifica todos los métodos de pago en una sola app.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-teal);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--color-teal), #14B8A6); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">🔐</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">3. Login</h3>
+              <span class="badge badge-green">Autenticación</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Autenticación con soporte para biometría (huella digital, Face ID), login social (Google, Apple) y credenciales tradicionales. Proceso seguro y rápido en menos de 5 segundos.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-success);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--color-success), #34D399); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">🏠</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">4. Home Dashboard</h3>
+              <span class="badge badge-green">Panel principal</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Balance total consolidado de todas las cuentas bancarias. Acciones rápidas (Pago Móvil, QR, PoS, Historial) y lista de transacciones recientes con actualizaciones en tiempo real.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-gold);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">💸</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">5. Pago Móvil</h3>
+              <span class="badge badge-gold">Transferencias</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Envío de dinero con selector de contactos, selector de banco origen/destino, teclado numérico optimizado y confirmación instantánea. Compatible con todos los bancos del país.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #8B5CF6;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #8B5CF6, #A78BFA); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">📷</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">6. QR Code</h3>
+              <span class="badge" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">Pagos instantáneos</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Genera o escanea códigos QR para pagos instantáneos. Cámara integrada con detección automática, generación de códigos con monto y datos del comercio preconfigurados.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-accent-dark);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">🏪</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">7. PoS Virtual</h3>
+              <span class="badge badge-blue">Comercios</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Panel de comerciante con estadísticas diarias de ventas, generación de cobros vía QR, NFC o enlace compartido. Dashboard con métricas en tiempo real y reportes.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #EC4899;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #EC4899, #F472B6); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">📋</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">8. Historial de Transacciones</h3>
+              <span class="badge" style="background: rgba(236,72,153,0.1); color: #EC4899;">Registro</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Lista filtrable de todas las transacciones con agrupación por fecha. Filtros por tipo (envíos, recibidos, QR, PoS), rango de fechas y montos. Exportación a PDF disponible.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #F97316;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #F97316, #FB923C); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">👤</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">9. Perfil</h3>
+              <span class="badge" style="background: rgba(249,115,22,0.1); color: #F97316;">Configuración</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Configuración de cuenta, seguridad (2FA, biometría), verificación KYC, gestión de cuentas bancarias vinculadas, preferencias de notificación y opciones de privacidad.</p>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--color-success);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #10B981, #059669); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0;">✅</div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.15rem;">10. Confirmación de Pago</h3>
+              <span class="badge badge-green">Éxito</span>
+            </div>
+          </div>
+          <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Animación de éxito con check animado, recibo digital completo con número de referencia, detalles de la transacción y opciones para compartir el comprobante.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3 — PRINCIPIOS DE DISEÑO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Diseño</span>
+        <h2>Principios de Diseño</h2>
+        <p>Cada decisión de diseño en NexoPay está guiada por principios claros que priorizan la velocidad, la accesibilidad y la confianza del usuario.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: 1.5rem;">
+
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--color-accent), var(--color-cyan)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; margin: 0 auto 1rem;">🎨</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Flutter Material Design 3</h3>
+          <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6;">Implementación nativa de Material You con tokens de diseño dinámicos, componentes adaptativos y soporte completo para temas claro/oscuro.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--color-cyan), var(--color-teal)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; margin: 0 auto 1rem;">📱</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Mobile-First</h3>
+          <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6;">Diseñado primero para móvil, donde ocurre el 98% del uso. Cada pixel optimizado para pantallas de 5" a 6.7" con interacciones táctiles nativas.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--color-success), #059669); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; margin: 0 auto 1rem;">✨</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">UI Minimalista</h3>
+          <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6;">Interfaz limpia y despejada que maximiza la usabilidad. Cada elemento tiene un propósito. Sin distracciones, sin elementos decorativos innecesarios.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; margin: 0 auto 1rem;">♿</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Accesibilidad Universal</h3>
+          <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6;">Accesible para todos los perfiles demográficos: jóvenes digitales, adultos mayores, comerciantes y personas con discapacidades visuales. WCAG 2.1 AA compliant.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #8B5CF6, #A78BFA); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; margin: 0 auto 1rem;">⚡</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Sub-3 Segundos</h3>
+          <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6;">Objetivo de completar cualquier pago en menos de 3 segundos. Optimización agresiva de cada paso del flujo para la máxima velocidad operativa.</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; margin: 0 auto 1rem;">👆</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Bottom Navigation</h3>
+          <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6;">Patrón de navegación inferior optimizado para uso con el pulgar. Acceso directo a las 4 funciones principales sin necesidad de alcanzar la parte superior.</p>
+        </div>
+
+      </div>
+
+      <div class="callout callout-info" style="margin-top: 2rem;">
+        <strong>Filosofía de diseño:</strong> "Cada toque cuenta." En mercados emergentes donde la conectividad puede ser inestable, el diseño debe ser resiliente, rápido y predecible. NexoPay minimiza los pasos necesarios y proporciona feedback instantáneo en cada interacción.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       4 — SISTEMA DE DISEÑO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Design System</span>
+        <h2>Sistema de Diseño</h2>
+        <p>Tokens de diseño, paleta de colores, tipografía y componentes que conforman el lenguaje visual unificado de NexoPay.</p>
+      </div>
+
+      <!-- Paleta de Colores -->
+      <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">Paleta de Colores</h3>
+
+      <div class="grid grid-4" style="gap: 1rem; margin-bottom: 2.5rem;">
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div style="height: 80px; background: #1A56DB;"></div>
+          <div style="padding: 1rem;">
+            <strong style="font-size: 0.95rem;">Primary</strong>
+            <p style="color: var(--color-text-light); font-size: 0.85rem; margin-top: 0.25rem;">#1A56DB</p>
+            <span class="badge badge-blue">Acciones principales</span>
+          </div>
+        </div>
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div style="height: 80px; background: #0891B2;"></div>
+          <div style="padding: 1rem;">
+            <strong style="font-size: 0.95rem;">Secondary</strong>
+            <p style="color: var(--color-text-light); font-size: 0.85rem; margin-top: 0.25rem;">#0891B2</p>
+            <span class="badge badge-cyan">Acentos y links</span>
+          </div>
+        </div>
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div style="height: 80px; background: #059669;"></div>
+          <div style="padding: 1rem;">
+            <strong style="font-size: 0.95rem;">Success</strong>
+            <p style="color: var(--color-text-light); font-size: 0.85rem; margin-top: 0.25rem;">#059669</p>
+            <span class="badge badge-green">Confirmaciones</span>
+          </div>
+        </div>
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div style="height: 80px; background: linear-gradient(135deg, #0F172A, #1E293B);"></div>
+          <div style="padding: 1rem;">
+            <strong style="font-size: 0.95rem;">Dark Header</strong>
+            <p style="color: var(--color-text-light); font-size: 0.85rem; margin-top: 0.25rem;">#0F172A</p>
+            <span class="badge">Headers y nav</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-gradient"></div>
+
+      <!-- Tipografía -->
+      <h3 style="margin: 2.5rem 0 1.5rem; font-size: 1.3rem;">Escala Tipográfica</h3>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Fuente</th>
+              <th>Peso</th>
+              <th>Tamaño</th>
+              <th>Uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Display Large</strong></td>
+              <td>Inter</td>
+              <td>800 (ExtraBold)</td>
+              <td>32px</td>
+              <td>Balance principal, montos grandes</td>
+            </tr>
+            <tr>
+              <td><strong>Headline</strong></td>
+              <td>Inter</td>
+              <td>700 (Bold)</td>
+              <td>24px</td>
+              <td>Títulos de sección</td>
+            </tr>
+            <tr>
+              <td><strong>Title</strong></td>
+              <td>Inter</td>
+              <td>600 (SemiBold)</td>
+              <td>18px</td>
+              <td>Subtítulos, nombres de pantalla</td>
+            </tr>
+            <tr>
+              <td><strong>Body Large</strong></td>
+              <td>Roboto</td>
+              <td>400 (Regular)</td>
+              <td>16px</td>
+              <td>Texto principal, descripciones</td>
+            </tr>
+            <tr>
+              <td><strong>Body</strong></td>
+              <td>Roboto</td>
+              <td>400 (Regular)</td>
+              <td>14px</td>
+              <td>Contenido general, listas</td>
+            </tr>
+            <tr>
+              <td><strong>Caption</strong></td>
+              <td>Roboto</td>
+              <td>500 (Medium)</td>
+              <td>12px</td>
+              <td>Etiquetas, metadata, timestamps</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider-gradient" style="margin: 2.5rem 0;"></div>
+
+      <!-- Spacing & Radius -->
+      <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">Espaciado y Bordes</h3>
+
+      <div class="grid grid-3" style="gap: 1.5rem; margin-bottom: 2.5rem;">
+        <div class="stat-card" style="text-align: center;">
+          <div style="width: 64px; height: 64px; border-radius: 28px; background: var(--color-surface-alt); border: 2px dashed var(--color-accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 0.85rem; font-weight: 600; color: var(--color-accent);">28px</div>
+          <strong>Border Radius Large</strong>
+          <p style="color: var(--color-text-light); font-size: 0.85rem; margin-top: 0.5rem;">Cards, modales, sheets</p>
+        </div>
+        <div class="stat-card" style="text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 16px; background: var(--color-surface-alt); border: 2px dashed var(--color-cyan); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 0.85rem; font-weight: 600; color: var(--color-cyan);">16px</div>
+          <strong>Border Radius Medium</strong>
+          <p style="color: var(--color-text-light); font-size: 0.85rem; margin-top: 0.5rem;">Botones, inputs, chips</p>
+        </div>
+        <div class="stat-card" style="text-align: center;">
+          <div style="width: 40px; height: 40px; border-radius: 12px; background: var(--color-surface-alt); border: 2px dashed var(--color-success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 0.85rem; font-weight: 600; color: var(--color-success);">12px</div>
+          <strong>Border Radius Small</strong>
+          <p style="color: var(--color-text-light); font-size: 0.85rem; margin-top: 0.5rem;">Badges, tags, iconos</p>
+        </div>
+      </div>
+
+      <!-- Componentes -->
+      <h3 style="margin-bottom: 1.5rem; font-size: 1.3rem;">Librería de Componentes</h3>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));">🔘</div>
+          <div>
+            <strong>Botones</strong>
+            <p>Primary, secondary, outline, ghost, text — con estados hover, pressed, disabled y loading spinner.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--color-cyan), var(--color-teal));">🃏</div>
+          <div>
+            <strong>Cards</strong>
+            <p>Elevadas, planas, interactivas, de balance, de transacción — con soporte para swipe actions y long-press.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--color-success), #059669);">📝</div>
+          <div>
+            <strong>Inputs</strong>
+            <p>Text fields, search bar, pin input, amount input con formato de moneda, selectors de banco y contacto.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));">🏷️</div>
+          <div>
+            <strong>Chips & Badges</strong>
+            <p>Filtros de categoría, estados de transacción, indicadores de verificación KYC y niveles de cuenta.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));">📍</div>
+          <div>
+            <strong>Navigation Bars</strong>
+            <p>Bottom nav con 4 tabs, app bar con acciones contextuales, tab bar para vistas secundarias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       5 — FLUJO DE USUARIO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number" style="color: var(--color-gold-light);">Flujos</span>
+        <h2 style="color: #fff;">Flujos de Usuario Principales</h2>
+        <p style="color: rgba(255,255,255,0.7);">Cada flujo ha sido optimizado para minimizar pasos y maximizar la velocidad. Los tiempos objetivo están basados en benchmarks de las mejores apps fintech del mundo.</p>
+      </div>
+
+      <!-- Flujo 1: Pago Móvil -->
+      <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.1);">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+          <span style="background: var(--color-accent); color: #fff; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem;">Flujo Principal</span>
+          <h3 style="color: #fff; font-size: 1.25rem; margin: 0;">Pago Móvil</h3>
+          <span style="margin-left: auto; color: var(--color-gold-light); font-weight: 600;">5 pasos · &lt;10 seg</span>
+        </div>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <strong>Home</strong>
+              <p>Tap en "Pago Móvil"</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Seleccionar contacto</strong>
+              <p>Búsqueda o favoritos</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Ingresar monto</strong>
+              <p>Teclado numérico</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <strong>Confirmar</strong>
+              <p>Verificar + biometría</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <strong>Éxito</strong>
+              <p>Recibo digital</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flujo 2: QR -->
+      <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.1);">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+          <span style="background: var(--color-cyan); color: #fff; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem;">Flujo Rápido</span>
+          <h3 style="color: #fff; font-size: 1.25rem; margin: 0;">Pago QR</h3>
+          <span style="margin-left: auto; color: var(--color-gold-light); font-weight: 600;">4 pasos · &lt;5 seg</span>
+        </div>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <strong>Home</strong>
+              <p>Tap en "QR"</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Escanear QR</strong>
+              <p>Cámara automática</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Auto-fill datos</strong>
+              <p>Monto preconfigurado</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <strong>Confirmar + Éxito</strong>
+              <p>Biometría → recibo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flujo 3: Comercio -->
+      <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid rgba(255,255,255,0.1);">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+          <span style="background: var(--color-gold); color: #fff; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-weight: 600; font-size: 0.9rem;">Flujo Comercio</span>
+          <h3 style="color: #fff; font-size: 1.25rem; margin: 0;">PoS Virtual</h3>
+          <span style="margin-left: auto; color: var(--color-gold-light); font-weight: 600;">4 pasos · &lt;8 seg</span>
+        </div>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <strong>PoS</strong>
+              <p>Abrir punto de venta</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <strong>Ingresar monto</strong>
+              <p>Monto del cobro</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <strong>Generar QR</strong>
+              <p>QR con datos del cobro</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <strong>Cliente escanea</strong>
+              <p>Confirmación mutua</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warning" style="margin-top: 2rem; background: rgba(245,158,11,0.1); border-color: var(--color-gold);">
+        <strong style="color: var(--color-gold-light);">Benchmark competitivo:</strong>
+        <span style="color: rgba(255,255,255,0.8);">Las apps líderes como Venmo y Cash App promedian 15-20 segundos por transacción. NexoPay apunta a &lt;10 segundos en Pago Móvil y &lt;5 segundos en QR — hasta 4x más rápido que la competencia.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       6 — ESTRUCTURA FLUTTER
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Código</span>
+        <h2>Estructura Flutter del Proyecto</h2>
+        <p>Arquitectura modular y escalable siguiendo las mejores prácticas de Flutter y Clean Architecture para facilitar el desarrollo y el mantenimiento a largo plazo.</p>
+      </div>
+
+      <div class="grid grid-2" style="gap: 2rem;">
+
+        <div>
+          <div class="highlight-box" style="font-family: var(--font-mono); font-size: 0.88rem; line-height: 2; padding: 2rem;">
+            <strong style="font-family: var(--font-sans); font-size: 1rem; display: block; margin-bottom: 1rem;">Estructura del proyecto</strong>
+            <div style="color: var(--color-text);">
+              📁 <strong>lib/</strong><br>
+              &nbsp;&nbsp;├── 📁 <strong>screens/</strong><br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── splash_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── onboarding_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── login_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── home_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── pago_movil_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── qr_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── pos_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── history_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── profile_screen.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── confirmation_screen.dart<br>
+              &nbsp;&nbsp;├── 📁 <strong>widgets/</strong><br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── balance_card.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── transaction_tile.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── quick_action_button.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── bank_selector.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── amount_input.dart<br>
+              &nbsp;&nbsp;├── 📁 <strong>models/</strong><br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── user.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── transaction.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── bank_account.dart<br>
+              &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── contact.dart<br>
+              &nbsp;&nbsp;└── 📁 <strong>theme/</strong><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── app_theme.dart<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── colors.dart<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── typography.dart
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="icon-list">
+            <div class="icon-list-item">
+              <div class="icon-list-icon" style="background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));">⚙️</div>
+              <div>
+                <strong>State Management</strong>
+                <p>Riverpod + BLoC pattern para un manejo de estado predecible, testeable y escalable con separación clara de responsabilidades.</p>
+              </div>
+            </div>
+            <div class="icon-list-item">
+              <div class="icon-list-icon" style="background: linear-gradient(135deg, var(--color-cyan), var(--color-teal));">🧭</div>
+              <div>
+                <strong>Navegación</strong>
+                <p>GoRouter para navegación declarativa con deep linking, route guards para autenticación y transiciones animadas personalizadas.</p>
+              </div>
+            </div>
+            <div class="icon-list-item">
+              <div class="icon-list-icon" style="background: linear-gradient(135deg, var(--color-success), #059669);">🔌</div>
+              <div>
+                <strong>API Layer</strong>
+                <p>Dio + Retrofit para comunicación HTTP con interceptores de autenticación, retry logic y cache offline-first.</p>
+              </div>
+            </div>
+            <div class="icon-list-item">
+              <div class="icon-list-icon" style="background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));">💾</div>
+              <div>
+                <strong>Local Storage</strong>
+                <p>Hive para datos estructurados, Flutter Secure Storage para tokens y credenciales, SharedPreferences para configuración.</p>
+              </div>
+            </div>
+            <div class="icon-list-item">
+              <div class="icon-list-icon" style="background: linear-gradient(135deg, #8B5CF6, #A78BFA);">🧪</div>
+              <div>
+                <strong>Testing</strong>
+                <p>Unit tests con Mockito, widget tests con WidgetTester, integration tests con Patrol. Cobertura objetivo: 85%+.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       7 — PRÓXIMOS PASOS DEL DISEÑO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">Roadmap</span>
+        <h2>Próximos Pasos del Diseño</h2>
+        <p>La evolución planificada del sistema de diseño y la implementación del prototipo hacia un producto de producción completo.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker" style="background: var(--color-success);"></div>
+          <div class="timeline-content">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-green">Actual</span>
+              <h3 style="font-size: 1.15rem; margin: 0;">Fase 1 — Validación del Prototipo</h3>
+            </div>
+            <p style="color: var(--color-text-light); line-height: 1.7;">Prototipo interactivo de alta fidelidad con 10 pantallas navegables. Validación con usuarios reales a través de sesiones de user testing. Recolección de feedback cualitativo y métricas de usabilidad (tasa de éxito, tiempo por tarea, NPS).</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
+              <span class="badge badge-green">User Testing</span>
+              <span class="badge badge-blue">10 pantallas</span>
+              <span class="badge">Feedback loop</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker" style="background: var(--color-accent);"></div>
+          <div class="timeline-content">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-blue">Q3 2026</span>
+              <h3 style="font-size: 1.15rem; margin: 0;">Fase 2 — Librería de Componentes Figma</h3>
+            </div>
+            <p style="color: var(--color-text-light); line-height: 1.7;">Creación de una librería completa en Figma con todos los componentes, variantes, estados y auto-layout. Incluye tokens de diseño sincronizados, estilos compartidos y flujos prototipados con animaciones avanzadas.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
+              <span class="badge badge-blue">Figma Library</span>
+              <span class="badge badge-cyan">Auto-layout</span>
+              <span class="badge">Design Tokens</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker" style="background: var(--color-gold);"></div>
+          <div class="timeline-content">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-gold">Q4 2026</span>
+              <h3 style="font-size: 1.15rem; margin: 0;">Fase 3 — Documentación del Design System</h3>
+            </div>
+            <p style="color: var(--color-text-light); line-height: 1.7;">Documentación exhaustiva del sistema de diseño con guías de uso, principios de accesibilidad, patrones de interacción y lineamientos de marca. Publicación en Storybook o ZeroHeight para acceso del equipo completo.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
+              <span class="badge badge-gold">Storybook</span>
+              <span class="badge">Guías de uso</span>
+              <span class="badge badge-green">Accesibilidad</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker" style="background: var(--color-cyan);"></div>
+          <div class="timeline-content">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-cyan">Q1 2027</span>
+              <h3 style="font-size: 1.15rem; margin: 0;">Fase 4 — Implementación Flutter</h3>
+            </div>
+            <p style="color: var(--color-text-light); line-height: 1.7;">Traducción del design system a código Flutter con componentes reutilizables, theme data configurado, widget catalog con golden tests y CI/CD para asegurar consistencia visual en cada build.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem;">
+              <span class="badge badge-cyan">Flutter Widgets</span>
+              <span class="badge badge-blue">Golden Tests</span>
+              <span class="badge">CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-success" style="margin-top: 2rem;">
+        <strong>Inversión en diseño = Retorno exponencial.</strong> Cada dólar invertido en UX retorna entre $2 y $100 según Forrester Research. Un design system robusto reduce el tiempo de desarrollo en un 40% y elimina inconsistencias visuales que erosionan la confianza del usuario.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA Final ═══ -->
+  <section class="section-dark" style="padding: 4rem 0;">
+    <div class="container" style="text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+      <h2 style="color: #fff; font-size: 2rem; margin-bottom: 1rem;">Experimenta NexoPay Ahora</h2>
+      <p style="color: rgba(255,255,255,0.7); max-width: 550px; margin: 0 auto 2rem; font-size: 1.05rem; line-height: 1.7;">
+        El prototipo interactivo demuestra que NexoPay no es solo una idea — es un producto tangible, diseñado y listo para construir.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="mvp/index.html" class="btn btn-gold btn-lg">
+          📱 Abrir Prototipo Interactivo
+        </a>
+        <a href="10-propuesta-inversion.html" class="btn btn-outline btn-lg">
+          💼 Ver Propuesta de Inversión
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Page Navigation ═══ -->
+  <div class="container">
+    <div class="page-nav">
+      <a href="10-propuesta-inversion.html"><span class="label">← Anterior</span><span class="title">Propuesta de Inversión</span></a>
+      <a href="index.html" class="next"><span class="label">Siguiente →</span><span class="title">Volver al Inicio</span></a>
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer" style="padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 NexoPay. Todos los derechos reservados. Documento confidencial para inversionistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Confidential Bar ═══ -->
+  <div class="confidential-bar">⚠ Documento Confidencial — Solo para Inversionistas Autorizados — NexoPay © 2026</div>
+
+</body>
+</html>

@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexoPay — Prototipo MVP Interactivo</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --md-primary: #1A56DB;
+      --md-primary-container: #D6E4FF;
+      --md-on-primary: #FFFFFF;
+      --md-on-primary-container: #001A40;
+      --md-secondary: #0891B2;
+      --md-secondary-container: #CDFAFF;
+      --md-tertiary: #7C3AED;
+      --md-surface: #FAFBFF;
+      --md-surface-variant: #E1E2EC;
+      --md-surface-container: #EDEEF8;
+      --md-surface-container-low: #F3F3FD;
+      --md-surface-container-high: #E7E8F2;
+      --md-on-surface: #1B1B1F;
+      --md-on-surface-variant: #44474F;
+      --md-outline: #74777F;
+      --md-outline-variant: #C4C6D0;
+      --md-success: #059669;
+      --md-success-container: #D1FAE5;
+      --md-error: #DC2626;
+      --md-gold: #D97706;
+      --md-shadow: rgba(0,0,0,0.08);
+      --md-radius-xs: 8px;
+      --md-radius-sm: 12px;
+      --md-radius-md: 16px;
+      --md-radius-lg: 28px;
+      --md-radius-full: 9999px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0B1D3A 0%, #132D5E 50%, #1E3A6E 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ── Page Header ── */
+    .page-header {
+      text-align: center;
+      padding: 2.5rem 1rem 1rem;
+      max-width: 800px;
+    }
+    .page-header .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .page-header .logo .icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: #fff; font-weight: 900;
+    }
+    .page-header .logo .nexo { color: #fff; }
+    .page-header .logo .pay { color: #22D3EE; }
+    .page-header p { color: rgba(255,255,255,0.65); font-size: 0.95rem; max-width: 500px; margin: 0 auto; line-height: 1.5; }
+    .page-header .badge { display: inline-block; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: #FBBF24; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.9rem; border-radius: 999px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+
+    .back-link { position: absolute; top: 1.5rem; left: 1.5rem; color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+    .back-link:hover { color: #fff; }
+
+    /* ── Screen Selector ── */
+    .screen-selector {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.5rem 1rem 1.5rem;
+      max-width: 700px;
+    }
+    .screen-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .screen-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .screen-btn.active { background: rgba(37,99,235,0.4); border-color: rgba(37,99,235,0.6); color: #fff; }
+
+    /* ── Phone Container ── */
+    .phone-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 0 1rem 3rem;
+    }
+    .phone-frame {
+      width: 375px;
+      height: 812px;
+      background: #000;
+      border-radius: 48px;
+      padding: 12px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 38px;
+      overflow: hidden;
+      position: relative;
+      background: var(--md-surface);
+    }
+    .phone-notch {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 160px; height: 34px;
+      background: #000;
+      border-radius: 0 0 24px 24px;
+      z-index: 100;
+    }
+    .phone-notch::after {
+      content: '';
+      position: absolute;
+      top: 10px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 6px;
+      background: #1a1a2e;
+      border-radius: 3px;
+    }
+    .phone-home-indicator {
+      position: absolute;
+      bottom: 8px; left: 50%;
+      transform: translateX(-50%);
+      width: 134px; height: 5px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 3px;
+      z-index: 100;
+    }
+
+    /* ── App Screens ── */
+    .app-screen {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      font-family: 'Roboto', 'Inter', sans-serif;
+      color: var(--md-on-surface);
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    .app-screen::-webkit-scrollbar { display: none; }
+    .app-screen.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    /* ── Status Bar ── */
+    .status-bar {
+      height: 54px;
+      padding: 30px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--md-on-surface);
+      position: relative;
+      z-index: 50;
+    }
+    .status-bar.light { color: #fff; }
+    .status-icons { display: flex; gap: 4px; align-items: center; font-size: 0.65rem; }
+
+    /* ── Bottom Nav ── */
+    .bottom-nav {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-outline-variant);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding-bottom: 16px;
+      z-index: 90;
+    }
+    .bottom-nav .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      cursor: pointer;
+      padding: 4px 12px;
+      border-radius: 16px;
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+    }
+    .bottom-nav .nav-item .nav-icon {
+      width: 56px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 16px;
+      font-size: 1.15rem;
+      transition: all 0.2s;
+    }
+    .bottom-nav .nav-item .nav-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--md-on-surface-variant);
+      transition: all 0.2s;
+    }
+    .bottom-nav .nav-item.active .nav-icon {
+      background: var(--md-primary-container);
+    }
+    .bottom-nav .nav-item.active .nav-label {
+      color: var(--md-on-surface);
+      font-weight: 700;
+    }
+
+    /* ── Common M3 Elements ── */
+    .m3-card {
+      background: #fff;
+      border-radius: var(--md-radius-md);
+      padding: 16px;
+      box-shadow: 0 1px 3px var(--md-shadow);
+    }
+    .m3-card-elevated {
+      background: var(--md-surface-container-low);
+      border-radius: var(--md-radius-md);
+      padding: 16px;
+      box-shadow: 0 1px 2px var(--md-shadow);
+    }
+    .m3-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--md-radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .m3-btn-filled {
+      background: var(--md-primary);
+      color: var(--md-on-primary);
+      box-shadow: 0 1px 3px rgba(26,86,219,0.3);
+    }
+    .m3-btn-filled:hover { box-shadow: 0 4px 12px rgba(26,86,219,0.4); }
+    .m3-btn-tonal {
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+    }
+    .m3-btn-outlined {
+      background: transparent;
+      color: var(--md-primary);
+      border: 1.5px solid var(--md-outline);
+    }
+    .m3-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      border: 1px solid var(--md-outline-variant);
+      background: var(--md-surface);
+    }
+    .m3-input-container {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .m3-input {
+      width: 100%;
+      padding: 16px;
+      border: 1.5px solid var(--md-outline);
+      border-radius: var(--md-radius-xs);
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: transparent;
+      color: var(--md-on-surface);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .m3-input:focus { border-color: var(--md-primary); }
+    .m3-input-label {
+      position: absolute;
+      top: -8px; left: 12px;
+      background: var(--md-surface);
+      padding: 0 4px;
+      font-size: 0.7rem;
+      color: var(--md-primary);
+      font-weight: 500;
+    }
+    .m3-fab {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      border: none;
+      cursor: pointer;
+    }
+    .m3-divider { height: 1px; background: var(--md-outline-variant); margin: 8px 0; }
+
+    /* ════════════════════════════════════════════
+       SCREEN 0: SPLASH
+       ════════════════════════════════════════════ */
+    .screen-splash {
+      background: linear-gradient(145deg, #0B1D3A 0%, #1A3A6E 50%, #2563EB 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .splash-logo {
+      width: 100px; height: 100px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 28px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; font-weight: 900; color: #fff;
+      backdrop-filter: blur(10px);
+      margin-bottom: 1.5rem;
+      animation: splash-pulse 2s ease-in-out infinite;
+    }
+    @keyframes splash-pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(37,99,235,0.3); }
+    }
+    .splash-name { font-size: 2.2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; }
+    .splash-name span { color: #22D3EE; }
+    .splash-tagline { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 0.5rem; font-weight: 400; }
+    .splash-loader { margin-top: 3rem; width: 40px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+    .splash-loader-bar { height: 100%; width: 60%; background: linear-gradient(90deg, #2563EB, #22D3EE); border-radius: 2px; animation: splash-load 1.5s ease-in-out infinite; }
+    @keyframes splash-load { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
+
+    /* ════════════════════════════════════════════
+       SCREEN 1: ONBOARDING
+       ════════════════════════════════════════════ */
+    .screen-onboarding {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .onboarding-visual {
+      flex: 1;
+      background: linear-gradient(145deg, #EEF2FF 0%, #DBEAFE 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px 20px;
+    }
+    .onboarding-illustration {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--md-primary-container), #BFDBFE);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      box-shadow: 0 20px 60px rgba(37,99,235,0.15);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
+    .onboarding-content {
+      padding: 2rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .onboarding-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--md-on-surface);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .onboarding-content p {
+      color: var(--md-on-surface-variant);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+    .onboarding-dots {
+      display: flex; gap: 8px; justify-content: center; margin-bottom: 1.5rem;
+    }
+    .onboarding-dot {
+      width: 8px; height: 8px;
+      border-radius: 4px;
+      background: var(--md-outline-variant);
+      transition: all 0.3s;
+    }
+    .onboarding-dot.active {
+      width: 24px;
+      background: var(--md-primary);
+    }
+
+    /* ════════════════════════════════════════════
+       SCREEN 2: LOGIN
+       ════════════════════════════════════════════ */
+    .screen-login {
+      background: var(--md-surface);
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .login-header {
+      padding-top: 70px;
+      margin-bottom: 2rem;
+    }
+    .login-header .logo-small {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: #fff; font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+    .login-header h1 { font-size: 1.6rem; font-weight: 700; color: var(--md-on-surface); }
+    .login-header p { font-size: 0.88rem; color: var(--md-on-surface-variant); margin-top: 0.5rem; }
+    .login-form { flex: 1; }
+    .login-forgot { text-align: right; font-size: 0.78rem; color: var(--md-primary); font-weight: 500; margin: -8px 0 24px; }
+    .login-divider {
+      display: flex; align-items: center; gap: 12px; margin: 24px 0;
+      font-size: 0.75rem; color: var(--md-outline);
+    }
+    .login-divider::before, .login-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--md-outline-variant);
+    }
+    .login-social {
+      display: flex; gap: 12px;
+    }
+    .login-social-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1.5px solid var(--md-outline-variant);
+      border-radius: var(--md-radius-full);
+      background: transparent;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .login-social-btn:hover { background: var(--md-surface-container); }
+    .login-bottom { text-align: center; padding: 24px 0 40px; font-size: 0.82rem; color: var(--md-on-surface-variant); }
+    .login-bottom a { color: var(--md-primary); font-weight: 600; text-decoration: none; }
+
+    /* ════════════════════════════════════════════
+       SCREEN 3: HOME DASHBOARD
+       ════════════════════════════════════════════ */
+    .screen-home {
+      background: var(--md-surface);
+    }
+    .home-header {
+      background: linear-gradient(145deg, #0B1D3A, #1E3A6E);
+      padding: 60px 20px 24px;
+      border-radius: 0 0 28px 28px;
+      color: #fff;
+    }
+    .home-topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 20px;
+    }
+    .home-greeting { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    .home-username { font-size: 1.15rem; font-weight: 700; }
+    .home-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700;
+    }
+    .home-balance-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .home-balance-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); font-weight: 500; }
+    .home-balance-value { font-size: 2.2rem; font-weight: 800; margin: 4px 0; letter-spacing: -0.02em; }
+    .home-balance-change { font-size: 0.72rem; color: #34D399; display: flex; align-items: center; gap: 4px; }
+    .home-balance-accounts {
+      display: flex; gap: 8px; margin-top: 12px;
+    }
+    .home-account-chip {
+      padding: 6px 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .home-account-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+    }
+
+    .home-actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 20px;
+      margin-top: -16px;
+    }
+    .home-action {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 14px 4px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-family: inherit;
+    }
+    .home-action:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .home-action-icon {
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .home-action-label { font-size: 0.62rem; font-weight: 600; color: var(--md-on-surface); text-align: center; }
+
+    .home-section { padding: 0 20px; }
+    .home-section-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px;
+    }
+    .home-section-title { font-size: 0.95rem; font-weight: 700; color: var(--md-on-surface); }
+    .home-section-link { font-size: 0.75rem; font-weight: 600; color: var(--md-primary); }
+
+    .home-promo-card {
+      background: linear-gradient(135deg, #EEF2FF, #DBEAFE);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .home-promo-icon {
+      width: 48px; height: 48px;
+      background: var(--md-primary);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .home-promo-title { font-size: 0.82rem; font-weight: 700; color: var(--md-on-surface); }
+    .home-promo-desc { font-size: 0.7rem; color: var(--md-on-surface-variant); margin-top: 2px; }
+
+    .home-tx-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--md-surface-container);
+    }
+    .home-tx-item:last-child { border: none; }
+    .home-tx-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .home-tx-info { flex: 1; }
+    .home-tx-name { font-size: 0.82rem; font-weight: 600; color: var(--md-on-surface); }
+    .home-tx-desc { font-size: 0.68rem; color: var(--md-on-surface-variant); margin-top: 1px; }
+    .home-tx-amount { text-align: right; }
+    .home-tx-value { font-size: 0.85rem; font-weight: 700; }
+    .home-tx-time { font-size: 0.62rem; color: var(--md-outline); margin-top: 1px; }
+
+    /* ════════════════════════════════════════════
+       SCREEN 4: PAGO MÓVIL
+       ════════════════════════════════════════════ */
+    .screen-pago {
+      background: var(--md-surface);
+    }
+    .pago-header {
+      padding: 60px 20px 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .pago-back {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: var(--md-surface-container);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+    .pago-title { font-size: 1.15rem; font-weight: 700; }
+
+    .pago-amount-section {
+      text-align: center;
+      padding: 20px 20px 30px;
+    }
+    .pago-amount-label { font-size: 0.75rem; color: var(--md-on-surface-variant); font-weight: 500; }
+    .pago-amount-value {
+      font-size: 3rem; font-weight: 800; color: var(--md-on-surface);
+      letter-spacing: -0.03em; margin: 8px 0;
+    }
+    .pago-amount-value span { color: var(--md-outline); font-weight: 400; font-size: 1.8rem; }
+    .pago-amount-currency {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px;
+      background: var(--md-surface-container);
+      border-radius: 20px;
+      font-size: 0.72rem; font-weight: 600; color: var(--md-on-surface-variant);
+    }
+
+    .pago-form { padding: 0 20px; }
+    .pago-contact-card {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 16px;
+      background: var(--md-surface-container-low);
+      border-radius: 16px;
+      margin-bottom: 16px;
+      border: 1.5px solid var(--md-outline-variant);
+    }
+    .pago-contact-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--md-secondary), #0EA5E9);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 0.9rem;
+    }
+    .pago-contact-name { font-size: 0.88rem; font-weight: 600; color: var(--md-on-surface); }
+    .pago-contact-bank { font-size: 0.7rem; color: var(--md-on-surface-variant); }
+    .pago-contact-change {
+      margin-left: auto;
+      font-size: 0.72rem; font-weight: 600; color: var(--md-primary);
+      cursor: pointer;
+    }
+
+    .pago-bank-selector {
+      display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px;
+      -ms-overflow-style: none; scrollbar-width: none;
+    }
+    .pago-bank-selector::-webkit-scrollbar { display: none; }
+    .pago-bank-chip {
+      padding: 8px 14px;
+      border-radius: 12px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      white-space: nowrap;
+      border: 1.5px solid var(--md-outline-variant);
+      background: transparent;
+      color: var(--md-on-surface-variant);
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .pago-bank-chip.selected {
+      background: var(--md-primary-container);
+      border-color: var(--md-primary);
+      color: var(--md-on-primary-container);
+    }
+
+    .pago-keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 20px;
+    }
+    .pago-key {
+      height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 16px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      background: var(--md-surface-container-low);
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      color: var(--md-on-surface);
+      transition: background 0.15s;
+    }
+    .pago-key:active { background: var(--md-surface-container-high); }
+    .pago-key.accent {
+      background: var(--md-primary);
+      color: #fff;
+    }
+
+    /* ════════════════════════════════════════════
+       SCREEN 5: QR
+       ════════════════════════════════════════════ */
+    .screen-qr {
+      background: var(--md-surface);
+    }
+    .qr-header {
+      padding: 60px 20px 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .qr-tabs {
+      display: flex; margin: 0 20px 20px;
+      background: var(--md-surface-container);
+      border-radius: var(--md-radius-full);
+      padding: 4px;
+    }
+    .qr-tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--md-radius-full);
+      cursor: pointer;
+      color: var(--md-on-surface-variant);
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .qr-tab.active {
+      background: #fff;
+      color: var(--md-on-surface);
+      box-shadow: 0 1px 4px var(--md-shadow);
+    }
+    .qr-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .qr-code-container {
+      width: 220px; height: 220px;
+      background: #fff;
+      border-radius: 24px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .qr-code-pattern {
+      width: 180px; height: 180px;
+      background:
+        repeating-conic-gradient(var(--md-on-surface) 0% 25%, transparent 0% 50%) 0 0 / 12px 12px,
+        repeating-conic-gradient(var(--md-on-surface) 0% 25%, transparent 0% 50%) 6px 6px / 12px 12px;
+      border-radius: 8px;
+      opacity: 0.85;
+      mask-image: radial-gradient(circle, black 60%, transparent 75%);
+      -webkit-mask-image: radial-gradient(circle, black 60%, transparent 75%);
+    }
+    .qr-code-logo {
+      position: absolute;
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900; font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+    }
+    .qr-user-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .qr-user-name { font-size: 1rem; font-weight: 700; color: var(--md-on-surface); }
+    .qr-user-id { font-size: 0.75rem; color: var(--md-on-surface-variant); margin-top: 4px; }
+    .qr-actions {
+      display: flex; gap: 12px; margin-top: 24px; padding: 0 20px; width: 100%;
+    }
+    .qr-action-btn {
+      flex: 1;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 16px;
+      background: var(--md-surface-container-low);
+      border-radius: 16px;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+    .qr-action-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .qr-action-label { font-size: 0.68rem; font-weight: 600; color: var(--md-on-surface); }
+
+    /* ════════════════════════════════════════════
+       SCREEN 6: POS VIRTUAL
+       ════════════════════════════════════════════ */
+    .screen-pos {
+      background: var(--md-surface);
+    }
+    .pos-header {
+      background: linear-gradient(145deg, #0B1D3A, #1E3A6E);
+      padding: 60px 20px 20px;
+      border-radius: 0 0 24px 24px;
+      color: #fff;
+    }
+    .pos-title-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 16px;
+    }
+    .pos-title { font-size: 1.15rem; font-weight: 700; }
+    .pos-status-badge {
+      padding: 4px 12px;
+      background: rgba(52,211,153,0.2);
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #34D399;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .pos-status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #34D399;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot { 0%,100%{ opacity: 1; } 50%{ opacity: 0.3; } }
+    .pos-stats {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+    }
+    .pos-stat {
+      background: rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+    }
+    .pos-stat-value { font-size: 1.1rem; font-weight: 700; }
+    .pos-stat-label { font-size: 0.6rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+    .pos-content { padding: 20px; }
+    .pos-amount-display {
+      text-align: center;
+      padding: 24px 0;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+    }
+    .pos-amount-display .label { font-size: 0.72rem; color: var(--md-on-surface-variant); font-weight: 500; }
+    .pos-amount-display .amount {
+      font-size: 2.8rem; font-weight: 800; color: var(--md-on-surface);
+      margin: 4px 0;
+      letter-spacing: -0.03em;
+    }
+    .pos-amount-display .amount span { color: var(--md-outline); font-size: 1.6rem; font-weight: 400; }
+    .pos-method-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .pos-method-card {
+      padding: 16px;
+      background: #fff;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .pos-method-card:hover { border-color: var(--md-primary); }
+    .pos-method-card.selected { border-color: var(--md-primary); background: var(--md-primary-container); }
+    .pos-method-icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .pos-method-label { font-size: 0.75rem; font-weight: 600; color: var(--md-on-surface); }
+    .pos-method-desc { font-size: 0.62rem; color: var(--md-on-surface-variant); }
+
+    /* ════════════════════════════════════════════
+       SCREEN 7: TRANSACTIONS
+       ════════════════════════════════════════════ */
+    .screen-history {
+      background: var(--md-surface);
+    }
+    .history-header { padding: 60px 20px 16px; }
+    .history-title { font-size: 1.3rem; font-weight: 700; }
+    .history-subtitle { font-size: 0.78rem; color: var(--md-on-surface-variant); margin-top: 2px; }
+    .history-filters {
+      display: flex; gap: 8px; padding: 0 20px 16px;
+      overflow-x: auto;
+    }
+    .history-filter {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border: 1.5px solid var(--md-outline-variant);
+      background: transparent;
+      color: var(--md-on-surface-variant);
+      white-space: nowrap;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .history-filter.active {
+      background: var(--md-primary);
+      color: #fff;
+      border-color: var(--md-primary);
+    }
+    .history-date-group {
+      padding: 0 20px;
+      margin-bottom: 16px;
+    }
+    .history-date-label {
+      font-size: 0.7rem; font-weight: 600; color: var(--md-on-surface-variant);
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .history-tx {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--md-surface-container);
+    }
+    .history-tx:last-child { border: none; }
+
+    /* ════════════════════════════════════════════
+       SCREEN 8: PROFILE
+       ════════════════════════════════════════════ */
+    .screen-profile {
+      background: var(--md-surface);
+    }
+    .profile-header {
+      padding: 60px 20px 24px;
+      text-align: center;
+    }
+    .profile-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 700; color: #fff;
+      margin: 0 auto 12px;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.25);
+    }
+    .profile-name { font-size: 1.2rem; font-weight: 700; color: var(--md-on-surface); }
+    .profile-email { font-size: 0.78rem; color: var(--md-on-surface-variant); margin-top: 2px; }
+    .profile-stats {
+      display: flex; justify-content: center; gap: 24px; margin-top: 16px;
+    }
+    .profile-stat { text-align: center; }
+    .profile-stat-value { font-size: 1.15rem; font-weight: 700; color: var(--md-primary); }
+    .profile-stat-label { font-size: 0.62rem; color: var(--md-on-surface-variant); }
+    .profile-section { padding: 0 20px; margin-bottom: 8px; }
+    .profile-section-title {
+      font-size: 0.7rem; font-weight: 700; color: var(--md-on-surface-variant);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 8px 0;
+    }
+    .profile-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--md-surface-container);
+      cursor: pointer;
+    }
+    .profile-item:last-child { border: none; }
+    .profile-item-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .profile-item-label { flex: 1; font-size: 0.85rem; font-weight: 500; color: var(--md-on-surface); }
+    .profile-item-arrow { color: var(--md-outline); font-size: 0.9rem; }
+
+    /* ════════════════════════════════════════════
+       SCREEN 9: SUCCESS
+       ════════════════════════════════════════════ */
+    .screen-success {
+      background: var(--md-surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .success-check {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      margin-bottom: 24px;
+      animation: success-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes success-pop { 0%{ transform: scale(0); } 100%{ transform: scale(1); } }
+    .success-title { font-size: 1.4rem; font-weight: 700; color: var(--md-on-surface); margin-bottom: 8px; }
+    .success-desc { font-size: 0.88rem; color: var(--md-on-surface-variant); margin-bottom: 8px; }
+    .success-amount { font-size: 2rem; font-weight: 800; color: var(--md-success); margin: 12px 0 4px; }
+    .success-detail { font-size: 0.78rem; color: var(--md-on-surface-variant); }
+    .success-receipt {
+      background: var(--md-surface-container-low);
+      border-radius: 16px;
+      padding: 16px 20px;
+      width: 100%;
+      margin-top: 24px;
+    }
+    .success-receipt-row {
+      display: flex; justify-content: space-between; padding: 8px 0;
+      font-size: 0.78rem;
+    }
+    .success-receipt-label { color: var(--md-on-surface-variant); }
+    .success-receipt-value { font-weight: 600; color: var(--md-on-surface); }
+    .success-actions { display: flex; gap: 12px; width: 100%; margin-top: 24px; }
+    .success-actions .m3-btn { flex: 1; }
+
+    /* ── Responsive for the outer page ── */
+    @media (max-width: 420px) {
+      .phone-frame { width: 100%; height: 92vh; border-radius: 0; padding: 0; }
+      .phone-screen { border-radius: 0; }
+      .phone-notch, .phone-home-indicator { display: none; }
+      .page-header { padding: 1.5rem 1rem 0.5rem; }
+      .page-header .logo { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../index.html" class="back-link">← Volver a Documentación</a>
+
+  <header class="page-header">
+    <div class="badge">Prototipo MVP Interactivo</div>
+    <div class="logo">
+      <div class="icon">N</div>
+      <span class="nexo">Nexo</span><span class="pay">Pay</span>
+    </div>
+    <p>Prototipo de alta fidelidad para la app móvil NexoPay. Diseño Flutter Material Design 3. Haz clic en los botones para navegar entre pantallas.</p>
+  </header>
+
+  <div class="screen-selector" id="screenSelector">
+    <button class="screen-btn active" data-screen="0">Splash</button>
+    <button class="screen-btn" data-screen="1">Onboarding</button>
+    <button class="screen-btn" data-screen="2">Login</button>
+    <button class="screen-btn" data-screen="3">Home</button>
+    <button class="screen-btn" data-screen="4">Pago Móvil</button>
+    <button class="screen-btn" data-screen="5">QR Code</button>
+    <button class="screen-btn" data-screen="6">PoS Virtual</button>
+    <button class="screen-btn" data-screen="7">Historial</button>
+    <button class="screen-btn" data-screen="8">Perfil</button>
+    <button class="screen-btn" data-screen="9">Confirmación</button>
+  </div>
+
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-notch"></div>
+        <div class="phone-home-indicator"></div>
+
+        <!-- ═══ SCREEN 0: SPLASH ═══ -->
+        <div class="app-screen screen-splash active" data-screen-id="0">
+          <div class="splash-logo">N</div>
+          <div class="splash-name">Nexo<span>Pay</span></div>
+          <div class="splash-tagline">Todos tus pagos. Una sola app.</div>
+          <div class="splash-loader"><div class="splash-loader-bar"></div></div>
+        </div>
+
+        <!-- ═══ SCREEN 1: ONBOARDING ═══ -->
+        <div class="app-screen screen-onboarding" data-screen-id="1">
+          <div class="onboarding-visual">
+            <div class="onboarding-illustration">💳</div>
+          </div>
+          <div class="onboarding-content">
+            <h2>Paga desde cualquier banco</h2>
+            <p>Conecta todas tus cuentas bancarias en un solo lugar. Realiza Pagos Móviles sin importar el banco.</p>
+            <div class="onboarding-dots">
+              <div class="onboarding-dot active"></div>
+              <div class="onboarding-dot"></div>
+              <div class="onboarding-dot"></div>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width: 100%;" onclick="goToScreen(2)">Comenzar →</button>
+            <div style="margin-top: 12px; font-size: 0.78rem; color: var(--md-on-surface-variant);">
+              ¿Ya tienes cuenta? <a href="#" style="color: var(--md-primary); font-weight: 600; text-decoration: none;" onclick="goToScreen(2)">Inicia sesión</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 2: LOGIN ═══ -->
+        <div class="app-screen screen-login" data-screen-id="2">
+          <div class="login-header">
+            <div class="logo-small">N</div>
+            <h1>Bienvenido de vuelta</h1>
+            <p>Inicia sesión en tu cuenta NexoPay</p>
+          </div>
+          <div class="login-form">
+            <div class="m3-input-container">
+              <span class="m3-input-label">Correo o Teléfono</span>
+              <input class="m3-input" type="text" value="+58 412-555-1234">
+            </div>
+            <div class="m3-input-container">
+              <span class="m3-input-label">Contraseña</span>
+              <input class="m3-input" type="password" value="••••••••">
+            </div>
+            <div class="login-forgot">¿Olvidaste tu contraseña?</div>
+            <button class="m3-btn m3-btn-filled" style="width: 100%;" onclick="goToScreen(3)">Iniciar Sesión</button>
+            <div class="login-divider">o continuar con</div>
+            <div class="login-social">
+              <button class="login-social-btn">🔵</button>
+              <button class="login-social-btn">🍎</button>
+              <button class="login-social-btn">📧</button>
+            </div>
+          </div>
+          <div class="login-bottom">
+            ¿No tienes cuenta? <a href="#">Regístrate gratis</a>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 3: HOME ═══ -->
+        <div class="app-screen screen-home" data-screen-id="3">
+          <div class="home-header">
+            <div class="home-topbar">
+              <div>
+                <div class="home-greeting">Buenos días 👋</div>
+                <div class="home-username">Carlos Rivero</div>
+              </div>
+              <div class="home-avatar" onclick="goToScreen(8)">CR</div>
+            </div>
+            <div class="home-balance-card">
+              <div class="home-balance-label">Saldo Total</div>
+              <div class="home-balance-value">$4,285<span style="font-size:1.2rem;color:rgba(255,255,255,0.5)">.50</span></div>
+              <div class="home-balance-change">↑ +12.5% este mes</div>
+              <div class="home-balance-accounts">
+                <div class="home-account-chip"><div class="home-account-dot" style="background:#3B82F6"></div> Banesco</div>
+                <div class="home-account-chip"><div class="home-account-dot" style="background:#10B981"></div> Mercantil</div>
+                <div class="home-account-chip"><div class="home-account-dot" style="background:#F59E0B"></div> Provincial</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-actions">
+            <button class="home-action" onclick="goToScreen(4)">
+              <div class="home-action-icon" style="background: #EEF2FF; color: var(--md-primary);">📲</div>
+              <div class="home-action-label">Pago Móvil</div>
+            </button>
+            <button class="home-action" onclick="goToScreen(5)">
+              <div class="home-action-icon" style="background: #ECFDF5; color: var(--md-success);">📷</div>
+              <div class="home-action-label">Escanear QR</div>
+            </button>
+            <button class="home-action" onclick="goToScreen(6)">
+              <div class="home-action-icon" style="background: #FEF3C7; color: var(--md-gold);">🏪</div>
+              <div class="home-action-label">PoS Virtual</div>
+            </button>
+            <button class="home-action" onclick="goToScreen(7)">
+              <div class="home-action-icon" style="background: #F3E8FF; color: var(--md-tertiary);">📊</div>
+              <div class="home-action-label">Historial</div>
+            </button>
+          </div>
+
+          <div class="home-section">
+            <div class="home-promo-card">
+              <div class="home-promo-icon">🎉</div>
+              <div>
+                <div class="home-promo-title">¡Invita amigos y gana!</div>
+                <div class="home-promo-desc">Recibe $1 por cada amigo que se registre</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-section" style="padding-bottom: 96px;">
+            <div class="home-section-header">
+              <div class="home-section-title">Recientes</div>
+              <div class="home-section-link" onclick="goToScreen(7)">Ver todo</div>
+            </div>
+            <div class="home-tx-item">
+              <div class="home-tx-icon" style="background: #FEE2E2;">🛒</div>
+              <div class="home-tx-info">
+                <div class="home-tx-name">Supermercado Express</div>
+                <div class="home-tx-desc">Pago QR · Banesco</div>
+              </div>
+              <div class="home-tx-amount">
+                <div class="home-tx-value" style="color: var(--md-error);">-$45.80</div>
+                <div class="home-tx-time">Hace 2h</div>
+              </div>
+            </div>
+            <div class="home-tx-item">
+              <div class="home-tx-icon" style="background: #D1FAE5;">💰</div>
+              <div class="home-tx-info">
+                <div class="home-tx-name">María González</div>
+                <div class="home-tx-desc">Pago Móvil recibido</div>
+              </div>
+              <div class="home-tx-amount">
+                <div class="home-tx-value" style="color: var(--md-success);">+$120.00</div>
+                <div class="home-tx-time">Hace 5h</div>
+              </div>
+            </div>
+            <div class="home-tx-item">
+              <div class="home-tx-icon" style="background: #EEF2FF;">📱</div>
+              <div class="home-tx-info">
+                <div class="home-tx-name">José Hernández</div>
+                <div class="home-tx-desc">Pago Móvil enviado</div>
+              </div>
+              <div class="home-tx-amount">
+                <div class="home-tx-value" style="color: var(--md-error);">-$35.00</div>
+                <div class="home-tx-time">Ayer</div>
+              </div>
+            </div>
+            <div class="home-tx-item">
+              <div class="home-tx-icon" style="background: #FEF3C7;">🏪</div>
+              <div class="home-tx-info">
+                <div class="home-tx-name">Farmacia Central</div>
+                <div class="home-tx-desc">PoS Virtual · Mercantil</div>
+              </div>
+              <div class="home-tx-amount">
+                <div class="home-tx-value" style="color: var(--md-error);">-$22.50</div>
+                <div class="home-tx-time">Ayer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom-nav">
+            <button class="nav-item active" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
+            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 4: PAGO MÓVIL ═══ -->
+        <div class="app-screen screen-pago" data-screen-id="4">
+          <div class="pago-header">
+            <button class="pago-back" onclick="goToScreen(3)">←</button>
+            <div class="pago-title">Pago Móvil</div>
+          </div>
+
+          <div class="pago-form" style="padding-top: 8px;">
+            <div style="font-size: 0.72rem; font-weight: 600; color: var(--md-on-surface-variant); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Destinatario</div>
+            <div class="pago-contact-card">
+              <div class="pago-contact-avatar">MG</div>
+              <div>
+                <div class="pago-contact-name">María González</div>
+                <div class="pago-contact-bank">V-12.345.678 · Banesco (0134)</div>
+              </div>
+              <div class="pago-contact-change">Cambiar</div>
+            </div>
+            <div style="font-size: 0.72rem; font-weight: 600; color: var(--md-on-surface-variant); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Cuenta origen</div>
+            <div class="pago-bank-selector">
+              <button class="pago-bank-chip selected">🔵 Banesco · ••4521</button>
+              <button class="pago-bank-chip">🟢 Mercantil · ••8903</button>
+              <button class="pago-bank-chip">🟡 Provincial · ••2187</button>
+            </div>
+          </div>
+
+          <div class="pago-amount-section">
+            <div class="pago-amount-label">Monto a enviar</div>
+            <div class="pago-amount-value"><span>$</span>150<span>.00</span></div>
+            <div class="pago-amount-currency">🇻🇪 Bolívares · Bs. 5,535.00</div>
+          </div>
+
+          <div class="pago-keypad">
+            <button class="pago-key">1</button><button class="pago-key">2</button><button class="pago-key">3</button>
+            <button class="pago-key">4</button><button class="pago-key">5</button><button class="pago-key">6</button>
+            <button class="pago-key">7</button><button class="pago-key">8</button><button class="pago-key">9</button>
+            <button class="pago-key">.</button><button class="pago-key">0</button><button class="pago-key" style="font-size:0.9rem;">⌫</button>
+          </div>
+          <div style="padding: 0 20px 24px;">
+            <button class="m3-btn m3-btn-filled" style="width: 100%; padding: 16px;" onclick="goToScreen(9)">Confirmar Pago →</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 5: QR ═══ -->
+        <div class="app-screen screen-qr" data-screen-id="5">
+          <div class="qr-header">
+            <button class="pago-back" onclick="goToScreen(3)">←</button>
+            <div class="pago-title">Código QR</div>
+          </div>
+
+          <div class="qr-tabs">
+            <button class="qr-tab active">Mi QR</button>
+            <button class="qr-tab">Escanear</button>
+          </div>
+
+          <div class="qr-display">
+            <div class="qr-code-container">
+              <div class="qr-code-pattern"></div>
+              <div class="qr-code-logo">N</div>
+            </div>
+            <div class="qr-user-info">
+              <div class="qr-user-name">Carlos Rivero</div>
+              <div class="qr-user-id">V-20.456.789 · Banesco (0134)</div>
+              <div style="margin-top: 10px;">
+                <span class="m3-chip" style="background: var(--md-success-container); border-color: transparent; color: var(--md-success);">● Activo · Recibir pagos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="qr-actions" style="margin-top: 16px;">
+            <button class="qr-action-btn">
+              <div class="qr-action-icon" style="background: #EEF2FF; color: var(--md-primary);">📤</div>
+              <div class="qr-action-label">Compartir</div>
+            </button>
+            <button class="qr-action-btn">
+              <div class="qr-action-icon" style="background: #ECFDF5; color: var(--md-success);">💰</div>
+              <div class="qr-action-label">Monto Fijo</div>
+            </button>
+            <button class="qr-action-btn">
+              <div class="qr-action-icon" style="background: #FEF3C7; color: var(--md-gold);">💾</div>
+              <div class="qr-action-label">Guardar</div>
+            </button>
+          </div>
+
+          <div class="bottom-nav">
+            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item active" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
+            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 6: POS VIRTUAL ═══ -->
+        <div class="app-screen screen-pos" data-screen-id="6">
+          <div class="pos-header">
+            <div class="pos-title-row">
+              <div>
+                <div class="pago-title" style="color: #fff;">PoS Virtual</div>
+                <div style="font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 2px;">Mi Tienda Express</div>
+              </div>
+              <div class="pos-status-badge"><div class="pos-status-dot"></div> Activo</div>
+            </div>
+            <div class="pos-stats">
+              <div class="pos-stat">
+                <div class="pos-stat-value">$1,847</div>
+                <div class="pos-stat-label">Ventas Hoy</div>
+              </div>
+              <div class="pos-stat">
+                <div class="pos-stat-value">43</div>
+                <div class="pos-stat-label">Transacciones</div>
+              </div>
+              <div class="pos-stat">
+                <div class="pos-stat-value">$42.9</div>
+                <div class="pos-stat-label">Ticket Prom.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pos-content">
+            <div class="pos-amount-display">
+              <div class="label">Cobrar</div>
+              <div class="amount"><span>$</span>0<span>.00</span></div>
+              <div style="display: flex; gap: 8px; justify-content: center; margin-top: 8px;">
+                <span class="m3-chip" style="font-size: 0.65rem;">Bs. 0.00</span>
+              </div>
+            </div>
+
+            <div style="font-size: 0.72rem; font-weight: 600; color: var(--md-on-surface-variant); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Método de cobro</div>
+            <div class="pos-method-grid">
+              <button class="pos-method-card selected">
+                <div class="pos-method-icon">📲</div>
+                <div class="pos-method-label">Código QR</div>
+                <div class="pos-method-desc">Mostrar QR</div>
+              </button>
+              <button class="pos-method-card">
+                <div class="pos-method-icon">📱</div>
+                <div class="pos-method-label">Pago Móvil</div>
+                <div class="pos-method-desc">Solicitar pago</div>
+              </button>
+              <button class="pos-method-card">
+                <div class="pos-method-icon">🔗</div>
+                <div class="pos-method-label">Link de Pago</div>
+                <div class="pos-method-desc">Compartir enlace</div>
+              </button>
+              <button class="pos-method-card">
+                <div class="pos-method-icon">📶</div>
+                <div class="pos-method-label">NFC</div>
+                <div class="pos-method-desc">Tap to pay</div>
+              </button>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width: 100%; padding: 16px;">Generar Cobro</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 7: HISTORY ═══ -->
+        <div class="app-screen screen-history" data-screen-id="7">
+          <div class="history-header">
+            <div class="history-title">Historial</div>
+            <div class="history-subtitle">Todas tus transacciones</div>
+          </div>
+
+          <div class="history-filters">
+            <button class="history-filter active">Todas</button>
+            <button class="history-filter">Enviados</button>
+            <button class="history-filter">Recibidos</button>
+            <button class="history-filter">QR</button>
+            <button class="history-filter">PoS</button>
+          </div>
+
+          <div class="history-date-group">
+            <div class="history-date-label">Hoy · 7 Abr 2026</div>
+            <div class="history-tx">
+              <div class="home-tx-icon" style="background: #FEE2E2;">🛒</div>
+              <div class="home-tx-info"><div class="home-tx-name">Supermercado Express</div><div class="home-tx-desc">QR · Banesco</div></div>
+              <div class="home-tx-amount"><div class="home-tx-value" style="color:var(--md-error);">-$45.80</div><div class="home-tx-time">10:32 AM</div></div>
+            </div>
+            <div class="history-tx">
+              <div class="home-tx-icon" style="background: #D1FAE5;">💰</div>
+              <div class="home-tx-info"><div class="home-tx-name">María González</div><div class="home-tx-desc">Pago Móvil recibido</div></div>
+              <div class="home-tx-amount"><div class="home-tx-value" style="color:var(--md-success);">+$120.00</div><div class="home-tx-time">8:15 AM</div></div>
+            </div>
+          </div>
+          <div class="history-date-group">
+            <div class="history-date-label">Ayer · 6 Abr 2026</div>
+            <div class="history-tx">
+              <div class="home-tx-icon" style="background: #EEF2FF;">📱</div>
+              <div class="home-tx-info"><div class="home-tx-name">José Hernández</div><div class="home-tx-desc">Pago Móvil</div></div>
+              <div class="home-tx-amount"><div class="home-tx-value" style="color:var(--md-error);">-$35.00</div><div class="home-tx-time">6:45 PM</div></div>
+            </div>
+            <div class="history-tx">
+              <div class="home-tx-icon" style="background: #FEF3C7;">🏪</div>
+              <div class="home-tx-info"><div class="home-tx-name">Farmacia Central</div><div class="home-tx-desc">PoS Virtual</div></div>
+              <div class="home-tx-amount"><div class="home-tx-value" style="color:var(--md-error);">-$22.50</div><div class="home-tx-time">2:10 PM</div></div>
+            </div>
+            <div class="history-tx">
+              <div class="home-tx-icon" style="background: #D1FAE5;">💵</div>
+              <div class="home-tx-info"><div class="home-tx-name">Nómina Abril</div><div class="home-tx-desc">Transferencia recibida</div></div>
+              <div class="home-tx-amount"><div class="home-tx-value" style="color:var(--md-success);">+$2,500.00</div><div class="home-tx-time">12:00 PM</div></div>
+            </div>
+          </div>
+          <div class="history-date-group" style="padding-bottom: 96px;">
+            <div class="history-date-label">5 Abr 2026</div>
+            <div class="history-tx">
+              <div class="home-tx-icon" style="background: #FEE2E2;">⛽</div>
+              <div class="home-tx-info"><div class="home-tx-name">Gasolinera PDV</div><div class="home-tx-desc">QR · Provincial</div></div>
+              <div class="home-tx-amount"><div class="home-tx-value" style="color:var(--md-error);">-$18.00</div><div class="home-tx-time">4:20 PM</div></div>
+            </div>
+          </div>
+
+          <div class="bottom-nav">
+            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item active" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
+            <button class="nav-item" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 8: PROFILE ═══ -->
+        <div class="app-screen screen-profile" data-screen-id="8">
+          <div class="profile-header">
+            <div class="profile-avatar">CR</div>
+            <div class="profile-name">Carlos Rivero</div>
+            <div class="profile-email">carlos@nexopay.com</div>
+            <div class="profile-stats">
+              <div class="profile-stat"><div class="profile-stat-value">3</div><div class="profile-stat-label">Cuentas</div></div>
+              <div class="profile-stat"><div class="profile-stat-value">156</div><div class="profile-stat-label">Transacciones</div></div>
+              <div class="profile-stat"><div class="profile-stat-value">⭐ Pro</div><div class="profile-stat-label">Plan</div></div>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <div class="profile-section-title">Cuenta</div>
+            <div class="profile-item">
+              <div class="profile-item-icon" style="background: #EEF2FF;">🏦</div>
+              <div class="profile-item-label">Mis Cuentas Bancarias</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+            <div class="profile-item">
+              <div class="profile-item-icon" style="background: #FEF3C7;">💳</div>
+              <div class="profile-item-label">Métodos de Pago</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+            <div class="profile-item">
+              <div class="profile-item-icon" style="background: #F3E8FF;">⭐</div>
+              <div class="profile-item-label">NexoPay Pro</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <div class="profile-section-title">Seguridad</div>
+            <div class="profile-item">
+              <div class="profile-item-icon" style="background: #ECFDF5;">🔐</div>
+              <div class="profile-item-label">Biometría y PIN</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+            <div class="profile-item">
+              <div class="profile-item-icon" style="background: #FEE2E2;">🛡️</div>
+              <div class="profile-item-label">Verificación KYC</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+          </div>
+
+          <div class="profile-section" style="padding-bottom: 96px;">
+            <div class="profile-section-title">Más</div>
+            <div class="profile-item">
+              <div class="profile-item-icon" style="background: #F1F5F9;">❓</div>
+              <div class="profile-item-label">Ayuda y Soporte</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+            <div class="profile-item">
+              <div class="profile-item-icon" style="background: #F1F5F9;">📄</div>
+              <div class="profile-item-label">Términos y Privacidad</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+            <div class="profile-item" onclick="goToScreen(2)">
+              <div class="profile-item-icon" style="background: #FEE2E2;">🚪</div>
+              <div class="profile-item-label" style="color: var(--md-error);">Cerrar Sesión</div>
+              <div class="profile-item-arrow">›</div>
+            </div>
+          </div>
+
+          <div class="bottom-nav">
+            <button class="nav-item" onclick="goToScreen(3)"><div class="nav-icon">🏠</div><div class="nav-label">Inicio</div></button>
+            <button class="nav-item" onclick="goToScreen(5)"><div class="nav-icon">📷</div><div class="nav-label">QR</div></button>
+            <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
+            <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
+            <button class="nav-item active" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 9: SUCCESS ═══ -->
+        <div class="app-screen screen-success" data-screen-id="9">
+          <div class="success-check">✓</div>
+          <div class="success-title">¡Pago Exitoso!</div>
+          <div class="success-desc">Tu pago ha sido procesado correctamente</div>
+          <div class="success-amount">$150.00</div>
+          <div class="success-detail">Enviado a María González</div>
+
+          <div class="success-receipt">
+            <div class="success-receipt-row"><span class="success-receipt-label">Referencia</span><span class="success-receipt-value">#NXP-2026-04-0847</span></div>
+            <div class="m3-divider"></div>
+            <div class="success-receipt-row"><span class="success-receipt-label">Fecha</span><span class="success-receipt-value">7 Abr 2026, 10:45 AM</span></div>
+            <div class="m3-divider"></div>
+            <div class="success-receipt-row"><span class="success-receipt-label">Banco Origen</span><span class="success-receipt-value">Banesco (0134)</span></div>
+            <div class="m3-divider"></div>
+            <div class="success-receipt-row"><span class="success-receipt-label">Banco Destino</span><span class="success-receipt-value">Banesco (0134)</span></div>
+            <div class="m3-divider"></div>
+            <div class="success-receipt-row"><span class="success-receipt-label">Cédula</span><span class="success-receipt-value">V-12.345.678</span></div>
+            <div class="m3-divider"></div>
+            <div class="success-receipt-row"><span class="success-receipt-label">Tiempo</span><span class="success-receipt-value" style="color: var(--md-success);">1.2 segundos ⚡</span></div>
+          </div>
+
+          <div class="success-actions">
+            <button class="m3-btn m3-btn-tonal" onclick="goToScreen(3)">🏠 Inicio</button>
+            <button class="m3-btn m3-btn-filled">📤 Compartir</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; padding: 0 1rem 3rem; color: rgba(255,255,255,0.3); font-size: 0.75rem;">
+    <p>Prototipo interactivo de alta fidelidad · Flutter Material Design 3 · NexoPay © 2026</p>
+    <p style="margin-top: 0.5rem;"><a href="../index.html" style="color: rgba(255,255,255,0.5);">← Volver a la documentación de inversión</a></p>
+  </div>
+
+  <script>
+    let currentScreen = 0;
+
+    function goToScreen(idx) {
+      const screens = document.querySelectorAll('.app-screen');
+      const btns = document.querySelectorAll('.screen-btn');
+      screens.forEach(s => s.classList.remove('active'));
+      btns.forEach(b => b.classList.remove('active'));
+      const target = document.querySelector(`[data-screen-id="${idx}"]`);
+      if (target) { target.classList.add('active'); target.scrollTop = 0; }
+      btns[idx]?.classList.add('active');
+      currentScreen = idx;
+    }
+
+    document.querySelectorAll('.screen-btn').forEach(btn => {
+      btn.addEventListener('click', () => goToScreen(parseInt(btn.dataset.screen)));
+    });
+
+    // Auto-advance splash after 2s
+    setTimeout(() => { if (currentScreen === 0) goToScreen(1); }, 2500);
+  </script>
+
+</body>
+</html>

@@ -513,6 +513,52 @@
     .home-account-dot {
       width: 6px; height: 6px; border-radius: 50%;
     }
+    .home-balance-carousel {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .carousel-arrow {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .bank-card-slider {
+      flex: 1;
+      position: relative;
+      min-height: 62px;
+    }
+    .bank-card {
+      display: none;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .bank-card.active { display: block; }
+    .bank-name { font-size: 0.68rem; color: rgba(255,255,255,0.75); }
+    .bank-amount { font-size: 0.95rem; font-weight: 700; color: #fff; margin-top: 2px; }
+    .bank-bs { font-size: 0.62rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+    }
+    .carousel-dot.active { background: #fff; }
 
     .home-actions {
       display: grid;
@@ -972,6 +1018,23 @@
     }
     .profile-item-label { flex: 1; font-size: 0.85rem; font-weight: 500; color: var(--md-on-surface); }
     .profile-item-arrow { color: var(--md-outline); font-size: 0.9rem; }
+    .detail-header {
+      padding: 60px 20px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--md-outline-variant);
+    }
+    .detail-content { padding: 16px 20px 96px; }
+    .detail-title { font-size: 1rem; font-weight: 700; color: var(--md-on-surface); }
+    .detail-subtitle { font-size: 0.72rem; color: var(--md-on-surface-variant); margin-top: 2px; }
+    .detail-card { background:#fff; border-radius: 16px; padding:14px; margin-bottom:12px; box-shadow:0 1px 4px var(--md-shadow); }
+    .detail-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--md-surface-container); }
+    .detail-row:last-child { border-bottom:none; }
 
     /* ════════════════════════════════════════════
        SCREEN 9: SUCCESS
@@ -1042,12 +1105,20 @@
     <button class="screen-btn active" data-screen="0">Splash</button>
     <button class="screen-btn" data-screen="1">Onboarding</button>
     <button class="screen-btn" data-screen="2">Login</button>
+    <button class="screen-btn" data-screen="10">Registro</button>
+    <button class="screen-btn" data-screen="11">Recuperar</button>
     <button class="screen-btn" data-screen="3">Home</button>
     <button class="screen-btn" data-screen="4">Pago Móvil</button>
     <button class="screen-btn" data-screen="5">QR Code</button>
     <button class="screen-btn" data-screen="6">PoS Virtual</button>
     <button class="screen-btn" data-screen="7">Historial</button>
     <button class="screen-btn" data-screen="8">Perfil</button>
+    <button class="screen-btn" data-screen="12">Cuentas</button>
+    <button class="screen-btn" data-screen="13">Métodos</button>
+    <button class="screen-btn" data-screen="14">NexoPay Pro</button>
+    <button class="screen-btn" data-screen="15">Biometría</button>
+    <button class="screen-btn" data-screen="16">KYC</button>
+    <button class="screen-btn" data-screen="17">Términos</button>
     <button class="screen-btn" data-screen="9">Confirmación</button>
   </div>
 
@@ -1101,17 +1172,21 @@
               <span class="m3-input-label">Contraseña</span>
               <input class="m3-input" type="password" value="••••••••">
             </div>
-            <div class="login-forgot">¿Olvidaste tu contraseña?</div>
+            <div class="login-forgot" onclick="goToScreen(11)" style="cursor:pointer;">¿Olvidaste tu contraseña?</div>
             <button class="m3-btn m3-btn-filled" style="width: 100%;" onclick="goToScreen(3)">Iniciar Sesión</button>
             <div class="login-divider">o continuar con</div>
             <div class="login-social">
-              <button class="login-social-btn">🔵</button>
+              <button class="login-social-btn" title="Ingresar con Gmail">G</button>
               <button class="login-social-btn">🍎</button>
               <button class="login-social-btn">📧</button>
             </div>
+            <div class="login-social" style="margin-top: 12px;">
+              <button class="m3-btn m3-btn-tonal" style="flex:1;" onclick="goToScreen(3)">🆔 Face ID</button>
+              <button class="m3-btn m3-btn-tonal" style="flex:1;" onclick="goToScreen(3)">🖐️ Huella</button>
+            </div>
           </div>
           <div class="login-bottom">
-            ¿No tienes cuenta? <a href="#">Regístrate gratis</a>
+            ¿No tienes cuenta? <a href="#" onclick="goToScreen(10)">Regístrate gratis</a>
           </div>
         </div>
 
@@ -1129,10 +1204,31 @@
               <div class="home-balance-label">Saldo Total</div>
               <div class="home-balance-value">$4,285<span style="font-size:1.2rem;color:rgba(255,255,255,0.5)">.50</span></div>
               <div class="home-balance-change">↑ +12.5% este mes</div>
-              <div class="home-balance-accounts">
-                <div class="home-account-chip"><div class="home-account-dot" style="background:#3B82F6"></div> Banesco</div>
-                <div class="home-account-chip"><div class="home-account-dot" style="background:#10B981"></div> Mercantil</div>
-                <div class="home-account-chip"><div class="home-account-dot" style="background:#F59E0B"></div> Provincial</div>
+              <div class="home-balance-carousel">
+                <button class="carousel-arrow" onclick="prevBankCard()">‹</button>
+                <div class="bank-card-slider">
+                  <div class="bank-card active" data-bank="0">
+                    <div class="bank-name">🔵 Banesco · ••4521</div>
+                    <div class="bank-amount">$2,140.20</div>
+                    <div class="bank-bs">Equivalente: Bs. 78,996.18</div>
+                  </div>
+                  <div class="bank-card" data-bank="1">
+                    <div class="bank-name">🟢 Mercantil · ••8903</div>
+                    <div class="bank-amount">$1,305.10</div>
+                    <div class="bank-bs">Equivalente: Bs. 48,175.32</div>
+                  </div>
+                  <div class="bank-card" data-bank="2">
+                    <div class="bank-name">🟡 Provincial · ••2187</div>
+                    <div class="bank-amount">$840.20</div>
+                    <div class="bank-bs">Equivalente: Bs. 31,012.38</div>
+                  </div>
+                </div>
+                <button class="carousel-arrow" onclick="nextBankCard()">›</button>
+              </div>
+              <div class="carousel-dots">
+                <span class="carousel-dot active" data-dot="0"></span>
+                <span class="carousel-dot" data-dot="1"></span>
+                <span class="carousel-dot" data-dot="2"></span>
               </div>
             </div>
           </div>
@@ -1459,17 +1555,17 @@
 
           <div class="profile-section">
             <div class="profile-section-title">Cuenta</div>
-            <div class="profile-item">
+            <div class="profile-item" onclick="goToScreen(12)">
               <div class="profile-item-icon" style="background: #EEF2FF;">🏦</div>
               <div class="profile-item-label">Mis Cuentas Bancarias</div>
               <div class="profile-item-arrow">›</div>
             </div>
-            <div class="profile-item">
+            <div class="profile-item" onclick="goToScreen(13)">
               <div class="profile-item-icon" style="background: #FEF3C7;">💳</div>
               <div class="profile-item-label">Métodos de Pago</div>
               <div class="profile-item-arrow">›</div>
             </div>
-            <div class="profile-item">
+            <div class="profile-item" onclick="goToScreen(14)">
               <div class="profile-item-icon" style="background: #F3E8FF;">⭐</div>
               <div class="profile-item-label">NexoPay Pro</div>
               <div class="profile-item-arrow">›</div>
@@ -1478,12 +1574,12 @@
 
           <div class="profile-section">
             <div class="profile-section-title">Seguridad</div>
-            <div class="profile-item">
+            <div class="profile-item" onclick="goToScreen(15)">
               <div class="profile-item-icon" style="background: #ECFDF5;">🔐</div>
               <div class="profile-item-label">Biometría y PIN</div>
               <div class="profile-item-arrow">›</div>
             </div>
-            <div class="profile-item">
+            <div class="profile-item" onclick="goToScreen(16)">
               <div class="profile-item-icon" style="background: #FEE2E2;">🛡️</div>
               <div class="profile-item-label">Verificación KYC</div>
               <div class="profile-item-arrow">›</div>
@@ -1497,7 +1593,7 @@
               <div class="profile-item-label">Ayuda y Soporte</div>
               <div class="profile-item-arrow">›</div>
             </div>
-            <div class="profile-item">
+            <div class="profile-item" onclick="goToScreen(17)">
               <div class="profile-item-icon" style="background: #F1F5F9;">📄</div>
               <div class="profile-item-label">Términos y Privacidad</div>
               <div class="profile-item-arrow">›</div>
@@ -1515,6 +1611,176 @@
             <button class="nav-item" onclick="goToScreen(4)"><div class="nav-icon">💸</div><div class="nav-label">Pagar</div></button>
             <button class="nav-item" onclick="goToScreen(7)"><div class="nav-icon">📋</div><div class="nav-label">Historial</div></button>
             <button class="nav-item active" onclick="goToScreen(8)"><div class="nav-icon">👤</div><div class="nav-label">Perfil</div></button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 10: REGISTRO + ONBOARDING KYC ═══ -->
+        <div class="app-screen screen-login" data-screen-id="10">
+          <div class="login-header">
+            <div class="logo-small">N</div>
+            <h1>Crear Cuenta NexoPay</h1>
+            <p>Registro en menos de 3 minutos con validación KYC guiada</p>
+          </div>
+          <div class="login-form">
+            <div class="m3-input-container">
+              <span class="m3-input-label">Nombre Completo</span>
+              <input class="m3-input" type="text" value="Carlos Rivero">
+            </div>
+            <div class="m3-input-container">
+              <span class="m3-input-label">Cédula</span>
+              <input class="m3-input" type="text" value="V-20456789">
+            </div>
+            <div class="m3-input-container">
+              <span class="m3-input-label">Correo Electrónico</span>
+              <input class="m3-input" type="email" value="carlos@email.com">
+            </div>
+            <div class="m3-input-container">
+              <span class="m3-input-label">Teléfono</span>
+              <input class="m3-input" type="text" value="+58 414-2535007">
+            </div>
+            <div class="m3-card-elevated" style="margin-bottom: 16px;">
+              <div style="font-size:0.72rem;font-weight:700;color:var(--md-on-surface-variant);margin-bottom:8px;">Onboarding KYC</div>
+              <div class="detail-row"><span style="font-size:0.78rem;">1. Captura de documento</span><span class="m3-chip" style="font-size:0.62rem;">Listo</span></div>
+              <div class="detail-row"><span style="font-size:0.78rem;">2. Selfie + prueba de vida</span><span class="m3-chip" style="font-size:0.62rem;">Pendiente</span></div>
+              <div class="detail-row"><span style="font-size:0.78rem;">3. Vinculación bancaria</span><span class="m3-chip" style="font-size:0.62rem;">Pendiente</span></div>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width:100%;" onclick="goToScreen(3)">Continuar Registro</button>
+            <div class="login-divider">o registrarte con</div>
+            <button class="m3-btn m3-btn-outlined" style="width:100%;">🟢 Continuar con Gmail</button>
+          </div>
+          <div class="login-bottom">¿Ya tienes cuenta? <a href="#" onclick="goToScreen(2)">Inicia sesión</a></div>
+        </div>
+
+        <!-- ═══ SCREEN 11: RECUPERACIÓN DE CONTRASEÑA ═══ -->
+        <div class="app-screen screen-login" data-screen-id="11">
+          <div class="login-header">
+            <div class="logo-small" style="background:linear-gradient(135deg,#7C3AED,#2563EB)">🔒</div>
+            <h1>Recuperar Contraseña</h1>
+            <p>Te enviaremos un código de verificación seguro</p>
+          </div>
+          <div class="login-form">
+            <div class="m3-input-container">
+              <span class="m3-input-label">Correo o Teléfono</span>
+              <input class="m3-input" type="text" value="dev.know.ai@gmail.com">
+            </div>
+            <div class="m3-card-elevated" style="margin-bottom: 16px;">
+              <div style="font-size:0.72rem;font-weight:700;color:var(--md-on-surface-variant);margin-bottom:8px;">Método de recuperación</div>
+              <div style="display:flex;gap:8px;">
+                <button class="m3-btn m3-btn-tonal" style="flex:1;padding:10px 12px;">📧 Email</button>
+                <button class="m3-btn m3-btn-outlined" style="flex:1;padding:10px 12px;">📱 SMS</button>
+              </div>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width:100%;margin-bottom:12px;">Enviar Código</button>
+            <button class="m3-btn m3-btn-tonal" style="width:100%;margin-bottom:12px;">🆔 Recuperar con Face ID</button>
+            <button class="m3-btn m3-btn-tonal" style="width:100%;" onclick="goToScreen(2)">🖐️ Recuperar con Huella</button>
+          </div>
+          <div class="login-bottom"><a href="#" onclick="goToScreen(2)">← Volver a Login</a></div>
+        </div>
+
+        <!-- ═══ SCREEN 12: MIS CUENTAS BANCARIAS ═══ -->
+        <div class="app-screen screen-profile" data-screen-id="12">
+          <div class="detail-header">
+            <button class="pago-back" onclick="goToScreen(8)">←</button>
+            <div><div class="detail-title">Mis Cuentas Bancarias</div><div class="detail-subtitle">Gestiona tus bancos conectados</div></div>
+          </div>
+          <div class="detail-content">
+            <div class="detail-card">
+              <div class="detail-row"><span>🔵 Banesco · ••4521</span><span class="m3-chip">Principal</span></div>
+              <div class="detail-row"><span>🟢 Mercantil · ••8903</span><span class="m3-chip">Activa</span></div>
+              <div class="detail-row"><span>🟡 Provincial · ••2187</span><span class="m3-chip">Activa</span></div>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width:100%;">+ Agregar Nueva Cuenta</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 13: MÉTODOS DE PAGO ═══ -->
+        <div class="app-screen screen-profile" data-screen-id="13">
+          <div class="detail-header">
+            <button class="pago-back" onclick="goToScreen(8)">←</button>
+            <div><div class="detail-title">Métodos de Pago</div><div class="detail-subtitle">Tarjetas, cuentas y preferencias</div></div>
+          </div>
+          <div class="detail-content">
+            <div class="detail-card">
+              <div class="detail-row"><span>💳 Visa Debit ••8765</span><span style="color:var(--md-success);font-size:0.72rem;">Activa</span></div>
+              <div class="detail-row"><span>🏦 Pago Móvil interbancario</span><span style="color:var(--md-success);font-size:0.72rem;">Activo</span></div>
+              <div class="detail-row"><span>📲 QR Instantáneo</span><span style="color:var(--md-success);font-size:0.72rem;">Activo</span></div>
+            </div>
+            <button class="m3-btn m3-btn-outlined" style="width:100%;">Configurar método por defecto</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 14: NEXOPAY PRO ═══ -->
+        <div class="app-screen screen-profile" data-screen-id="14">
+          <div class="detail-header">
+            <button class="pago-back" onclick="goToScreen(8)">←</button>
+            <div><div class="detail-title">NexoPay Pro</div><div class="detail-subtitle">Beneficios premium para clientes frecuentes</div></div>
+          </div>
+          <div class="detail-content">
+            <div class="detail-card" style="background:linear-gradient(145deg,#1E3A6E,#2563EB);color:#fff;">
+              <div style="font-size:0.75rem;opacity:0.75;">Plan actual</div>
+              <div style="font-size:1.2rem;font-weight:700;margin-top:4px;">NexoPay Pro · Activo</div>
+              <div style="font-size:0.72rem;opacity:0.75;margin-top:4px;">Renovación: 07 Mayo 2026</div>
+            </div>
+            <div class="detail-card">
+              <div class="detail-row"><span>⚡ Prioridad en procesamiento</span><span>✓</span></div>
+              <div class="detail-row"><span>📊 Analytics personal avanzado</span><span>✓</span></div>
+              <div class="detail-row"><span>💸 Cashback en comercios aliados</span><span>✓</span></div>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width:100%;">Gestionar Suscripción</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 15: BIOMETRÍA Y PIN ═══ -->
+        <div class="app-screen screen-profile" data-screen-id="15">
+          <div class="detail-header">
+            <button class="pago-back" onclick="goToScreen(8)">←</button>
+            <div><div class="detail-title">Biometría y PIN</div><div class="detail-subtitle">Seguridad de acceso y autorización</div></div>
+          </div>
+          <div class="detail-content">
+            <div class="detail-card">
+              <div class="detail-row"><span>🆔 Face ID</span><span style="color:var(--md-success);font-size:0.72rem;">Activado</span></div>
+              <div class="detail-row"><span>🖐️ Huella digital</span><span style="color:var(--md-success);font-size:0.72rem;">Activado</span></div>
+              <div class="detail-row"><span>🔢 PIN de 6 dígitos</span><span style="color:var(--md-success);font-size:0.72rem;">Configurado</span></div>
+            </div>
+            <button class="m3-btn m3-btn-outlined" style="width:100%;margin-bottom:10px;">Cambiar PIN</button>
+            <button class="m3-btn m3-btn-tonal" style="width:100%;">Reconfigurar biometría</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 16: VERIFICACIÓN KYC ═══ -->
+        <div class="app-screen screen-profile" data-screen-id="16">
+          <div class="detail-header">
+            <button class="pago-back" onclick="goToScreen(8)">←</button>
+            <div><div class="detail-title">Verificación KYC</div><div class="detail-subtitle">Cumplimiento regulatorio seguro</div></div>
+          </div>
+          <div class="detail-content">
+            <div class="detail-card">
+              <div class="detail-row"><span>Documento de identidad</span><span style="color:var(--md-success);">Verificado</span></div>
+              <div class="detail-row"><span>Selfie + prueba de vida</span><span style="color:var(--md-gold);">En revisión</span></div>
+              <div class="detail-row"><span>Comprobante de residencia</span><span style="color:var(--md-outline);">Pendiente</span></div>
+              <div class="detail-row"><span>Lista PEP / AML</span><span style="color:var(--md-success);">Aprobado</span></div>
+            </div>
+            <button class="m3-btn m3-btn-filled" style="width:100%;">Completar Verificación</button>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 17: TÉRMINOS Y PRIVACIDAD ═══ -->
+        <div class="app-screen screen-profile" data-screen-id="17">
+          <div class="detail-header">
+            <button class="pago-back" onclick="goToScreen(8)">←</button>
+            <div><div class="detail-title">Términos y Privacidad</div><div class="detail-subtitle">Transparencia y protección de datos</div></div>
+          </div>
+          <div class="detail-content">
+            <div class="detail-card">
+              <div style="font-size:0.84rem;font-weight:700;margin-bottom:8px;">Resumen de Términos de Servicio</div>
+              <p style="font-size:0.74rem;line-height:1.5;color:var(--md-on-surface-variant);">NexoPay opera como plataforma de pagos interoperable. Las transacciones son irreversibles una vez confirmadas por la red bancaria. El usuario acepta el uso de autenticación reforzada (PIN y biometría) para operaciones sensibles.</p>
+            </div>
+            <div class="detail-card">
+              <div style="font-size:0.84rem;font-weight:700;margin-bottom:8px;">Resumen de Política de Privacidad</div>
+              <p style="font-size:0.74rem;line-height:1.5;color:var(--md-on-surface-variant);">Tus datos son cifrados en tránsito y reposo. No vendemos información personal. Compartimos solo datos estrictamente necesarios con bancos aliados y entes regulatorios para cumplimiento KYC/AML.</p>
+            </div>
+            <button class="m3-btn m3-btn-outlined" style="width:100%;margin-bottom:10px;">Ver documento completo</button>
+            <button class="m3-btn m3-btn-filled" style="width:100%;">Aceptar y continuar</button>
           </div>
         </div>
 
@@ -1557,6 +1823,7 @@
 
   <script>
     let currentScreen = 0;
+    let currentBank = 0;
 
     function goToScreen(idx) {
       const screens = document.querySelectorAll('.app-screen');
@@ -1569,9 +1836,38 @@
       currentScreen = idx;
     }
 
+    function updateBankCarousel() {
+      const cards = document.querySelectorAll('.bank-card');
+      const dots = document.querySelectorAll('.carousel-dot');
+      cards.forEach((c, i) => c.classList.toggle('active', i === currentBank));
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentBank));
+    }
+
+    function nextBankCard() {
+      const cards = document.querySelectorAll('.bank-card');
+      if (!cards.length) return;
+      currentBank = (currentBank + 1) % cards.length;
+      updateBankCarousel();
+    }
+
+    function prevBankCard() {
+      const cards = document.querySelectorAll('.bank-card');
+      if (!cards.length) return;
+      currentBank = (currentBank - 1 + cards.length) % cards.length;
+      updateBankCarousel();
+    }
+
     document.querySelectorAll('.screen-btn').forEach(btn => {
       btn.addEventListener('click', () => goToScreen(parseInt(btn.dataset.screen)));
     });
+
+    document.querySelectorAll('.carousel-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        currentBank = parseInt(dot.dataset.dot || '0');
+        updateBankCarousel();
+      });
+    });
+    updateBankCarousel();
 
     // Auto-advance splash after 2s
     setTimeout(() => { if (currentScreen === 0) goToScreen(1); }, 2500);

@@ -164,7 +164,7 @@
       color: var(--md-on-surface);
       opacity: 0;
       transform: translateX(30px);
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
       overflow-y: auto;
       overflow-x: hidden;
@@ -1104,22 +1104,15 @@
     /* ═══════════════════════════════════════
        PREMIUM UX: FLUTTER TRANSITIONS
        ═══════════════════════════════════════ */
-    .app-screen {
-      transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-    }
     .app-screen.slide-out-left {
-      opacity: 0;
-      transform: translateX(-60px) scale(0.94);
+      opacity: 0 !important;
+      transform: translateX(-60px) scale(0.94) !important;
+      pointer-events: none !important;
     }
-    .app-screen.slide-in-up {
-      transform: translateY(0);
-    }
-    .app-screen:not(.active):not(.slide-out-left) {
-      transform: translateX(30px);
-    }
-    .app-screen.sub-view:not(.active) {
+    .app-screen.sub-view {
       transform: translateY(100%);
       opacity: 0;
+      transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1), transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .app-screen.sub-view.active {
       transform: translateY(0);
@@ -1312,23 +1305,38 @@
     /* ═══════════════════════════════════════
        PREMIUM UX: MULTI-STEP ONBOARDING
        ═══════════════════════════════════════ */
-    .onboarding-slider {
-      display: flex;
-      width: 300%;
-      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    .screen-onboarding {
+      padding-bottom: 0 !important;
     }
-    .onboarding-slide {
-      width: calc(100% / 3);
-      flex-shrink: 0;
+    .ob-slide {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      bottom: 160px;
       display: flex;
       flex-direction: column;
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
     }
-    .onboarding-slide .onboarding-visual {
+    .ob-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    .ob-slide .onboarding-visual {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 60px 30px 20px;
+    }
+    .ob-controls {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0 1.5rem 2rem;
+      text-align: center;
+      background: #fff;
     }
 
     /* ═══════════════════════════════════════
@@ -1647,37 +1655,35 @@
         </div>
 
         <!-- ═══ SCREEN 1: ONBOARDING 3 PASOS ═══ -->
-        <div class="app-screen screen-onboarding" data-screen-id="1" style="overflow:hidden;">
-          <div class="onboarding-slider" id="onboardingSlider">
-            <div class="onboarding-slide">
-              <div class="onboarding-visual" style="background:linear-gradient(145deg,#EEF2FF,#DBEAFE);">
-                <div class="onboarding-illustration">💳</div>
-              </div>
-              <div class="onboarding-content">
-                <h2>Todos tus bancos, una sola app</h2>
-                <p>Conecta Banesco, Mercantil, Provincial y 60+ bancos. Realiza Pagos Móviles sin cambiar de aplicación.</p>
-              </div>
+        <div class="app-screen screen-onboarding" data-screen-id="1">
+          <div class="ob-slide active" data-ob-slide="0">
+            <div class="onboarding-visual" style="background:linear-gradient(145deg,#EEF2FF,#DBEAFE);">
+              <div class="onboarding-illustration">💳</div>
             </div>
-            <div class="onboarding-slide">
-              <div class="onboarding-visual" style="background:linear-gradient(145deg,#ECFDF5,#D1FAE5);">
-                <div class="onboarding-illustration" style="background:linear-gradient(135deg,#D1FAE5,#6EE7B7);">🏪</div>
-              </div>
-              <div class="onboarding-content">
-                <h2>Tu negocio cobra al instante</h2>
-                <p>Convierte tu teléfono en un Punto de Venta. Acepta pagos por QR, NFC y Pago Móvil sin equipos costosos.</p>
-              </div>
-            </div>
-            <div class="onboarding-slide">
-              <div class="onboarding-visual" style="background:linear-gradient(145deg,#F3E8FF,#E9D5FF);">
-                <div class="onboarding-illustration" style="background:linear-gradient(135deg,#E9D5FF,#C084FC);">🔐</div>
-              </div>
-              <div class="onboarding-content">
-                <h2>Seguridad de nivel bancario</h2>
-                <p>Face ID, huella digital y PIN protegen cada transacción. Cifrado de extremo a extremo y cumplimiento KYC/AML.</p>
-              </div>
+            <div class="onboarding-content">
+              <h2>Todos tus bancos, una sola app</h2>
+              <p>Conecta Banesco, Mercantil, Provincial y 60+ bancos. Realiza Pagos Móviles sin cambiar de aplicación.</p>
             </div>
           </div>
-          <div style="padding:0 1.5rem 2rem;text-align:center;">
+          <div class="ob-slide" data-ob-slide="1">
+            <div class="onboarding-visual" style="background:linear-gradient(145deg,#ECFDF5,#D1FAE5);">
+              <div class="onboarding-illustration" style="background:linear-gradient(135deg,#D1FAE5,#6EE7B7);">🏪</div>
+            </div>
+            <div class="onboarding-content">
+              <h2>Tu negocio cobra al instante</h2>
+              <p>Convierte tu teléfono en un Punto de Venta. Acepta pagos por QR, NFC y Pago Móvil sin equipos costosos.</p>
+            </div>
+          </div>
+          <div class="ob-slide" data-ob-slide="2">
+            <div class="onboarding-visual" style="background:linear-gradient(145deg,#F3E8FF,#E9D5FF);">
+              <div class="onboarding-illustration" style="background:linear-gradient(135deg,#E9D5FF,#C084FC);">🔐</div>
+            </div>
+            <div class="onboarding-content">
+              <h2>Seguridad de nivel bancario</h2>
+              <p>Face ID, huella digital y PIN protegen cada transacción. Cifrado de extremo a extremo y cumplimiento KYC/AML.</p>
+            </div>
+          </div>
+          <div class="ob-controls">
             <div class="onboarding-dots" id="onboardingDots">
               <div class="onboarding-dot active" data-ob="0"></div>
               <div class="onboarding-dot" data-ob="1"></div>
@@ -2607,12 +2613,11 @@
       updateOnboarding();
     }
     function updateOnboarding() {
-      const slider = document.getElementById('onboardingSlider');
-      if (slider) slider.style.transform = `translateX(-${obStep * 33.333}%)`;
+      document.querySelectorAll('.ob-slide').forEach((s, i) => {
+        s.classList.toggle('active', i === obStep);
+      });
       document.querySelectorAll('[data-ob]').forEach((d, i) => {
         d.classList.toggle('active', i === obStep);
-        d.style.width = i === obStep ? '24px' : '8px';
-        d.style.background = i === obStep ? 'var(--md-primary)' : 'var(--md-outline-variant)';
       });
       const btn = document.getElementById('obNextBtn');
       if (btn) btn.textContent = obStep === 2 ? 'Comenzar →' : 'Siguiente →';

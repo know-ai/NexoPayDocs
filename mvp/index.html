@@ -55,7 +55,24 @@
       text-align: center;
       padding: 2.5rem 1rem 1rem;
       max-width: 800px;
+      position: relative;
     }
+    .theme-toggle {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.25rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,0.16); }
     .page-header .logo {
       display: inline-flex;
       align-items: center;
@@ -168,6 +185,7 @@
       overflow-y: auto;
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
+      padding-bottom: 92px;
     }
     .app-screen::-webkit-scrollbar { display: none; }
     .app-screen.active {
@@ -204,6 +222,31 @@
       justify-content: space-around;
       padding-bottom: 16px;
       z-index: 90;
+    }
+    .screen-footer-fixed {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: var(--md-surface);
+      border-top: 1px solid var(--md-outline-variant);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px 14px;
+      z-index: 90;
+    }
+    .screen-footer-fixed .mini-btn {
+      border: none;
+      background: var(--md-surface-container);
+      color: var(--md-on-surface);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
     }
     .bottom-nav .nav-item {
       display: flex;
@@ -262,6 +305,8 @@
       cursor: pointer;
       font-family: inherit;
       transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
     }
     .m3-btn-filled {
       background: var(--md-primary);
@@ -1085,6 +1130,61 @@
       .phone-notch, .phone-home-indicator { display: none; }
       .page-header { padding: 1.5rem 1rem 0.5rem; }
       .page-header .logo { font-size: 1.4rem; }
+      .theme-toggle { position: static; margin-top: 0.75rem; }
+    }
+
+    .dark-mode {
+      --md-surface: #0F172A;
+      --md-surface-variant: #1E293B;
+      --md-surface-container: #1E293B;
+      --md-surface-container-low: #111827;
+      --md-surface-container-high: #263244;
+      --md-on-surface: #E5E7EB;
+      --md-on-surface-variant: #94A3B8;
+      --md-outline: #64748B;
+      --md-outline-variant: #334155;
+      --md-shadow: rgba(0,0,0,0.45);
+    }
+    .dark-mode .m3-card,
+    .dark-mode .detail-card,
+    .dark-mode .home-action,
+    .dark-mode .pos-amount-display,
+    .dark-mode .pos-method-card,
+    .dark-mode .qr-code-container { background: #111827; color: var(--md-on-surface); }
+    .dark-mode .theme-toggle { background: rgba(255,255,255,0.12); }
+
+    .skeleton-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 120;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.06));
+    }
+    .skeleton-overlay.active { opacity: 1; }
+    .skeleton-block {
+      margin: 64px 20px 0;
+      height: 16px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, rgba(148,163,184,0.22) 25%, rgba(148,163,184,0.4) 50%, rgba(148,163,184,0.22) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1s infinite linear;
+    }
+    .skeleton-block:nth-child(2) { margin-top: 16px; width: 75%; }
+    .skeleton-block:nth-child(3) { margin-top: 16px; width: 55%; }
+    @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      background: rgba(255,255,255,0.45);
+      animation: ripple 0.55s linear;
+      pointer-events: none;
+    }
+    @keyframes ripple {
+      to { transform: scale(4); opacity: 0; }
     }
   </style>
 </head>
@@ -1093,6 +1193,7 @@
   <a href="../index.html" class="back-link">← Volver a Documentación</a>
 
   <header class="page-header">
+    <button class="theme-toggle" id="themeToggle">🌙 Modo Oscuro</button>
     <div class="badge">Prototipo MVP Interactivo</div>
     <div class="logo">
       <div class="icon">N</div>
@@ -1125,6 +1226,11 @@
   <div class="phone-wrapper">
     <div class="phone-frame">
       <div class="phone-screen">
+        <div class="skeleton-overlay" id="skeletonOverlay">
+          <div class="skeleton-block"></div>
+          <div class="skeleton-block"></div>
+          <div class="skeleton-block"></div>
+        </div>
         <div class="phone-notch"></div>
         <div class="phone-home-indicator"></div>
 
@@ -1134,6 +1240,10 @@
           <div class="splash-name">Nexo<span>Pay</span></div>
           <div class="splash-tagline">Todos tus pagos. Una sola app.</div>
           <div class="splash-loader"><div class="splash-loader-bar"></div></div>
+          <div class="screen-footer-fixed">
+            <button class="mini-btn" onclick="goToScreen(1)">Saltar Intro</button>
+            <button class="mini-btn" onclick="goToScreen(2)">Ir a Login</button>
+          </div>
         </div>
 
         <!-- ═══ SCREEN 1: ONBOARDING ═══ -->
@@ -1153,6 +1263,10 @@
             <div style="margin-top: 12px; font-size: 0.78rem; color: var(--md-on-surface-variant);">
               ¿Ya tienes cuenta? <a href="#" style="color: var(--md-primary); font-weight: 600; text-decoration: none;" onclick="goToScreen(2)">Inicia sesión</a>
             </div>
+          </div>
+          <div class="screen-footer-fixed">
+            <button class="mini-btn" onclick="goToScreen(0)">← Anterior</button>
+            <button class="mini-btn" onclick="goToScreen(2)">Siguiente →</button>
           </div>
         </div>
 
@@ -1187,6 +1301,10 @@
           </div>
           <div class="login-bottom">
             ¿No tienes cuenta? <a href="#" onclick="goToScreen(10)">Regístrate gratis</a>
+          </div>
+          <div class="screen-footer-fixed">
+            <button class="mini-btn" onclick="goToScreen(1)">← Onboarding</button>
+            <button class="mini-btn" onclick="goToScreen(3)">Entrar Demo →</button>
           </div>
         </div>
 
@@ -1649,6 +1767,10 @@
             <button class="m3-btn m3-btn-outlined" style="width:100%;">🟢 Continuar con Gmail</button>
           </div>
           <div class="login-bottom">¿Ya tienes cuenta? <a href="#" onclick="goToScreen(2)">Inicia sesión</a></div>
+          <div class="screen-footer-fixed">
+            <button class="mini-btn" onclick="goToScreen(2)">← Login</button>
+            <button class="mini-btn" onclick="goToScreen(3)">Completar →</button>
+          </div>
         </div>
 
         <!-- ═══ SCREEN 11: RECUPERACIÓN DE CONTRASEÑA ═══ -->
@@ -1675,6 +1797,10 @@
             <button class="m3-btn m3-btn-tonal" style="width:100%;" onclick="goToScreen(2)">🖐️ Recuperar con Huella</button>
           </div>
           <div class="login-bottom"><a href="#" onclick="goToScreen(2)">← Volver a Login</a></div>
+          <div class="screen-footer-fixed">
+            <button class="mini-btn" onclick="goToScreen(2)">← Login</button>
+            <button class="mini-btn" onclick="goToScreen(3)">Acceder Demo →</button>
+          </div>
         </div>
 
         <!-- ═══ SCREEN 12: MIS CUENTAS BANCARIAS ═══ -->
@@ -1824,13 +1950,26 @@
   <script>
     let currentScreen = 0;
     let currentBank = 0;
+    let darkMode = false;
 
     function goToScreen(idx) {
       const screens = document.querySelectorAll('.app-screen');
       const btns = document.querySelectorAll('.screen-btn');
-      screens.forEach(s => s.classList.remove('active'));
-      btns.forEach(b => b.classList.remove('active'));
       const target = document.querySelector(`[data-screen-id="${idx}"]`);
+      if (!target) return;
+
+      const skeleton = document.getElementById('skeletonOverlay');
+      if (skeleton) {
+        skeleton.classList.add('active');
+        setTimeout(() => skeleton.classList.remove('active'), 220);
+      }
+
+      screens.forEach(s => {
+        s.classList.remove('active');
+        s.style.transition = `all 0.35s cubic-bezier(0.4, 0, 0.2, 1)`;
+        s.style.transform = idx > currentScreen ? 'translateX(30px)' : 'translateX(-30px)';
+      });
+      btns.forEach(b => b.classList.remove('active'));
       if (target) { target.classList.add('active'); target.scrollTop = 0; }
       btns[idx]?.classList.add('active');
       currentScreen = idx;
@@ -1859,6 +1998,27 @@
 
     document.querySelectorAll('.screen-btn').forEach(btn => {
       btn.addEventListener('click', () => goToScreen(parseInt(btn.dataset.screen)));
+    });
+
+    document.querySelectorAll('button, .home-action, .profile-item, .qr-action-btn, .pos-method-card').forEach(el => {
+      el.addEventListener('click', function(e) {
+        const rect = this.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 560);
+      });
+    });
+
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+      darkMode = !darkMode;
+      document.querySelector('.phone-screen')?.classList.toggle('dark-mode', darkMode);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = darkMode ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
     });
 
     document.querySelectorAll('.carousel-dot').forEach(dot => {

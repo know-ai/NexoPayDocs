@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arquitectura Tecnológica — NexoPay</title>
-  <meta name="description" content="Arquitectura cloud-native con Flutter, Go, AWS y microservicios. Seguridad PCI DSS Level 1 para 31M+ transacciones diarias.">
+  <meta name="description" content="Arquitectura cloud-native con Flutter, Python FastAPI, AWS y microservicios. Seguridad PCI DSS Level 1 para 31M+ transacciones diarias.">
   <meta property="og:title" content="Arquitectura Tecnológica — NexoPay">
-  <meta property="og:description" content="Arquitectura cloud-native con Flutter, Go, AWS y microservicios. Seguridad PCI DSS Level 1 para 31M+ transacciones diarias.">
+  <meta property="og:description" content="Arquitectura cloud-native con Flutter, Python FastAPI, AWS y microservicios. Seguridad PCI DSS Level 1 para 31M+ transacciones diarias.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="NexoPay — Inversión">
   <meta name="twitter:card" content="summary_large_image">
@@ -39,6 +39,7 @@
         <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
         <li><a href="10-propuesta-inversion.html">Inversión</a></li>
         <li><a href="11-mvp-prototipo.html">MVP</a></li>
+        <li><a href="12-srs-especificaciones.html">SRS</a></li>
       </ul>
     </div>
   </nav>
@@ -186,16 +187,16 @@
 
       <!-- Backend -->
       <span class="badge badge-gold">Backend</span>
-      <h3 class="mt-2">Go + Node.js + Python — El Trío Optimizado</h3>
-      <p class="lead" style="max-width: 800px;">Tres lenguajes, cada uno en su fortaleza: Go para la velocidad bruta del procesamiento de pagos, Node.js para la flexibilidad del API gateway, y Python para la inteligencia de datos.</p>
+      <h3 class="mt-2">Python + FastAPI + Node.js — Backend de Alto Rendimiento</h3>
+      <p class="lead" style="max-width: 800px;">El backend transaccional y de negocio se implementa en Python con FastAPI para maximizar velocidad de desarrollo, mantenibilidad y performance asíncrona. Node.js se mantiene como capa de tiempo real y distribución de eventos.</p>
 
       <div class="grid grid-3 mt-3">
         <div class="card card-gold">
           <div class="card-icon gold">⚡</div>
-          <h4>Go (Golang)</h4>
-          <p>Motor de procesamiento de pagos. Concurrencia nativa con goroutines que maneja miles de transacciones simultáneas con consumo mínimo de memoria.</p>
+          <h4>Python + FastAPI</h4>
+          <p>Motor principal de procesamiento de pagos y dominio financiero. FastAPI habilita APIs asíncronas de baja latencia, tipado fuerte con Pydantic y documentación OpenAPI automática.</p>
           <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border);">
-            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Casos de uso:</strong> Payment engine, settlement, reconciliación, validaciones en tiempo real</span>
+            <span style="font-size: 0.85rem; color: var(--color-text-light);"><strong>Casos de uso:</strong> Payment engine, settlement, reconciliación, validaciones en tiempo real, APIs core</span>
           </div>
         </div>
         <div class="card card-accent">
@@ -356,7 +357,7 @@
           <div class="flow-arrow">→</div>
           <div class="flow-node" style="border-color: var(--color-success); background: rgba(16,185,129,0.05);">📨 Kafka<br><small style="color: var(--color-text-lighter);">Event Bus</small></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node" style="border-color: #8B5CF6; background: rgba(139,92,246,0.05);">💰 Payment Service<br><small style="color: var(--color-text-lighter);">Go</small></div>
+          <div class="flow-node" style="border-color: #8B5CF6; background: rgba(139,92,246,0.05);">💰 Payment Service<br><small style="color: var(--color-text-lighter);">Python + FastAPI</small></div>
           <div class="flow-arrow">→</div>
           <div class="flow-node" style="border-color: var(--color-cyan); background: rgba(6,182,212,0.05);">🏦 Bancos<br><small style="color: var(--color-text-lighter);">ISO 8583/20022</small></div>
         </div>

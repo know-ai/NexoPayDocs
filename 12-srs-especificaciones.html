@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRS — Especificación de Requerimientos de Software | NexoPay</title>
+  <meta name="description" content="SRS de clase mundial para NexoPay: requerimientos funcionales y no funcionales, arquitectura Python FastAPI, Flutter, React Admin, pruebas, seguridad y despliegue de alta disponibilidad.">
+  <meta property="og:title" content="SRS — Especificación de Requerimientos de Software | NexoPay">
+  <meta property="og:description" content="Documento SRS completo para clientes, inversionistas y equipo de desarrollo de NexoPay.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NexoPay — Inversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-icon">N</div><span><span class="logo-text-nexo">Nexo</span><span class="logo-text-pay">Pay</span></span></a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.navbar-nav').classList.toggle('open')">☰</button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="01-resumen-ejecutivo.html">Resumen</a></li>
+        <li><a href="02-analisis-mercado.html">Mercado</a></li>
+        <li><a href="03-problema-solucion.html">Solución</a></li>
+        <li><a href="04-modelo-negocio.html">Negocio</a></li>
+        <li><a href="05-tecnologia.html">Tecnología</a></li>
+        <li><a href="06-regulatorio-legal.html">Legal</a></li>
+        <li><a href="07-analisis-competitivo.html">Competencia</a></li>
+        <li><a href="08-proyecciones-financieras.html">Finanzas</a></li>
+        <li><a href="09-hoja-de-ruta.html">Roadmap</a></li>
+        <li><a href="10-propuesta-inversion.html">Inversión</a></li>
+        <li><a href="11-mvp-prototipo.html">MVP</a></li>
+        <li><a href="12-srs-especificaciones.html" class="active">SRS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a><span class="separator">/</span><span class="current">SRS</span>
+      </div>
+      <span class="section-number">Sección 12</span>
+      <h1>SRS — Software Requirements Specification</h1>
+      <p class="lead">Especificación integral para llevar NexoPay desde MVP a producción con estándares de clase mundial: alcance, arquitectura, requerimientos, seguridad, pruebas y operación de alta disponibilidad.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">1. Contexto</span>
+        <h2>Objetivo, Alcance y Stakeholders</h2>
+        <p>Este SRS establece la base contractual y técnica común entre clientes, inversionistas y desarrolladores.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card card-accent">
+          <div class="card-icon">🎯</div>
+          <h4>Objetivo</h4>
+          <p>Construir una plataforma fintech interoperable para pagos P2P, cobros comerciales y operación bancaria digital centralizada en Venezuela.</p>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon gold">📦</div>
+          <h4>Alcance</h4>
+          <p>Aplicación cliente móvil (Flutter), panel administrativo web (React), backend transaccional (Python + FastAPI) y plataforma de datos/observabilidad.</p>
+        </div>
+        <div class="card card-accent">
+          <div class="card-icon cyan">🤝</div>
+          <h4>Stakeholders</h4>
+          <p>Usuarios finales, comercios, bancos aliados, regulador, inversionistas, equipo de operaciones, seguridad, producto e ingeniería.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-info mt-3">
+        <strong>Definición de éxito:</strong> MVP productivo con seguridad bancaria, tiempos promedio de transacción &lt;3s, disponibilidad 99.95%+ inicial y escalamiento progresivo hacia 99.99%.
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">2. Arquitectura</span>
+        <h2>Arquitectura Objetivo de Producción</h2>
+        <p>Arquitectura modular para escalar por dominio funcional y mantener tiempos de entrega altos con calidad operacional.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Canales y Frontends</h4>
+          <ul class="icon-list">
+            <li><span class="icon">📱</span><span><strong>Frontend Cliente:</strong> Flutter (iOS/Android), biometría, QR, PoS virtual, notificaciones.</span></li>
+            <li><span class="icon">🖥️</span><span><strong>Frontend Admin:</strong> React + TypeScript para operaciones, soporte, conciliación y analítica operativa.</span></li>
+            <li><span class="icon">🔐</span><span><strong>Autenticación:</strong> JWT de corta duración + refresh tokens + device binding + MFA para operaciones críticas.</span></li>
+          </ul>
+        </div>
+        <div class="card card-accent">
+          <h4>Backend y Plataforma</h4>
+          <ul class="icon-list">
+            <li><span class="icon">🐍</span><span><strong>Backend Core:</strong> Python 3.12 + FastAPI (async), Pydantic v2, SQLAlchemy, Alembic.</span></li>
+            <li><span class="icon">📨</span><span><strong>Mensajería:</strong> Kafka para eventos de negocio, auditoría y notificaciones asincrónicas.</span></li>
+            <li><span class="icon">🗄️</span><span><strong>Datos:</strong> PostgreSQL (ACID), Redis (cache/rate limit), almacenamiento de eventos y observabilidad.</span></li>
+            <li><span class="icon">☁️</span><span><strong>Infra:</strong> Docker + Kubernetes, IaC con Terraform, despliegues Blue/Green o Canary.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">3. Requerimientos Funcionales</span>
+        <h2>Catálogo Funcional (Cliente, Admin, Operación)</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>RF-C (Cliente Flutter)</h4>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><div><strong>RF-C01:</strong><p style="margin-bottom:0;">Registro, login y recuperación con biometría y MFA.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-C02:</strong><p style="margin-bottom:0;">Pago Móvil P2P interoperable con validación previa.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-C03:</strong><p style="margin-bottom:0;">QR estático/dinámico y PoS virtual para comercios.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-C04:</strong><p style="margin-bottom:0;">Historial, filtros, comprobantes y exportación.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-C05:</strong><p style="margin-bottom:0;">Gestión de perfil, cuentas bancarias, KYC y seguridad.</p></div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>RF-A (Admin React)</h4>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><div><strong>RF-A01:</strong><p style="margin-bottom:0;">Panel de monitoreo de transacciones y latencias.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-A02:</strong><p style="margin-bottom:0;">Gestión de incidencias, reversos y conciliación.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-A03:</strong><p style="margin-bottom:0;">Operación KYC/KYB, revisión documental y aprobaciones.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-A04:</strong><p style="margin-bottom:0;">Control de usuarios internos por roles (RBAC).</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-A05:</strong><p style="margin-bottom:0;">Reportes regulatorios y exportables auditables.</p></div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>RF-B (Backend FastAPI)</h4>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><div><strong>RF-B01:</strong><p style="margin-bottom:0;">API REST versionada y contratos OpenAPI.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-B02:</strong><p style="margin-bottom:0;">Procesamiento idempotente de pagos y estados.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-B03:</strong><p style="margin-bottom:0;">Integraciones bancarias con adapter por institución.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-B04:</strong><p style="margin-bottom:0;">Eventos de negocio para notificaciones y analytics.</p></div></li>
+            <li><span class="check">✓</span><div><strong>RF-B05:</strong><p style="margin-bottom:0;">Auditoría completa y trazabilidad end-to-end.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">4. Requerimientos No Funcionales</span>
+        <h2>Calidad, Seguridad y Operación</h2>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Categoría</th>
+              <th>Requisito</th>
+              <th>Objetivo Inicial</th>
+              <th>Objetivo Escala</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Disponibilidad</strong></td>
+              <td>Uptime de servicios críticos de pago</td>
+              <td>99.95%</td>
+              <td>99.99%</td>
+            </tr>
+            <tr>
+              <td><strong>Performance</strong></td>
+              <td>Latencia p95 endpoint de pago</td>
+              <td>&lt;1200ms</td>
+              <td>&lt;800ms</td>
+            </tr>
+            <tr>
+              <td><strong>Escalabilidad</strong></td>
+              <td>Escala horizontal de pods por demanda</td>
+              <td>Auto-scaling x10</td>
+              <td>Auto-scaling x30</td>
+            </tr>
+            <tr>
+              <td><strong>Seguridad</strong></td>
+              <td>Cifrado, controles IAM y auditoría</td>
+              <td>TLS 1.3 + AES-256</td>
+              <td>Rotación y hardening continuo</td>
+            </tr>
+            <tr>
+              <td><strong>Recuperación</strong></td>
+              <td>RTO / RPO en desastre</td>
+              <td>&lt;15 min / &lt;5 min</td>
+              <td>&lt;5 min / &lt;1 min</td>
+            </tr>
+            <tr>
+              <td><strong>Mantenibilidad</strong></td>
+              <td>Calidad de código y cobertura de pruebas</td>
+              <td>80% cobertura</td>
+              <td>85%+ cobertura</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">5. Datos</span>
+        <h2>Esquema de Base de Datos (Referencia)</h2>
+        <p>Modelo relacional para transacciones críticas y trazabilidad financiera.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Entidades Core</h4>
+          <ul class="icon-list">
+            <li><span class="icon">👤</span><span><strong>users:</strong> identidad, estado KYC, nivel de riesgo.</span></li>
+            <li><span class="icon">🏦</span><span><strong>bank_accounts:</strong> cuentas vinculadas y estado de verificación.</span></li>
+            <li><span class="icon">💸</span><span><strong>transactions:</strong> monto, moneda, referencia, estado, trazas.</span></li>
+            <li><span class="icon">🧾</span><span><strong>ledger_entries:</strong> doble partida e integridad contable.</span></li>
+            <li><span class="icon">🔐</span><span><strong>auth_sessions:</strong> sesión, dispositivo, expiración, MFA.</span></li>
+            <li><span class="icon">📜</span><span><strong>audit_logs:</strong> evento, actor, origen, hash de integridad.</span></li>
+          </ul>
+        </div>
+        <div class="card card-accent">
+          <h4>Lineamientos de Diseño de Datos</h4>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><div><strong>Integridad:</strong><p style="margin-bottom:0;">FKs, constraints y transacciones ACID en rutas de pago.</p></div></li>
+            <li><span class="check">✓</span><div><strong>Idempotencia:</strong><p style="margin-bottom:0;">Llaves idempotentes por operación financiera.</p></div></li>
+            <li><span class="check">✓</span><div><strong>Auditoría:</strong><p style="margin-bottom:0;">Bitácora inmutable de eventos operativos y de seguridad.</p></div></li>
+            <li><span class="check">✓</span><div><strong>Particionado:</strong><p style="margin-bottom:0;">Particiones por fecha y estrategia de archivado regulatorio.</p></div></li>
+            <li><span class="check">✓</span><div><strong>Privacidad:</strong><p style="margin-bottom:0;">Enmascaramiento de datos sensibles en entornos no productivos.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number" style="color: var(--color-gold-light);">6. QA</span>
+        <h2 style="color:#fff;">Estrategia de Pruebas de Clase Mundial</h2>
+        <p style="color: rgba(255,255,255,0.75);">Calidad por diseño: cobertura funcional, técnica, seguridad y resiliencia operacional.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card-glass">
+          <h4>Pruebas de Backend</h4>
+          <p>Unitarias, integración, contrato API (OpenAPI), pruebas de idempotencia y concurrencia en endpoints críticos.</p>
+          <span class="badge badge-primary" style="background: rgba(37,99,235,0.2);">Pytest + Schemathesis</span>
+        </div>
+        <div class="card-glass">
+          <h4>Pruebas Frontend</h4>
+          <p>Flutter widget/integration tests y React component/e2e tests para journeys de negocio end-to-end.</p>
+          <span class="badge badge-success" style="background: rgba(16,185,129,0.2);">Flutter Test + Playwright</span>
+        </div>
+        <div class="card-glass">
+          <h4>Pruebas No Funcionales</h4>
+          <p>Performance, carga, estrés, caos, seguridad ofensiva (SAST/DAST) y pruebas de recuperación ante fallos.</p>
+          <span class="badge badge-gold" style="background: rgba(245,158,11,0.2);">k6 + OWASP ZAP</span>
+        </div>
+      </div>
+
+      <div class="callout callout-warning mt-3" style="background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.25);">
+        <strong style="color: var(--color-gold-light);">Gate de release obligatorio:</strong>
+        <span style="color: rgba(255,255,255,0.82);">No se libera a producción si falla cobertura mínima, seguridad crítica o presupuesto de error del SLO.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">7. Trazabilidad</span>
+        <h2>Matriz de Trazabilidad de Requisitos (RTM)</h2>
+        <p>Trazabilidad completa desde requerimiento (RF/RNF) hasta estrategia de prueba, criterio de aceptación y evidencia esperada para auditoría.</p>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tipo</th>
+              <th>Requisito</th>
+              <th>Pruebas Asociadas</th>
+              <th>Criterio de Aceptación</th>
+              <th>Evidencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>RF-C02</strong></td>
+              <td>Funcional</td>
+              <td>Pago Móvil interoperable</td>
+              <td>Integración API + E2E Flutter + prueba de banco mock</td>
+              <td>Pago exitoso en menos de 3s, con referencia y recibo</td>
+              <td>Reporte E2E + logs transaccionales</td>
+            </tr>
+            <tr>
+              <td><strong>RF-B02</strong></td>
+              <td>Funcional</td>
+              <td>Procesamiento idempotente</td>
+              <td>Concurrencia + repetición de request con misma llave</td>
+              <td>Una sola transacción confirmada por llave idempotente</td>
+              <td>Prueba automatizada + auditoría de estados</td>
+            </tr>
+            <tr>
+              <td><strong>RF-A02</strong></td>
+              <td>Funcional</td>
+              <td>Gestión de reversos y conciliación</td>
+              <td>Pruebas de flujo admin React + integración backend</td>
+              <td>Reverso ejecutado y reflejado en ledger y dashboard</td>
+              <td>Capturas + reporte de conciliación</td>
+            </tr>
+            <tr>
+              <td><strong>RNF-01</strong></td>
+              <td>No Funcional</td>
+              <td>Disponibilidad 99.95%+</td>
+              <td>Monitoreo SLO + simulación de failover</td>
+              <td>Uptime mensual igual o superior al objetivo</td>
+              <td>Dashboard SRE + postmortems</td>
+            </tr>
+            <tr>
+              <td><strong>RNF-02</strong></td>
+              <td>No Funcional</td>
+              <td>Latencia p95 de pago</td>
+              <td>k6 (carga y estrés) + profiling en FastAPI</td>
+              <td>p95 menor a 1200ms en objetivo inicial</td>
+              <td>Reporte performance CI/CD</td>
+            </tr>
+            <tr>
+              <td><strong>RNF-03</strong></td>
+              <td>No Funcional</td>
+              <td>Seguridad de datos y acceso</td>
+              <td>SAST/DAST + revisión de secretos + pentest</td>
+              <td>0 vulnerabilidades críticas abiertas en release</td>
+              <td>Informe de seguridad firmado</td>
+            </tr>
+            <tr>
+              <td><strong>RNF-04</strong></td>
+              <td>No Funcional</td>
+              <td>Recuperación ante desastres</td>
+              <td>Simulacro DR + restauración de backups</td>
+              <td>RTO/RPO dentro de umbrales definidos</td>
+              <td>Bitácora DR + acta de simulacro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid-3 mt-3">
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Requisitos Críticos Trazados</div>
+          <div class="stat-sublabel">RF/RNF con prueba y evidencia definida</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value gold">Gate</div>
+          <div class="stat-label">Release Controlado</div>
+          <div class="stat-sublabel">Sin evidencia, no hay despliegue productivo</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="background: linear-gradient(135deg, #10B981, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Audit-Ready</div>
+          <div class="stat-label">Due Diligence Técnico</div>
+          <div class="stat-sublabel">Trazabilidad diseñada para inversionistas y auditoría</div>
+        </div>
+      </div>
+
+      <div class="callout callout-success mt-3">
+        <strong>Valor para inversionistas:</strong> La RTM reduce riesgo de ejecución porque conecta cada compromiso del roadmap con evidencia objetiva de calidad y cumplimiento.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">8. DevSecOps</span>
+        <h2>Despliegue de Alta Disponibilidad, Escalable y Mantenible</h2>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Pipeline CI/CD</h4>
+          <ul class="icon-list">
+            <li><span class="icon">🔄</span><span>Build, tests, SAST, DAST y análisis de dependencias en cada PR.</span></li>
+            <li><span class="icon">📦</span><span>Artefactos versionados y firmados para trazabilidad completa.</span></li>
+            <li><span class="icon">🚀</span><span>Canary deployment con rollback automático por métricas SLO.</span></li>
+            <li><span class="icon">📈</span><span>Observabilidad centralizada: logs, métricas, trazas y alertas accionables.</span></li>
+          </ul>
+        </div>
+        <div class="card card-gold">
+          <h4>Alta Disponibilidad (HA)</h4>
+          <ul class="icon-list">
+            <li><span class="icon" style="background: rgba(245,158,11,0.12); color: var(--color-gold);">🌎</span><span>Multi-AZ en producción para todos los servicios críticos.</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.12); color: var(--color-gold);">🧯</span><span>Plan DR con failover validado mediante simulacros periódicos.</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.12); color: var(--color-gold);">🔐</span><span>Gestión de secretos centralizada (KMS/Vault) con rotación automática.</span></li>
+            <li><span class="icon" style="background: rgba(245,158,11,0.12); color: var(--color-gold);">🛠️</span><span>Runbooks operativos y playbooks de incidentes auditables.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-number">9. Gobierno</span>
+        <h2>Acuerdos entre Clientes, Inversionistas y Desarrollo</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Compromisos con Clientes</h4>
+          <p>SLA de disponibilidad, tiempos de respuesta, gestión de incidencias, privacidad y continuidad del servicio.</p>
+        </div>
+        <div class="card">
+          <h4>Compromisos con Inversionistas</h4>
+          <p>Reporte mensual de KPIs de negocio/tecnología, riesgo operacional, cumplimiento y ejecución de roadmap.</p>
+        </div>
+        <div class="card">
+          <h4>Compromisos del Equipo</h4>
+          <p>Cadencias de entrega, definición de listo, estándares de código, auditoría de cambios y control de deuda técnica.</p>
+        </div>
+      </div>
+
+      <div class="table-container mt-3">
+        <table>
+          <thead>
+            <tr>
+              <th>Entregable</th>
+              <th>Frecuencia</th>
+              <th>Responsable</th>
+              <th>Audiencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reporte de disponibilidad y incidentes</td>
+              <td>Semanal</td>
+              <td>SRE / Operaciones</td>
+              <td>Dirección, inversionistas</td>
+            </tr>
+            <tr>
+              <td>KPIs de negocio y producto</td>
+              <td>Mensual</td>
+              <td>Producto / Data</td>
+              <td>Inversionistas, liderazgo</td>
+            </tr>
+            <tr>
+              <td>Reporte de seguridad y cumplimiento</td>
+              <td>Mensual</td>
+              <td>Seguridad / Legal</td>
+              <td>Comité de riesgo</td>
+            </tr>
+            <tr>
+              <td>Estado de roadmap técnico</td>
+              <td>Quincenal</td>
+              <td>CTO / Engineering</td>
+              <td>Stakeholders clave</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark" style="padding: 4rem 0;">
+    <div class="container" style="text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">📘</div>
+      <h2 style="color:#fff; margin-bottom: 1rem;">SRS listo para ejecución y escalamiento</h2>
+      <p style="max-width: 760px; margin: 0 auto 1.5rem; color: rgba(255,255,255,0.75);">
+        Este documento alinea expectativas de negocio e ingeniería para ejecutar NexoPay con foco en confiabilidad, velocidad y cumplimiento regulatorio.
+      </p>
+      <span class="badge badge-gold">Backend oficial: Python + FastAPI</span>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="page-nav">
+      <a href="11-mvp-prototipo.html"><span class="label">← Anterior</span><span class="title">MVP Prototipo Interactivo</span></a>
+      <a href="index.html" class="next"><span class="label">Siguiente →</span><span class="title">Volver al Inicio</span></a>
+    </div>
+  </div>
+
+  <footer class="footer" style="padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 NexoPay. Todos los derechos reservados. Documento confidencial para inversionistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="confidential-bar">⚠ Documento Confidencial — Solo para Inversionistas Autorizados — NexoPay © 2026</div>
+
+</body>
+</html>
